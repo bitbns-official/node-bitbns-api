@@ -30,7 +30,7 @@ Alternative Method :
 <code>npm install bitbns --save</code>
 
 <pre> 
-const bitbnsApi = require('bitbns-api');
+const bitbnsApi = require('bitbns');
 
 const bitbns = new bitbnsApi({
   apiKey :  'API-KEY',
@@ -40,7 +40,7 @@ const bitbns = new bitbnsApi({
 
 <b>Instantiating Multiple Instances</b><br>
 <pre>
-const bitbnsApi = require('bitbns-api');
+const bitbnsApi = require('bitbns');
 
 const instance1 = new bitbnsApi({
   // ...
