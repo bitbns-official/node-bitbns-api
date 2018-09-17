@@ -26,6 +26,9 @@ Alternative Method :
 <h6><a href='https://nodejs.org/en/download/'>For Other Platforms</a></h6>
 
 <h3>Getting Started</h3><br>
+
+<code>npm install bitbns --save</code>
+
 <pre> 
 const bitbnsApi = require('bitbns-api');
 
