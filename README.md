@@ -26,9 +26,6 @@ Alternative Method :
 <h6><a href='https://nodejs.org/en/download/'>For Other Platforms</a></h6>
 
 <h3>Getting Started</h3><br>
-
-<code>npm install bitbns --save</code>
-
 <pre> 
 const bitbnsApi = require('bitbns');
 
@@ -1077,6 +1074,33 @@ console.log(e,d);
   </pre>
 </details>
 
+<b>Get API usage Status</b><br>
+<pre>
+bitbns.getApiUsageStatus(function(error, data){
+ if(!error){
+   console.log('Data ::', data);
+ } else {
+   console.log('Error ::', error);
+ }
+})
+</pre>
+<details> 
+  <summary>
+   View Response
+  </summary>
+  <pre>
+    {
+     data: {
+        readRateUsed: 0,
+        writeRateUsed: 1,
+        status: 1
+     },
+      status: 1,
+      error: null
+    }
+  </pre>
+</details>
+
 <h3>Trading Basic Tutorial</h3>
 <code>Trust the data if status flag is 1 and error is null in response</code>
 
@@ -1085,36 +1109,36 @@ console.log(e,d);
 <pre>
 let volume_to_buy = 100;
 bitbns.platformStatus(function(error, res1){
-	if(res1.data['XRP'].status == 1){
-		bitbns.getSellOrderBook('XRP', function(error, res2){
-			if(res2.status == 1){
-			    console.log(res2);
-			    let volume_available = 0;
-			    let max_sell_price_available = 0;
-			    for(let idx = 0; idx < res2.data.length; idx++){
-			    	volume_available += res2.data[idx].btc;// Here .btc represent Volume
-			    	max_sell_price_available = Math.max(max_sell_price_available, res2.data[idx].rate);
-			    	if(volume_available >= volume_to_buy){
-			    		break;
-			    	}
-			    }
-			    if(volume_available >= volume_to_buy){
-			    	bitbns.placeBuyOrder('XRP', volume_to_buy, max_sell_price_available, function(error, data){
-						  if(!error){
-						     console.log('OrderId ::', data);
-						   } else {
-						     console.log('Error ::', error);
-						   }
-						})
-			    } else{
-			    	console.log("Volume insufficent");
-			    }
+  if(res1.data['XRP'].status == 1){
+    bitbns.getSellOrderBook('XRP', function(error, res2){
+      if(res2.status == 1){
+          console.log(res2);
+          let volume_available = 0;
+          let max_sell_price_available = 0;
+          for(let idx = 0; idx < res2.data.length; idx++){
+            volume_available += res2.data[idx].btc;// Here .btc represent Volume
+            max_sell_price_available = Math.max(max_sell_price_available, res2.data[idx].rate);
+            if(volume_available >= volume_to_buy){
+              break;
+            }
+          }
+          if(volume_available >= volume_to_buy){
+            bitbns.placeBuyOrder('XRP', volume_to_buy, max_sell_price_available, function(error, data){
+              if(!error){
+                 console.log('OrderId ::', data);
+               } else {
+                 console.log('Error ::', error);
+               }
+            })
+          } else{
+            console.log("Volume insufficent");
+          }
 
-			}
-		});
-	}else{
-		console.log("Error");
-	}
+      }
+    });
+  }else{
+    console.log("Error");
+  }
 });
 
 </pre>
@@ -1132,47 +1156,47 @@ bitbns.platformStatus(function(error, res1){
 <pre>
 function cancelEntryId(coinName, entryId){
     return new Promise(function(resolve, reject){
-		bitbns.cancelOrder(coinName, entryId , function(error, data){
-			  if(!error){
-			   resolve(data);
-			  } else {
-			    reject(error);
-			  }
-			})
-	});
+    bitbns.cancelOrder(coinName, entryId , function(error, data){
+        if(!error){
+         resolve(data);
+        } else {
+          reject(error);
+        }
+      })
+  });
   }
 
 async function cancelAllOpenOrdersEntriesForSpecificCoins(coinName, entryIdLists){
-	for(let idx = 0; idx < entryIdLists.length; idx++){
-		try{
-			let response = await cancelEntryId(coinName, entryIdLists[idx]);
-			console.log(response);
-		} catch(e){
-			console.log(e);
-		}
-	}
+  for(let idx = 0; idx < entryIdLists.length; idx++){
+    try{
+      let response = await cancelEntryId(coinName, entryIdLists[idx]);
+      console.log(response);
+    } catch(e){
+      console.log(e);
+    }
+  }
 }
 
 bitbns.platformStatus(function(error, res1){
-	if(res1.data['XRP'].status == 1){
-		bitbns.listOpenOrders('XRP', function(error, res2){
-			  if(!error){
-			    	if(res2.status == 1 && res2.error == null){
-			    		let entryIdLists = [];
-			    		for(let idx = 0; idx < res2.data.length; idx++){
-			    			entryIdLists.push(res2.data[idx].entry_id);
-			    		}
-			    		cancelAllOpenOrdersEntriesForSpecificCoins('XRP', entryIdLists);
-			    	} else{
-			    		console.log("Error :: ", res2.error);
-			    	}
-			  } else {
-			    console.log('Error ::', error);
-			  }
-			})
-	}else{
-		console.log("Error");
-	}
+  if(res1.data['XRP'].status == 1){
+    bitbns.listOpenOrders('XRP', function(error, res2){
+        if(!error){
+            if(res2.status == 1 && res2.error == null){
+              let entryIdLists = [];
+              for(let idx = 0; idx < res2.data.length; idx++){
+                entryIdLists.push(res2.data[idx].entry_id);
+              }
+              cancelAllOpenOrdersEntriesForSpecificCoins('XRP', entryIdLists);
+            } else{
+              console.log("Error :: ", res2.error);
+            }
+        } else {
+          console.log('Error ::', error);
+        }
+      })
+  }else{
+    console.log("Error");
+  }
 });
 </pre>
 
@@ -1190,4 +1214,3 @@ bitbns.platformStatus(function(error, res1){
   ...
   </pre>
   </details>
-
