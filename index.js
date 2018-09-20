@@ -184,6 +184,17 @@ class bitbnsApi{
     }
   }
 
+
+  getApiUsageStatus(callback){
+    this.requestAuthenticate('USAGE', callback);
+    if(this.verifyApiKeys(this.apiKeys)){
+      let body = {};
+      this.makePostRequest('USAGE', "getApiUsageStatus", body, callback);
+    }else{
+      return callback("apiKeys Not Found , Please intialize it first","");
+    }
+  }
+
   withdrawHistory(symbol, page, callback){
     this.requestAuthenticate(symbol, callback);
     if(this.verifyApiKeys(this.apiKeys)){
@@ -229,6 +240,25 @@ class bitbnsApi{
     }
   }
 
+  orderStatus(symbol, entry_id, callback){
+    this.requestAuthenticate(symbol, callback);
+    if(this.verifyApiKeys(this.apiKeys)){
+      let body = {entry_id:entry_id};
+      this.makePostRequest(symbol, "orderStatus", body, callback);
+    }else{
+      return callback("apiKeys Not Found , Please intialize it first","");
+    }
+  }
+
+  cancelStopLossOrder(symbol, entry_id, callback){
+    this.requestAuthenticate(symbol, callback);
+    if(this.verifyApiKeys(this.apiKeys)){
+      let body = {entry_id:entry_id};
+      this.makePostRequest(symbol, "cancelStopLossOrder", body, callback);
+    }else{
+      return callback("apiKeys Not Found , Please intialize it first","");
+    }
+  }
 
   /*
     Set Option for get / post requests
