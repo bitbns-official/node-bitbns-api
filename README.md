@@ -25,6 +25,112 @@ Alternative Method :
 <br>
 <h6><a href='https://nodejs.org/en/download/'>For Other Platforms</a></h6>
 
+<h2>API Access</h2>
+<div id ="api_summary_table" style ="border:1px solid">
+  <table style = "width:55%">
+    <tr>
+      <th>PERMISSIONS</th>
+      <th>Read</th>
+      <th>Write</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>List Open Orders</th>
+      <th>&#10003;</th>
+      <th>&#x2716;</th>
+    </tr>
+    <tr>
+      <th>List Open Stop Limit</th>
+      <th>&#10003;</th>
+      <th>&#x2716;</th>
+    </tr>
+    <tr>
+      <th>Api Usages Status</th>
+      <th>&#10003;</th>
+      <th>&#x2716;</th>
+    </tr>
+    <tr>
+      <th>Current Coin Balance</th>
+      <th>&#10003;</th>
+      <th>&#x2716;</th>
+    </tr>
+    <tr>
+      <th>Deposit History</th>
+      <th>&#10003;</th>
+      <th>&#x2716;</th>
+    </tr>
+    <tr>
+      <th>Withdrawal History</th>
+      <th>&#10003;</th>
+      <th>&#x2716;</th>
+    </tr>
+    <tr>
+      <th>Order Status</th>
+      <th>&#10003;</th>
+      <th>&#x2716;</th>
+    </tr>
+    <tr>
+      <th>Buy Stop Loss Order</th>
+      <th>&#x2716;</th>
+      <th>&#10003;</th>
+    </tr>
+     <tr>
+      <th>Sell Stop Loss Order</th>
+      <th>&#x2716;</th>
+      <th>&#10003;</th>
+    </tr>
+     <tr>
+      <th>Buy Order</th>
+      <th>&#x2716;</th>
+      <th>&#10003;</th>
+    </tr> 
+     <tr>
+      <th>Sell Order</th>
+      <th>&#x2716;</th>
+      <th>&#10003;</th>
+    </tr> 
+     <tr>
+      <th>Get Coin Address</th>
+      <th>&#10003;</th>
+      <th>&#x2716;</th>
+    </tr> 
+     <tr>
+      <th>Cancel Order</th>
+      <th>&#x2716;</th>
+      <th>&#10003;</th>
+    </tr> 
+     <tr>
+      <th>Cancel Stop Loss Order</th>
+      <th>&#x2716;</th>
+      <th>&#10003;</th>
+    </tr> 
+     <tr>
+      <th>Platform Status</th>
+      <th>&#10003;</th>
+      <th>&#x2716;</th>
+    </tr> 
+     <tr>
+      <th>Ticker API</th>
+      <th>&#10003;</th>
+      <th>&#x2716;</th>
+    </tr> 
+      <tr>
+      <th>Buy OrderBook</th>
+      <th>&#10003;</th>
+      <th>&#x2716;</th>
+    </tr> 
+      <tr>
+      <th>Sell OrderBook</th>
+      <th>&#10003;</th>
+      <th>&#x2716;</th>
+    </tr>    
+  </table>
+</div>
+
 <h3>Getting Started</h3><br>
 <pre> 
 const bitbnsApi = require('bitbns');
