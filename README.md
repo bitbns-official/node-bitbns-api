@@ -1,3 +1,5 @@
+<p><a href="https://npmjs.org/package/bitbns" rel="nofollow"><img src="https://nodei.co/npm/bitbns.png?compact=true" alt="NPM" data-canonical-src="https://nodei.co/npm/bitbns.png?compact=true" style="max-width:100%;"></a></p>
+
 # Bitbns Node API
 
 This project is designed to assist you make your own projects that interact with the Bitbns API.  This project seeks to have complete API coverage excluding WebSockets which would be released in the future version.
