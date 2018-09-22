@@ -131,6 +131,8 @@ Alternative Method :
   </table>
 </div>
 
+<h3>Installation</h3>
+<code>npm install bitbns --save</code>
 
 <h3>Getting Started</h3><br>
 <pre> 
