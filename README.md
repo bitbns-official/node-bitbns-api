@@ -133,17 +133,94 @@ Alternative Method :
   </table>
 </div>
 
+<h2>Minimum Volume allowed of supporting currencies</h2>
+<table>
+    <tr>
+      <th>COIN NAME</th>
+      <th>SYMBOL</th>
+      <th>MINIMUM VOLUME ALLOWED</th>
+      <th>MAXIMUM VOLUME ALLOWED</th>
+    </tr>
+    <tr>
+      <th>Bitcoin</th>
+      <th>BTC</th>
+      <th>0.04</th>
+      <th>20</th>
+    </tr>
+    <tr>
+      <th>Ripple</th>
+      <th>XRP</th>
+      <th>800</th>
+      <th>500000</th>
+    </tr>
+    <tr>
+      <th>Neo</th>
+      <th>NEO</th>
+      <th>15</th>
+      <th>10000</th>
+    </tr>
+    <tr>
+      <th>Gas</th>
+      <th>GAS</th>
+      <th>25</th>
+      <th>10000</th>
+    </tr>
+    <tr>
+      <th>Stellar</th>
+      <th>XLM</th>
+      <th>1000</th>
+      <th>500000</th>
+    </tr>
+    <tr>
+      <th>Ethereum</th>
+      <th>ETH</th>
+      <th>1</th>
+      <th>20</th>
+    </tr>
+    <tr>
+      <th>Bitcoin Cash</th>
+      <th>BCH</th>
+      <th>0.3</th>
+      <th>200</th>
+    </tr>
+    <tr>
+      <th>Tron</th>
+      <th>TRX</th>
+      <th>5000</th>
+      <th>200000</th>
+    </tr>
+    <tr>
+      <th>Cardano</th>
+      <th>ADA</th>
+      <th>2100</th>
+      <th>2000000</th>
+    </tr>
+    <tr>
+      <th>VeChain</th>
+      <th>VET</th>
+      <th>10000</th>
+      <th>20000</th>
+    </tr>
+    <tr>
+      <th>Verge</th>
+      <th>XVG</th>
+      <th>10000</th>
+      <th>2000000</th>
+    </tr>
+</table>
+
 <h3>Installation</h3>
 <code>npm install bitbns --save</code>
 
 <h3>Getting Started</h3><br>
 <pre> 
 const bitbnsApi = require('bitbns');
-
+<code>
 const bitbns = new bitbnsApi({
-  apiKey :  'API-KEY',
-  apiSecretKey : 'SECRET-KEY'
+      apiKey :  'API-KEY',
+      apiSecretKey : 'SECRET-KEY'
 }); 
+</code>
 </pre>
 
 <b>Instantiating Multiple Instances</b><br>
