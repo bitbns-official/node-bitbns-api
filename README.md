@@ -1461,3 +1461,20 @@ bitbns.platformStatus(function(error, res1){
   ...
   </pre>
   </details>
+
+<b>Curl request to get server time</b><br>
+ <pre>
+ curl -H "X-BITBNS-APIKEY: API-KEY" -X GET 'https://api.bitbns.com/api/trade/v1/getServerTime'
+ </pre>
+ <details> 
+   <summary>
+    View Response
+   </summary>
+   <pre>
+     {
+   serverTime: '1538150764273',
+   status: 1,
+   error: null
+ }
+   </pre>
+ </details>
