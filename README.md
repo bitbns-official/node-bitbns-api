@@ -213,6 +213,78 @@ Alternative Method :
       <th>0.8</th>
       <th>200</th>
     </tr>
+     <tr>
+      <th>DigixDAO</th>
+      <th>DGD</th>
+      <th>4</th>
+      <th>200</th>
+    </tr>
+     <tr>
+      <th>LiteCoin</th>
+      <th>LTC</th>
+      <th>3</th>
+      <th>150</th>
+    </tr>
+     <tr>
+      <th>Augur</th>
+      <th>REP</th>
+      <th>12</th>
+      <th>500</th>
+    </tr>
+    <tr>
+      <th>Qtum</th>
+      <th>QTUM</th>
+      <th>35</th>
+      <th>1000</th>
+    </tr>
+    <tr>
+      <th>Lisk</th>
+      <th>LSK</th>
+      <th>35</th>
+      <th>1000</th>
+    </tr>
+    <tr>
+      <th>OmiseGo</th>
+      <th>OMG</th>
+      <th>35</th>
+      <th>1000</th>
+    </tr>
+    <tr>
+      <th>Waves</th>
+      <th>WAVES</th>
+      <th>60</th>
+      <th>1000</th>
+    </tr>
+    <tr>
+      <th>Ontology</th>
+      <th>ONT</th>
+      <th>60</th>
+      <th>1000</th>
+    </tr>
+    <tr>
+      <th>0x</th>
+      <th>ZRX</th>
+      <th>180</th>
+      <th>3000</th>
+    </tr> 
+    <tr>
+      <th>Power Ledger</th>
+      <th>POWR</th>
+      <th>1000</th>
+      <th>8000</th>
+    </tr>   
+    <tr>
+      <th>PolyMath</th>
+      <th>POLY</th>
+      <th>2500</th>
+      <th>10000</th>
+    </tr> 
+    <tr>
+      <th>Tether</th>
+      <th>USDT</th>
+      <th>200</th>
+      <th>5000</th>
+    </tr>     
 </table>
 
 <h3>Installation</h3>
