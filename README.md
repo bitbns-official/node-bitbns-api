@@ -144,145 +144,145 @@ Alternative Method :
     <tr>
       <th>Bitcoin</th>
       <th>BTC</th>
-      <th>0.04</th>
+      <th>0.01</th>
       <th>20</th>
     </tr>
     <tr>
       <th>Ripple</th>
       <th>XRP</th>
-      <th>800</th>
+      <th>150</th>
       <th>500000</th>
     </tr>
     <tr>
       <th>Neo</th>
       <th>NEO</th>
-      <th>15</th>
+      <th>4</th>
       <th>10000</th>
     </tr>
     <tr>
       <th>Gas</th>
       <th>GAS</th>
-      <th>25</th>
+      <th>13</th>
       <th>10000</th>
     </tr>
     <tr>
       <th>Stellar</th>
       <th>XLM</th>
-      <th>1000</th>
+      <th>300</th>
       <th>500000</th>
     </tr>
     <tr>
       <th>Ethereum</th>
       <th>ETH</th>
-      <th>1</th>
+      <th>0.32</th>
       <th>20</th>
     </tr>
     <tr>
       <th>Bitcoin Cash</th>
       <th>BCH</th>
-      <th>0.3</th>
+      <th>0.15</th>
       <th>200</th>
     </tr>
     <tr>
       <th>Tron</th>
       <th>TRX</th>
-      <th>5000</th>
+      <th>2800</th>
       <th>200000</th>
     </tr>
     <tr>
       <th>Cardano</th>
       <th>ADA</th>
-      <th>2100</th>
+      <th>880</th>
       <th>2000000</th>
     </tr>
     <tr>
       <th>VeChain</th>
       <th>VET</th>
-      <th>10000</th>
+      <th>5800</th>
       <th>20000</th>
     </tr>
     <tr>
       <th>Verge</th>
       <th>XVG</th>
-      <th>10000</th>
+      <th>4550</th>
       <th>2000000</th>
     </tr>
      <tr>
       <th>Dash</th>
       <th>DASH</th>
-      <th>0.8</th>
+      <th>0.42</th>
       <th>200</th>
     </tr>
      <tr>
       <th>DigixDAO</th>
       <th>DGD</th>
-      <th>4</th>
+      <th>1.5</th>
       <th>200</th>
     </tr>
      <tr>
       <th>LiteCoin</th>
       <th>LTC</th>
-      <th>3</th>
+      <th>1.2</th>
       <th>150</th>
     </tr>
      <tr>
       <th>Augur</th>
       <th>REP</th>
-      <th>12</th>
+      <th>6</th>
       <th>500</th>
     </tr>
     <tr>
       <th>Qtum</th>
       <th>QTUM</th>
-      <th>35</th>
+      <th>17</th>
       <th>1000</th>
     </tr>
     <tr>
       <th>Lisk</th>
       <th>LSK</th>
-      <th>35</th>
+      <th>24</th>
       <th>1000</th>
     </tr>
     <tr>
       <th>OmiseGo</th>
       <th>OMG</th>
-      <th>35</th>
+      <th>21</th>
       <th>1000</th>
     </tr>
     <tr>
       <th>Waves</th>
       <th>WAVES</th>
-      <th>60</th>
+      <th>34</th>
       <th>1000</th>
     </tr>
     <tr>
       <th>Ontology</th>
       <th>ONT</th>
-      <th>60</th>
+      <th>35</th>
       <th>1000</th>
     </tr>
     <tr>
       <th>0x</th>
       <th>ZRX</th>
-      <th>180</th>
+      <th>87</th>
       <th>3000</th>
     </tr> 
     <tr>
       <th>Power Ledger</th>
       <th>POWR</th>
-      <th>1000</th>
+      <th>400</th>
       <th>8000</th>
     </tr>   
     <tr>
       <th>PolyMath</th>
       <th>POLY</th>
-      <th>2500</th>
+      <th>324</th>
       <th>10000</th>
     </tr> 
     <tr>
       <th>Tether</th>
       <th>USDT</th>
-      <th>200</th>
+      <th>100</th>
       <th>5000</th>
     </tr>     
 </table>
