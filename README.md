@@ -1426,6 +1426,55 @@ bitbns.cancelStopLossOrder('BTC', 4221 , function(error, data){
   </pre>
 </details>
 
+<h3>API V2 (New Features)</h3>
+<b>Place Orders(BUY or SELL)</b><br>
+<pre>
+<b>(Placing Bracket Order)</b>
+
+bitbns.placeOrders({
+	symbol : 'XRP',
+	side : 'BUY',
+	quantity : 40,
+	rate : 4,
+	target_rate : 5,
+	t_rate : 3.5,
+	trail_rate : .01  
+},function(error, data) {
+	console.log(data)
+});
+
+side -> BUY or SELL
+symbol -> COIN NAME,
+quantity -> QUANTITY,
+rate -> RATE,
+target_rate -> TARGET RATE,
+t_rate -> TRRIGER RATE,
+trail_rate -> TRAIL RATE
+
+To Place Simple Buy or Sell Order use <b>rate</b>
+To Place Stoploss Buy or Sell Order use <b>rate & t_rate</b>
+To Place Bracket Buy or Sell Order use <b>rate , t_rate, target_rate & trail_rate</b>
+</pre>
+
+
+<b>Cancel Order</b><br>
+<pre>
+
+bitbns.cancelOrders({
+	symbol : 'XRP',
+	side : 'cancelOrder',
+	entry_id : 462
+}, function(error, data) {
+	console.log(error, data);
+});
+
+side -> "cancelOrder" or "cancelStopLossOrder"
+symbol -> COIN NAME,
+entry_id : ENTRY ID
+
+</pre>
+
+
 <h3>Trading Basic Tutorial</h3>
 <code>Trust the data if status flag is 1 and error is null in response</code>
 
