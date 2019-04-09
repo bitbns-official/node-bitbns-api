@@ -15,6 +15,7 @@ class bitbnsApi{
   constructor(data){
 
     this.baseURL = "https://api.bitbns.com/api/trade/v1";
+    this.baseURL2 = "https://api.bitbns.com/api/trade/v2"
     this.apiKeys = {};
     if(typeof(data.apiKey) !== 'string') throw Error('API_KEY NOT FOUND.');
     if(typeof(data.apiSecretKey) !== 'string') throw Error('API_SECRET_KEY NOT FOUND.');
@@ -79,8 +80,37 @@ class bitbnsApi{
     });
   }
 
+  makePostRequest2(methodName, body, callback) {
+    const options = {
+      url : `${this.baseURL2}/${methodName}`,
+      method : 'POST',
+      body : JSON.stringify(body),
+      followAllRedirects : true
+    }
+
+
+    let headers = this.populateHeadersForPost(body.symbol, methodName, JSON.stringify(body));
+        options.headers = headers;
+          request(options, function(error, res, body){
+            if(!error){
+              body = body
+             // body = JSON.parse(body);
+              return callback("",body);
+            }else{
+              return callback(error,"");
+            }
+          });
+
+
+  }
+
   requestAuthenticate(symbol, callback){
     if(typeof(symbol) !== 'string' || symbol.length < 1) throw Error('Prices apiError :: Symbol not found.');
+    if(typeof(callback) !== 'function') throw Error('Prices apiError :: Callback not found.');
+  }
+
+  requestAuthenticate2(orders_obj, callback) {
+    if(typeof(orders_obj.symbol) !== 'string' || typeof(orders_obj.side) != 'string') throw Error('Invalid Object Passed');
     if(typeof(callback) !== 'function') throw Error('Prices apiError :: Callback not found.');
   }
 
@@ -184,17 +214,6 @@ class bitbnsApi{
     }
   }
 
-
-  getApiUsageStatus(callback){
-    this.requestAuthenticate('USAGE', callback);
-    if(this.verifyApiKeys(this.apiKeys)){
-      let body = {};
-      this.makePostRequest('USAGE', "getApiUsageStatus", body, callback);
-    }else{
-      return callback("apiKeys Not Found , Please intialize it first","");
-    }
-  }
-
   withdrawHistory(symbol, page, callback){
     this.requestAuthenticate(symbol, callback);
     if(this.verifyApiKeys(this.apiKeys)){
@@ -222,6 +241,27 @@ class bitbnsApi{
       return callback("apiKeys Not Found , Please intialize it first","");
     }
   }
+
+   placeOrders(orders_obj, callback) {
+    this.requestAuthenticate2(orders_obj, callback);
+        if(this.verifyApiKeys(this.apiKeys)){
+          let body = orders_obj;
+          this.makePostRequest2("orders", body, callback);
+        }else{
+          return callback("apiKeys Not Found , Please intialize it first","");
+        }
+   }
+
+   cancelOrders(orders_obj, callback) {
+      this.requestAuthenticate2(orders_obj, callback);
+      if(this.verifyApiKeys(this.apiKeys)) {
+          let body = orders_obj;
+          this.makePostRequest2("cancel", body, callback);
+      } else {
+        return callback("apiKeys Not Found, Please intialize it first","")
+      }
+   }
+
   /*
     Cancels an open buy or sell order
     @params {string} symbol -> name of coin
@@ -259,6 +299,17 @@ class bitbnsApi{
       return callback("apiKeys Not Found , Please intialize it first","");
     }
   }
+
+    getApiUsageStatus(callback){
+    this.requestAuthenticate('USAGE', callback);
+    if(this.verifyApiKeys(this.apiKeys)){
+      let body = {};
+      this.makePostRequest('USAGE', "getApiUsageStatus", body, callback);
+    }else{
+      return callback("apiKeys Not Found , Please intialize it first","");
+    }
+  }
+
 
   /*
     Set Option for get / post requests
