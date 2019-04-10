@@ -1468,9 +1468,72 @@ bitbns.cancelOrders({
 	console.log(error, data);
 });
 
-side -> "cancelOrder" or "cancelStopLossOrder"
-symbol -> COIN NAME,
+side -> "cancelOrder","cancelStopLossOrder", "usdtcancelOrder", "usdtcancelStopLossOrder"
+symbol -> COIN NAME
 entry_id : ENTRY ID
+
+</pre>
+
+<b>Place Orders in USDT Market</b><br>
+<pre>
+bitbns.placeOrders({
+	symbol : 'TRX_USDT',
+	side : 'BUY',
+	quantity : 40,
+	rate : 4,
+	target_rate : 5,
+	t_rate : 3.5,
+	trail_rate : .01  
+},function(error, data) {
+	console.log(data)
+});
+
+side -> BUY or SELL
+symbol -> COIN NAME(use suffix "_USDT" with coin name)
+quantity -> QUANTITY,
+rate -> RATE,
+target_rate -> TARGET RATE,
+t_rate -> TRRIGER RATE,
+trail_rate -> TRAIL RATE
+
+To Place Simple Buy or Sell Order use <b>rate</b>
+To Place Stoploss Buy or Sell Order use <b>rate & t_rate</b>
+To Place Bracket Buy or Sell Order use <b>rate , t_rate, target_rate & trail_rate</b>
+
+</pre>
+
+<b>Cancel Order in USDT MARKET</b><br>
+<pre>
+
+bitbns.cancelOrders({
+	symbol : 'TRX_USDT',
+	side : 'cancelOrder',
+	entry_id : 462
+}, function(error, data) {
+	console.log(error, data);
+});
+
+side -> "cancelOrder","cancelStopLossOrder", "usdtcancelOrder", "usdtcancelStopLossOrder"
+symbol -> COIN NAME(use suffix "_USDT" with coin name)
+entry_id : ENTRY ID
+
+</pre>
+
+<b>Get Orders in USDT MARKET</b><br>
+<pre>
+
+bitbns.getOrders({
+	side : 'usdtListOpenOrders',
+	symbol : 'TRX_USDT',
+	page : 0
+}, function(error, data) {
+	console.log(data)
+});
+
+side -> "listOpenOrders", "listOpenStopOrders", "listOpenBracketOrders", "usdtListOpenBracketOrders",
+         "usdtListOpenStopOrders","usdtListOpenOrders" 
+symbol -> COIN NAME(use suffix "_USDT" with coin name)
+page -> INTEGER
 
 </pre>
 
