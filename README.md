@@ -1228,8 +1228,8 @@ Here 174 is a order id
 
 <b>Getting Sell Order Book</b><br>
 <pre>
-bitbns.platformStatus(function(error, data){
-  console.log(error, data);
+bitbns.getSellOrderBook('BTC', function(e, d){
+console.log(e,d);
 });
 </pre>
 
