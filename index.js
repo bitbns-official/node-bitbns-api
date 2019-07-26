@@ -260,7 +260,7 @@ class bitbnsApi{
     this.requestAuthenticate2(orders_obj, callback);
         if(this.verifyApiKeys(this.apiKeys)){
           let body = orders_obj;
-          this.makePostRequest2("getorders", body, callback);
+          this.makePostRequest2("getordersnew", body, callback);
         }else{
           return callback("apiKeys Not Found , Please intialize it first","");
         }
