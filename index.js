@@ -72,8 +72,12 @@ class bitbnsApi{
     options.headers = headers;
     request(options, function(error, res, body){
       if(!error){
-        body = JSON.parse(body);
-        return callback("",body);
+        try {
+          body = JSON.parse(body);
+          return callback("",body);
+        } catch(err){
+          return callback("Invalid Non-JSON response " + methodName,"");
+        }
       }else{
         return callback(error,"");
       }
@@ -305,6 +309,16 @@ class bitbnsApi{
     if(this.verifyApiKeys(this.apiKeys)){
       let body = {};
       this.makePostRequest('USAGE', "getApiUsageStatus", body, callback);
+    }else{
+      return callback("apiKeys Not Found , Please intialize it first","");
+    }
+  }
+
+  getTokenSocket(callback){
+    this.requestAuthenticate('USAGE', callback);
+    if(this.verifyApiKeys(this.apiKeys)){
+      let body = {};
+      this.makePostRequest('USAGE', "getOrderSocketToken", body, callback);
     }else{
       return callback("apiKeys Not Found , Please intialize it first","");
     }

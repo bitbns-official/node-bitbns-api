@@ -1369,6 +1369,31 @@ bitbns.getApiUsageStatus(function(error, data){
   </pre>
 </details>
 
+
+<b>Get Token to authenticate Orders socket</b><br>
+<pre>
+bitbns.getTokenSocket(function(error, data){
+ if(!error){
+   console.log('Data ::', data);
+ } else {
+   console.log('Error ::', error);
+ }
+})
+</pre>
+<details> 
+  <summary>
+   View Response
+  </summary>
+  <pre>
+    {
+     data: '6efgunSa2bH6FrteeS0ZcozU5h_9',
+      status: 1,
+      error: null
+    }
+  </pre>
+</details>
+
+
 <b>Getting Order Status</b><br>
 <pre>
 bitbns.orderStatus('BTC', '4221', function(error, data){
