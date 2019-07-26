@@ -44,7 +44,7 @@ class bitbnsApi{
       timeStamp_nonce : timeStamp_nonce,
       body: body
     };
-    return new Buffer(JSON.stringify(data)).toString('base64');;
+    return new Buffer(JSON.stringify(data)).toString('base64');
   }
   getSignature(payload, apiSecretKey){
     return crypto.createHmac('sha512',apiSecretKey)
