@@ -1592,7 +1592,7 @@ bitbns.getTokenSocket(function(error, response){
   
   let data = JSON.parse(response);
   let token = response.data;
-  const socket = getExecutedOrders(token);
+  const socket = bitbns.getExecutedOrders(token);
 
   socket.on('connect', () => console.log('Connected'))
 
