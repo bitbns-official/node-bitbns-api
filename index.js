@@ -256,6 +256,16 @@ class bitbnsApi{
         }
    }
 
+   getOrders(orders_obj, callback) {
+    this.requestAuthenticate2(orders_obj, callback);
+        if(this.verifyApiKeys(this.apiKeys)){
+          let body = orders_obj;
+          this.makePostRequest2("getorders", body, callback);
+        }else{
+          return callback("apiKeys Not Found , Please intialize it first","");
+        }
+   }
+
    cancelOrders(orders_obj, callback) {
       this.requestAuthenticate2(orders_obj, callback);
       if(this.verifyApiKeys(this.apiKeys)) {
