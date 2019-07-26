@@ -1,5 +1,6 @@
 const crypto = require("crypto");
 const request = require('request');
+const socket_IO = require('socket.io-client');
 
 const api_headers = {
   'X-BITBNS-APIKEY':'',
@@ -29,6 +30,14 @@ class bitbnsApi{
       throw Error('Data Format is incorrect.');
     }
   }
+
+  getOrderBookSocket(coinName, marketName) {
+		return socket_IO(`https://ws${marketName.toLowerCase()}m.bitbns.com/?coin=${coinName.toUpperCase()}`);
+  }
+  
+  getExecutedOrders(token) {
+		return socket_IO(`https://wsorder.bitbns.com/?token=${token}`);
+	}
 
   verifyApiKeys(data){
     if(typeof(data.apiKey) === 'string' && data.apiKey.length >= 5 && typeof(data.apiSecretKey) === 'string' && data.apiSecretKey.length >= 5){

@@ -1370,29 +1370,6 @@ bitbns.getApiUsageStatus(function(error, data){
 </details>
 
 
-<b>Get Token to authenticate Orders socket</b><br>
-<pre>
-bitbns.getTokenSocket(function(error, data){
- if(!error){
-   console.log('Data ::', data);
- } else {
-   console.log('Error ::', error);
- }
-})
-</pre>
-<details> 
-  <summary>
-   View Response
-  </summary>
-  <pre>
-    {
-     data: '6efgunSa2bH6FrteeS0ZcozU5h_9',
-      status: 1,
-      error: null
-    }
-  </pre>
-</details>
-
 
 <b>Getting Order Status</b><br>
 <pre>
@@ -1561,6 +1538,85 @@ symbol -> COIN NAME(use suffix "_USDT" with coin name)
 page -> INTEGER
 
 </pre>
+
+
+<b>Get Token to authenticate Orders socket</b><br>
+<pre>
+bitbns.getTokenSocket(function(error, data){
+ if(!error){
+   console.log('Data ::', data);
+ } else {
+   console.log('Error ::', error);
+ }
+})
+</pre>
+<details> 
+  <summary>
+   View Response
+  </summary>
+  <pre>
+    {
+     data: '6efgunSa2bH6FrteeS0ZcozU5h_9',
+      status: 1,
+      error: null
+    }
+  </pre>
+</details>
+
+<b>Use socket to get live order book</b><br>
+<pre>
+
+const socket = bitbns.getOrderBookSocket('BTC', 'INR')
+
+socket.on('connect', () => console.log('Connected'))
+
+socket.on('news', res => {
+	try {
+		const data = JSON.parse(res)
+		console.log('Data Received')
+		console.log(data)
+	} catch (e) {
+		console.log('Error in the Stream', e)
+	}
+})
+
+socket.on('disconnect', () => console.log('Disconnected'))
+
+</pre>
+
+<b>Use socket to get live executed order of your account</b><br>
+<pre>
+
+bitbns.getTokenSocket(function(error, response){
+ if(!error){
+  
+  let data = JSON.parse(response);
+  let token = response.data;
+  const socket = getExecutedOrders(token);
+
+  socket.on('connect', () => console.log('Connected'))
+
+  socket.on('delta_data', res => {
+    try {
+      const data = JSON.parse(res)
+      console.log('Data Received')
+      console.log(data)
+    } catch (e) {
+      console.log('Error in the Stream', e)
+    }
+  })
+
+  socket.on('disconnect', () => console.log('Disconnected'))
+
+
+ } else {
+   console.log('Error ::', error);
+ }
+
+})
+
+</pre>
+
 
 
 <h3>Trading Basic Tutorial</h3>
