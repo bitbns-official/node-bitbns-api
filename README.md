@@ -1509,7 +1509,7 @@ To Place Bracket Buy or Sell Order use <b>rate , t_rate, target_rate & trail_rat
 
 bitbns.cancelOrders({
 	symbol : 'TRX_USDT',
-	side : 'cancelOrder',
+	side : 'usdtcancelOrder',
 	entry_id : 462
 }, function(error, data) {
 	console.log(error, data);
