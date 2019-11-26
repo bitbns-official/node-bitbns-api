@@ -741,7 +741,7 @@ bitbns.getTickerApi('',function(error,data){
 </details>
 
 <b>Getting current balance of crypto asset</b><br>
-Inputing "INR" in place of crypto asset would list your inr balance .
+Inputing "INR" in place of crypto asset would list your inr balance . Pass "EVERYTHING" to get all the balance at once
 <pre>
 bitbns.currentCoinBalance('BTC', function(error, data){
  if(!error){
