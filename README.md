@@ -46,6 +46,11 @@ Alternative Method :
       <th>&#x2716;</th>
     </tr>
     <tr>
+      <th>List Executed Orders</th>
+      <th>&#10003;</th>
+      <th>&#x2716;</th>
+    </tr>
+    <tr>
       <th>List Open Stop Limit</th>
       <th>&#10003;</th>
       <th>&#x2716;</th>
