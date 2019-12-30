@@ -145,6 +145,18 @@ class bitbnsApi{
     }
   }
 
+
+  listExecutedOrders(symbol, callback){
+    this.requestAuthenticate(symbol, callback);
+
+    if(this.verifyApiKeys(this.apiKeys)){
+      let body = {page:0};
+      this.makePostRequest(symbol, "listExecutedOrders", body, callback);
+    }else{
+      return callback("apiKeys Not Found , Please intialize it first","");
+    }
+  }
+
   listOpenStopOrders(symbol, callback){
     this.requestAuthenticate(symbol, callback);
 
