@@ -1340,6 +1340,45 @@ console.log(e,d);
   </pre>
 </details>
 
+
+<b>Get executed trades list </b><br>
+<pre>
+let pageNo = 0; // starts with 0
+bitbns.listExecutedOrders('XRP', pageNo, function(error, data){
+ if(!error){
+   console.log('Data ::', data);
+ } else {
+   console.log('Error ::', error);
+ }
+})
+
+Use symbol as XRPUSDT for fetching executed orders of USDT market. Just coin name, XRP, will return trades of INR market 
+</pre>
+<details> 
+  <summary>
+   View Response
+  </summary>
+  <pre>
+   { data: 
+   [ { type: 'BTC Sell order executed',
+       typeI: 30,
+       crypto: 13972,
+       amount: 1.01,
+       rate: '7246.8604',
+       date: '2019-11-27T12:05:10.000Z',
+       unit: 'USDT',
+       factor: 100000000,
+       fee: 1,
+       delh_btc: -13972,
+       delh_inr: 0,
+       del_btc: 0,
+       del_inr: 101 } ],
+  status: 1,
+  error: null }
+  </pre>
+</details>
+
+
 <b>Get API usage Status</b><br>
 <pre>
 bitbns.getApiUsageStatus(function(error, data){

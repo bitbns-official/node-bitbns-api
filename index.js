@@ -146,11 +146,11 @@ class bitbnsApi{
   }
 
 
-  listExecutedOrders(symbol, callback){
+  listExecutedOrders(symbol, pageNo, callback){
     this.requestAuthenticate(symbol, callback);
 
     if(this.verifyApiKeys(this.apiKeys)){
-      let body = {page:0};
+      let body = {page:pageNo};
       this.makePostRequest(symbol, "listExecutedOrders", body, callback);
     }else{
       return callback("apiKeys Not Found , Please intialize it first","");
