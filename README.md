@@ -1349,7 +1349,8 @@ console.log(e,d);
 <b>Get executed trades list </b><br>
 <pre>
 let pageNo = 0; // starts with 0
-bitbns.listExecutedOrders('XRP', pageNo, function(error, data){
+let since = '2019-01-01T00:00:00Z'; // shows trade after that period
+bitbns.listExecutedOrders('XRP', pageNo, since, function(error, data){
  if(!error){
    console.log('Data ::', data);
  } else {
