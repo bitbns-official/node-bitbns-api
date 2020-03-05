@@ -149,13 +149,13 @@ Alternative Method :
     <tr>
       <th>Bitcoin</th>
       <th>BTC</th>
-      <th>0.01</th>
+      <th>0.001</th>
       <th>20</th>
     </tr>
     <tr>
       <th>Ripple</th>
       <th>XRP</th>
-      <th>150</th>
+      <th>50</th>
       <th>500000</th>
     </tr>
     <tr>
@@ -269,29 +269,220 @@ Alternative Method :
     <tr>
       <th>0x</th>
       <th>ZRX</th>
-      <th>87</th>
+      <th>10</th>
       <th>3000</th>
-    </tr> 
+    </tr>
     <tr>
       <th>Power Ledger</th>
       <th>POWR</th>
       <th>400</th>
       <th>8000</th>
-    </tr>   
+    </tr>
     <tr>
       <th>PolyMath</th>
       <th>POLY</th>
       <th>324</th>
       <th>10000</th>
-    </tr> 
+    </tr>
     <tr>
       <th>Tether</th>
       <th>USDT</th>
-      <th>100</th>
+      <th>5</th>
       <th>5000</th>
-    </tr>     
+    </tr>
+    <tr>
+      <th>Sia</th>
+      <th>SC</th>
+      <th>10000</th>
+      <th>1000000</th>
+    </tr>
+    <tr>
+      <th>NEM</th>
+      <th>XEM</th>
+      <th>564</th>
+      <th>5000000</th>
+    </tr>
+    <tr>
+      <th>DeepBrain Chain</th>
+      <th>DBC</th>
+      <th>9400</th>
+      <th>500000</th>
+    </tr>
+    <tr>
+      <th>MONERO</th>
+      <th>XMR</th>
+      <th>0.7</th>
+      <th>200</th>
+    </tr>
+    <tr>
+      <th>DogeCoin</th>
+      <th>DOGE</th>
+      <th>18000</th>
+      <th>1000000</th>
+    </tr>
+    <tr>
+      <th>Electroneum</th>
+      <th>ETN</th>
+      <th>4000</th>
+      <th>200000</th>
+    </tr>
+    <tr>
+      <th>EOS</th>
+      <th>EOS</th>
+      <th>15</th>
+      <th>200000</th>
+    </tr>
+    <tr>
+      <th>Zilica</th>
+      <th>ZIL</th>
+      <th>2000</th>
+      <th>200000</th>
+    </tr>
+    <tr>
+      <th>Digibyte</th>
+      <th>DGB</th>
+      <th>3000</th>
+      <th>2000000</th>
+    </tr>
+    <tr>
+      <th>ICON</th>
+      <th>ICX</th>
+      <th>105</th>
+      <th>20000</th>
+    </tr>
+    <tr>
+      <th>Request</th>
+      <th>REQ</th>
+      <th>1500</th>
+      <th>200000</th>
+    </tr>
+    <tr>
+      <th>QLC Chain</th>
+      <th>QLC</th>
+      <th>1500</th>
+      <th>2000000</th>
+    </tr>
+    <tr>
+      <th>Wan Chain</th>
+      <th>WAN</th>
+      <th>70</th>
+      <th>2000000</th>
+    </tr>
+    <tr>
+      <th>Achain</th>
+      <th>ACT</th>
+      <th>2500</th>
+      <th>2000000</th>
+    </tr>
+    <tr>
+      <th>Bluzelle</th>
+      <th>BLZ</th>
+      <th>500</th>
+      <th>200000</th>
+    </tr>
+    <tr>
+      <th>Substratum</th>
+      <th>SUB</th>
+      <th>600</th>
+      <th>200000</th>
+    </tr>
+    <tr>
+      <th>Loopring</th>
+      <th>LRC</th>
+      <th>600</th>
+      <th>200000</th>
+    </tr>
+    <tr>
+      <th>Nexo</th>
+      <th>NEXO</th>
+      <th>450</th>
+      <th>200000</th>
+    </tr>
+    <tr>
+      <th>Effect.Ai</th>
+      <th>EFX</th>
+      <th>5000</th>
+      <th>200000</th>
+    </tr>
+    <tr>
+      <th>Apex</th>
+      <th>CPX</th>
+      <th>2500</th>
+      <th>200000</th>
+    </tr>
+    <tr>
+      <th>LOOM Network</th>
+      <th>LOOM</th>
+      <th>500</th>
+      <th>200000</th>
+    </tr>
+    <tr>
+      <th>eosDAC</th>
+      <th>EOSDAC</th>
+      <th>1600</th>
+      <th>200000</th>
+    </tr>
+    <tr>
+      <th>Storm</th>
+      <th>STORM</th>
+      <th>8000</th>
+      <th>200000</th>
+    </tr>
+    <tr>
+      <th>Golem</th>
+      <th>GNT</th>
+      <th>400</th>
+      <th>200000</th>
+    </tr>
+    <tr>
+      <th>PundiX</th>
+      <th>NPXS</th>
+      <th>40000</th>
+      <th>2000000</th>
+    </tr>
+    <tr>
+      <th>Ethereum Classic</th>
+      <th>ETC</th>
+      <th>10</th>
+      <th>200000</th>
+    </tr>
+    <tr>
+      <th>DENT</th>
+      <th>DENT</th>
+      <th>200</th>
+      <th>200000</th>
+    </tr>
+    <tr>
+      <th>CloakCoin</th>
+      <th>CLOAK</th>
+      <th>25</th>
+      <th>200000</th>
+    </tr>
+    <tr>
+      <th>Komodo</th>
+      <th>KMD</th>
+      <th>55</th>
+      <th>200000</th>
+    </tr>
+    <tr>
+      <th>GroestlCoin</th>
+      <th>GRS</th>
+      <th>150</th>
+      <th>200000</th>
+    </tr>
+    <tr>
+      <th>LinkEye</th>
+      <th>LET</th>
+      <th>10000</th>
+      <th>200000</th>
+    </tr>
+    <tr>
+      <th>Phantasma</th>
+      <th>SOUL</th>
+      <th>600</th>
+      <th>200000</th>
+    </tr>
 </table>
-
 <h3>Installation</h3>
 <code>npm install bitbns --save</code>
 
