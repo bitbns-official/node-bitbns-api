@@ -1985,3 +1985,76 @@ bitbns.platformStatus(function(error, res1){
  }
    </pre>
  </details>
+
+
+<h2>HTTP error status codes </h2>
+<h3> HTTP error codes would be returned incase of any errors, the body will also cointain an error feild which will explain the cause of the error</h3>
+<div id ="HTTP_error_code_table" style ="border:1px solid">
+  <table style = "width:100%">
+    <tr>
+      <th>Code</th>
+      <th>Meaning</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>200</th>
+      <th>null -- requested action has been performed without any problems </th>
+    </tr>
+    <tr>
+      <th>400</th>
+      <th>Invalid Request -- Invalid request format</th>
+    </tr>
+    <tr>
+      <th>401</th>
+      <th>authentication -- Not authorised or invalid API key</th>
+    </tr>
+    <tr>
+      <th>403</th>
+      <th>Undefined -- this request is forbidden</th>
+    </tr>
+    <tr>
+      <th>404</th>
+      <th>Exchange not found -- Unable to find exchange</th>
+    </tr>
+    <tr>
+      <th>406</th>
+      <th>Coin name not supplied or not yet supported -- coin name applied is incorrect</th>
+    </tr>
+    <tr>
+      <th>409</th>
+      <th>parameter type not correct -- parameters entered is incorrect</th>
+    </tr>
+    <tr>
+      <th>412</th>
+      <th>Oops ! Cancellation failed. Something went wrong ! -- Unable to cancel order</th>
+    </tr>
+    <tr>
+      <th>413</th>
+      <th>volume asked not acceptable -- Desired volume is not within bounds</th>
+    </tr>
+     <tr>
+      <th>416</th>
+      <th>Oops ! Not sufficient balance to purchase currency -- wallet balance is not sufficient </th>
+    </tr>
+     <tr>
+      <th>417</th>
+      <th>Oops ! Order doesn't exist any more -- Order has alredy been deleted</th>
+    </tr>
+     <tr>
+      <th>428</th>
+      <th>Price seems Irregular from current market price. -- Entered price is more than current price</th>
+    </tr>
+         <tr>
+      <th>500</th>
+      <th>Problem with our servers, try again later</th>
+    </tr>
+         <tr>
+      <th>503</th>
+      <th>currently down for maintaince</th>
+    </tr>
+    </tr>
+  </table>
+</div>
