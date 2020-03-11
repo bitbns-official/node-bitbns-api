@@ -407,16 +407,19 @@ class bitbnsApi{
             "last_traded_price":completeList[key].last_traded_price
           }
         })
-        let filteredList = {};
+        let filteredList = {}; let errorFlag = 200;
         if(symbolArray.length === 1 && symbolArray[0] === ""){
-          return callback(error,{"data":completeList,"status":1,"error":null});
+          return callback(error,{"data":completeList,"status":1,"error":null,"code":200});
         }
         symbolArray.forEach((entity) => {
+	  if(!completeList[entity]){
+		 errorFlag = 403;
+	  }
           filteredList[entity] = completeList[entity];
         })
-        return callback(error, {"data":filteredList,"status":1,"error":null});
+        return callback(error, {"data":filteredList,"status":1,"error":null,"code":errorFlag});
       } else {
-        return callback(error, {"data":body,"status":1,"error":null});
+        return callback(error, {"data":body,"status":1,"error":null,"code":200});
       }
     })
   }
