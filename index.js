@@ -457,4 +457,69 @@ class bitbnsApi{
   }
 }
 
+// Margin Trading starts here - V2
+
+placeMarginOrders(orders_obj, callback) {
+    this.requestAuthenticate2(orders_obj, callback);
+        if(this.verifyApiKeys(this.apiKeys)){
+          let body = orders_obj;
+          this.makePostRequest2("marginOrders", body, callback);
+        }else{
+          return callback("apiKeys Not Found , Please intialize it first","");
+    }
+}
+
+cancelMarginOrder(orders_obj, callback) {
+    this.requestAuthenticate2(orders_obj, callback);
+        if(this.verifyApiKeys(this.apiKeys)){
+          let body = orders_obj;
+          this.makePostRequest2("marginOrders", body, callback);
+        }else{
+          return callback("apiKeys Not Found , Please intialize it first","");
+    }
+}
+
+settleMarginPartial(orders_obj, callback) {
+    this.requestAuthenticate2(orders_obj, callback);
+        if(this.verifyApiKeys(this.apiKeys)){
+          let body = orders_obj;
+          this.makePostRequest2("marginOrders", body, callback);
+        }else{
+          return callback("apiKeys Not Found , Please intialize it first","");
+    }
+}
+
+listMarginExecuted(orders_obj, callback) {
+    this.requestAuthenticate2(orders_obj, callback);
+        if(this.verifyApiKeys(this.apiKeys)){
+          let body = orders_obj;
+          this.makePostRequest2("marginOrders", body, callback);
+        }else{
+          return callback("apiKeys Not Found , Please intialize it first","");
+    }
+}
+
+
+listMarginPending(orders_obj, callback) {
+    this.requestAuthenticate2(orders_obj, callback);
+        if(this.verifyApiKeys(this.apiKeys)){
+          let body = orders_obj;
+          this.makePostRequest2("marginOrders", body, callback);
+        }else{
+          return callback("apiKeys Not Found , Please intialize it first","");
+    }
+}
+
+
+listMarginMarketOrders(orders_obj, callback) {
+    this.requestAuthenticate2(orders_obj, callback);
+        if(this.verifyApiKeys(this.apiKeys)){
+          let body = orders_obj;
+          this.makePostRequest2("marginOrders", body, callback);
+        }else{
+          return callback("apiKeys Not Found , Please intialize it first","");
+    }
+}
+
+
 module.exports = bitbnsApi;
