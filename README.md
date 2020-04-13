@@ -1663,6 +1663,139 @@ bitbns.getTokenSocket(function(error, response){
 </pre>
 
 
+<b>Margin Trading V2 APIs</b><br>
+<pre>
+<b>Place a margin order</b>
+
+bitbns.placeMarginOrders({
+	symbol : 'XRP',
+	side : 'placeOrder',
+  type: 'LEND',
+	qnty : 40,
+  days : 1,
+	rate : 0.0055 
+},function(error, data) {
+	console.log(data)
+});
+
+side -> placeOrder
+type -> BORROW or LEND
+days -> 1,3,7,15,30
+renew -> 0,1,2
+symbol -> COIN NAME,
+qnty -> QUANTITY,
+rate -> RATE
+
+
+Renew Flags => 0 - Don't renew, 1 -> Renew only Principal, 2 -> Renew with Principal + Interest
+
+</pre>
+
+<pre>
+<b>Cancel a margin order</b>
+
+bitbns.cancelMarginOrder({
+	id : 1,
+	side : 'cancelMarginOrder'
+},function(error, data) {
+	console.log(data)
+});
+
+
+
+Pass id of the margin transaction you are looking to cancel
+
+</pre>
+
+
+<pre>
+<b>Settle a margin order partially</b>
+
+bitbns.settleMarginPartial({
+	id : 1,
+	side : 'settleMarginOrderPartial',
+  amt : 50
+},function(error, data) {
+	console.log(data)
+});
+
+
+amt -> Amount to settle
+
+Pass id of the margin transaction you are looking to settle and amt you want to settle
+
+</pre>
+
+
+<pre>
+<b>Settle a margin order completely</b>
+
+bitbns.settleMargin({
+	id : 1,
+	side : 'settleMarginOrder'
+
+},function(error, data) {
+	console.log(data)
+});
+
+
+
+
+Pass id of the margin transaction you are looking to settle
+
+</pre>
+
+
+<pre>
+<b>Get my margin executed orders</b>
+
+bitbns.listMarginExecuted({
+	page : 1,
+	side : 'listMarginExecuted',
+  type : 'LEND',
+  symbol : 'XRP'
+},function(error, data) {
+	console.log(data)
+});
+
+type => LEND or BORROW
+
+
+</pre>
+
+
+<pre>
+<b>Get my margin pending orders</b>
+
+bitbns.listMarginPending({
+	page : 1,
+	side : 'listMarginPending',
+  symbol : 'XRP'
+},function(error, data) {
+	console.log(data)
+});
+
+
+
+</pre>
+
+
+<pre>
+<b>Get open orders of margin market - all users</b>
+
+bitbns.listMarginMarketOrders({
+	type : 'BORROW',
+	side : 'listMarketOrders',
+  symbol : 'XRP'
+},function(error, data) {
+	console.log(data)
+});
+
+type => LEND or BORROW
+
+</pre>
+
+
 
 <h3>Trading Basic Tutorial</h3>
 <code>Trust the data if status flag is 1 and error is null in response</code>
