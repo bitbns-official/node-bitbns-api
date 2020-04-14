@@ -455,7 +455,7 @@ class bitbnsApi{
       }
     });
   }
-}
+
 
 // Margin Trading starts here - V2
 
@@ -521,5 +521,6 @@ listMarginMarketOrders(orders_obj, callback) {
     }
 }
 
+}
 
 module.exports = bitbnsApi;
