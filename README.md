@@ -1887,7 +1887,8 @@ Renew Flags => 0 - Don't renew, 1 -> Renew only Principal, 2 -> Renew with Princ
 
 bitbns.cancelMarginOrder({
 	id : 1,
-	side : 'cancelMarginOrder'
+	side : 'cancelMarginOrder', 
+	symbol: 'BTC'
 },function(error, data) {
 	console.log(data)
 });
@@ -1895,6 +1896,7 @@ bitbns.cancelMarginOrder({
 
 
 Pass id of the margin transaction you are looking to cancel
+symbol -> COIN NAME,
 
 </pre>
 
