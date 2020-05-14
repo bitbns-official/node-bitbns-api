@@ -489,6 +489,16 @@ settleMarginPartial(orders_obj, callback) {
     }
 }
 
+settleMargin(orders_obj, callback) {
+  this.requestAuthenticate2(orders_obj, callback);
+      if(this.verifyApiKeys(this.apiKeys)){
+        let body = orders_obj;
+        this.makePostRequest2("marginOrders", body, callback);
+      }else{
+        return callback("apiKeys Not Found , Please intialize it first","");
+  }
+}
+
 listMarginExecuted(orders_obj, callback) {
     this.requestAuthenticate2(orders_obj, callback);
         if(this.verifyApiKeys(this.apiKeys)){
