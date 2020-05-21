@@ -1907,7 +1907,8 @@ symbol -> COIN NAME,
 bitbns.settleMarginPartial({
 	id : 1,
 	side : 'settleMarginOrderPartial',
-  amt : 50
+	symbol: 'BTC',
+ 	amt : 50
 },function(error, data) {
 	console.log(data)
 });
