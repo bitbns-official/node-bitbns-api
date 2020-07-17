@@ -531,6 +531,53 @@ listMarginMarketOrders(orders_obj, callback) {
     }
 }
 
+
+// Options Trading starts here - V2
+
+placeOptionOrder(orders_obj, callback) {
+  this.requestAuthenticate2(orders_obj, callback);
+      if(this.verifyApiKeys(this.apiKeys)){
+        let body = orders_obj;
+        this.makePostRequest2("optionNewOrder", body, callback);
+      }else{
+        return callback("apiKeys Not Found , Please intialize it first","");
+  }
+}
+
+
+
+cancelOptionOrder(orders_obj, callback) {
+  this.requestAuthenticate2(orders_obj, callback);
+      if(this.verifyApiKeys(this.apiKeys)){
+        let body = orders_obj;
+        this.makePostRequest2("optionCancelOrder", body, callback);
+      }else{
+        return callback("apiKeys Not Found , Please intialize it first","");
+  }
+}
+
+
+listOptionDetails(orders_obj, callback) {
+  this.requestAuthenticate2(orders_obj, callback);
+      if(this.verifyApiKeys(this.apiKeys)){
+        let body = orders_obj;
+        this.makePostRequest2("listOptionDetails", body, callback);
+      }else{
+        return callback("apiKeys Not Found , Please intialize it first","");
+  }
+}
+
+listAllInstruments(orders_obj, callback) {
+
+  if(this.verifyApiKeys(this.apiKeys)){
+    let body = orders_obj;
+    this.makePostRequest2("listAllInstruments", body, callback);
+  }else{
+    return callback("apiKeys Not Found , Please intialize it first","");
+  }
+}
+
+
 }
 
 module.exports = bitbnsApi;

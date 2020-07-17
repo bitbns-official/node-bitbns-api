@@ -1,0 +1,92 @@
+// // Get list of all instruments
+bitbns.listAllInstruments({},function(error, data) {
+     console.log(data);
+});
+
+
+// side can be BUY/SELL
+bitbns.placeOptionOrder({
+    side: 'BUY',
+    prem: 0.05,
+    qnty: 10,
+    instrument: 'BTC-17JUL20-8500-C',
+    symbol: 'BTC'
+},function(error, data) {
+     console.log(data);
+});
+
+
+bitbns.placeOptionOrder({
+    side: 'SELL',
+    prem: 0.08,
+    qnty: 10,
+    instrument: 'BTC-31JUL20-8500-C',
+    symbol: 'BTC'
+},function(error, data) {
+     console.log(data);
+});
+
+// // Cancel with an order id
+bitbns.cancelOptionOrder({
+    order_id: 1263162,
+    symbol: 'BTC',
+    side: 'INDIVIDUAL'
+},function(error, data) {
+     console.log(data);
+});
+
+// // Cancel with instrument name
+bitbns.cancelOptionOrder({
+    instrument: 'BTC-31JUL20-8500-C',
+    symbol: 'BTC',
+    side: 'INSTRUMENT'
+},function(error, data) {
+     console.log(data);
+});
+
+// // // Cancel all orders from an account
+bitbns.cancelOptionOrder({
+    symbol: 'BTC',
+    side: 'ALL'
+},function(error, data) {
+     console.log(data);
+});
+
+
+// listOptionDetails - ORDER, TRADE, POSITION, OPEN
+
+// // // List all open orders 
+bitbns.listOptionDetails({
+    symbol: 'BTC',
+    side: 'OPEN'
+},function(error, data) {
+     console.log(data);
+});
+
+
+
+// // // List all trade history 
+bitbns.listOptionDetails({
+    symbol: 'BTC',
+    side: 'TRADE'
+},function(error, data) {
+     console.log(data);
+});
+
+
+// // // List all positions 
+bitbns.listOptionDetails({
+    symbol: 'BTC',
+    side: 'TRADE'
+},function(error, data) {
+     console.log(data);
+});
+
+
+// // // List all orders history 
+bitbns.listOptionDetails({
+    symbol: 'BTC',
+    side: 'ORDER'
+},function(error, data) {
+     console.log(data);
+});
