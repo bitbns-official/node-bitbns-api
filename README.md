@@ -482,6 +482,12 @@ Alternative Method :
       <th>600</th>
       <th>200000</th>
     </tr>
+    <tr>
+      <th>BNS token</th>
+      <th>BNS</th>
+      <th>300</th>
+      <th>200000</th>
+    </tr>
 </table>
 <h3>Installation</h3>
 <code>npm install bitbns --save</code>
