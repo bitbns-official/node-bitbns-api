@@ -577,6 +577,26 @@ listAllInstruments(orders_obj, callback) {
   }
 }
 
+getOptionsBalance(orders_obj, callback) {
+
+  if(this.verifyApiKeys(this.apiKeys)){
+    let body = orders_obj;
+    this.makePostRequest2("getOptionsbalance", body, callback);
+  }else{
+    return callback("apiKeys Not Found , Please intialize it first","");
+  }
+}
+
+getOptionsExecuted(orders_obj, callback) {
+
+  if(this.verifyApiKeys(this.apiKeys)){
+    let body = orders_obj;
+    this.makePostRequest2("getOptionsExecuted", body, callback);
+  }else{
+    return callback("apiKeys Not Found , Please intialize it first","");
+  }
+}
+
 
 }
 

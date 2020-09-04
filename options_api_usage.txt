@@ -90,3 +90,14 @@ bitbns.listOptionDetails({
 },function(error, data) {
      console.log(data);
 });
+
+
+// Get my options balance
+bitbns.getOptionsBalance({},function(error, data) {
+     console.log(data);
+});
+
+// Get if any options order is executed
+bitbns.getOptionsExecuted({},function(error, data) {
+     console.log(data);
+});
