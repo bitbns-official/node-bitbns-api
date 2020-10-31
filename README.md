@@ -12,16 +12,16 @@ This project is designed to assist you make your own projects that interact with
 <pre>
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt install -y nodejs
-    
+
     After the installation is completed, you can verify the version of Node.js installed:
     node -v
     v8.1.1
     You can also check the version of npm installed:
     npm -v
     5.0.3
-    
-Alternative Method : 
-<a href='https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-16-04'>Click Here</a>    
+
+Alternative Method :
+<a href='https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-16-04'>Click Here</a>
 
 </pre>
 <br>
@@ -94,47 +94,47 @@ Alternative Method :
       <th>Buy Order</th>
       <th>&#x2716;</th>
       <th>&#10003;</th>
-    </tr> 
+    </tr>
      <tr>
       <th>Sell Order</th>
       <th>&#x2716;</th>
       <th>&#10003;</th>
-    </tr> 
+    </tr>
      <tr>
       <th>Get Coin Address</th>
       <th>&#10003;</th>
       <th>&#x2716;</th>
-    </tr> 
+    </tr>
      <tr>
       <th>Cancel Order</th>
       <th>&#x2716;</th>
       <th>&#10003;</th>
-    </tr> 
+    </tr>
      <tr>
       <th>Cancel Stop Loss Order</th>
       <th>&#x2716;</th>
       <th>&#10003;</th>
-    </tr> 
+    </tr>
      <tr>
       <th>Platform Status</th>
       <th>&#10003;</th>
       <th>&#x2716;</th>
-    </tr> 
+    </tr>
      <tr>
       <th>Ticker API</th>
       <th>&#10003;</th>
       <th>&#x2716;</th>
-    </tr> 
+    </tr>
       <tr>
       <th>Buy OrderBook</th>
       <th>&#10003;</th>
       <th>&#x2716;</th>
-    </tr> 
+    </tr>
       <tr>
       <th>Sell OrderBook</th>
       <th>&#10003;</th>
       <th>&#x2716;</th>
-    </tr>    
+    </tr>
   </table>
 </div>
 
@@ -493,13 +493,13 @@ Alternative Method :
 <code>npm install bitbns --save</code>
 
 <h3>Getting Started</h3><br>
-<pre> 
+<pre>
 const bitbnsApi = require('bitbns');
 <code>
 const bitbns = new bitbnsApi({
       apiKey :  'API-KEY',
       apiSecretKey : 'SECRET-KEY'
-}); 
+});
 </code>
 </pre>
 
@@ -522,7 +522,7 @@ bitbns.platformStatus(function(error, data){
 });
 </pre>
 
-<details> 
+<details>
   <summary>
    View Response
   </summary>
@@ -552,7 +552,7 @@ bitbns.getTickerApi('BTC',function(error,data){
 })
 </pre>
 
-<details> 
+<details>
   <summary>
    View Response
   </summary>
@@ -608,7 +608,7 @@ bitbns.getTickerApi('',function(error,data){
 })
 </pre>
 
-<details> 
+<details>
   <summary>
    View Response
   </summary>
@@ -953,7 +953,7 @@ bitbns.currentCoinBalance('BTC', function(error, data){
  }
 })
 </pre>
-<details> 
+<details>
   <summary>
    View Response
   </summary>
@@ -981,7 +981,7 @@ bitbns.depositHistory('BTC', 0, function(error, data){
 </pre>
 
 
-<details> 
+<details>
   <summary>
    View Response
   </summary>
@@ -1032,7 +1032,7 @@ bitbns.depositHistory('BTC', 0, function(error, data){
    console.log('Error ::', error);
  }
 })</pre>
-<details> 
+<details>
   <summary>
    View Response
   </summary>
@@ -1083,7 +1083,7 @@ bitbns.listOpenOrders('BTC', function(error, data){
  }
 })
 </pre>
-<details> 
+<details>
   <summary>
    View Response
   </summary>
@@ -1227,7 +1227,7 @@ bitbns.listOpenStopOrders('TST', function(error, data){
  }
 })
 </pre>
-<details> 
+<details>
   <summary>
    View Response
   </summary>
@@ -1260,7 +1260,7 @@ bitbns.getCoinAddress('BTC', function(error, data){
    console.log('Error ::', error);
  }
 });</pre>
-<details> 
+<details>
   <summary>
    View Response
   </summary>
@@ -1284,7 +1284,7 @@ bitbns.getCoinAddress('XLM', function(error, data){
    console.log('Error ::', error);
  }
 });</pre>
-<details> 
+<details>
   <summary>
    View Response
   </summary>
@@ -1311,7 +1311,7 @@ bitbns.getCoinAddress('XLM', function(error, data){
 200 -> Quantity
 25 -> Rate
 </pre>
-<details> 
+<details>
   <summary>
    View Response
   </summary>
@@ -1336,7 +1336,7 @@ bitbns.getCoinAddress('XLM', function(error, data){
 200 -> Quantity
 25 -> Rate
 </pre>
-<details> 
+<details>
   <summary>
    View Response
   </summary>
@@ -1359,11 +1359,11 @@ bitbns.buyStopLoss('XRP', 40, 24, 24.5, function(error, data){
  }
 })
 
-40 -> Quantity 
+40 -> Quantity
 24 -> Rate
 24.5 -> Trigger rate
 </pre>
-<details> 
+<details>
   <summary>
    View Response
   </summary>
@@ -1387,11 +1387,11 @@ bitbns.sellStopLoss('XRP', 40, 25, 24.5, function(error, data){
  }
 })
 
-40 -> Quantity 
+40 -> Quantity
 24 -> Rate
 24.5 -> Trigger rate
 </pre>
-<details> 
+<details>
   <summary>
    View Response
   </summary>
@@ -1415,7 +1415,7 @@ bitbns.sellStopLoss('XRP', 40, 25, 24.5, function(error, data){
 })
 Here 174 is a order id
 </pre>
-<details> 
+<details>
   <summary>
    View Response
   </summary>
@@ -1435,7 +1435,7 @@ console.log(e,d);
 });
 </pre>
 
-<details> 
+<details>
   <summary>
    View Response
   </summary>
@@ -1515,7 +1515,7 @@ bitbns.getBuyOrderBook('BTC', function(e, d){
 console.log(e,d);
 });
 </pre>
-<details> 
+<details>
   <summary>
    View Response
   </summary>
@@ -1555,14 +1555,14 @@ bitbns.listExecutedOrders('XRP', pageNo, since, function(error, data){
  }
 })
 
-Use symbol as XRPUSDT for fetching executed orders of USDT market. Just coin name, XRP, will return trades of INR market 
+Use symbol as XRPUSDT for fetching executed orders of USDT market. Just coin name, XRP, will return trades of INR market
 </pre>
-<details> 
+<details>
   <summary>
    View Response
   </summary>
   <pre>
-   { data: 
+   { data:
    [ { type: 'BTC Sell order executed',
        typeI: 30,
        crypto: 13972,
@@ -1592,7 +1592,7 @@ bitbns.getApiUsageStatus(function(error, data){
  }
 })
 </pre>
-<details> 
+<details>
   <summary>
    View Response
   </summary>
@@ -1624,7 +1624,7 @@ bitbns.orderStatus('BTC', '4221', function(error, data){
 })
 4221 -> order id
 </pre>
-<details> 
+<details>
   <summary>
    View Response
   </summary>
@@ -1657,7 +1657,7 @@ bitbns.cancelStopLossOrder('BTC', 4221 , function(error, data){
 })
 4221 -> order id
 </pre>
-<details> 
+<details>
   <summary>
    View Response
   </summary>
@@ -1682,7 +1682,7 @@ bitbns.placeOrders({
 	rate : 4,
 	target_rate : 5,
 	t_rate : 3.5,
-	trail_rate : .01  
+	trail_rate : .01
 },function(error, data) {
 	console.log(data)
 });
@@ -1727,7 +1727,7 @@ bitbns.placeOrders({
 	rate : 4,
 	target_rate : 5,
 	t_rate : 3.5,
-	trail_rate : .01  
+	trail_rate : .01
 },function(error, data) {
 	console.log(data)
 });
@@ -1775,7 +1775,7 @@ bitbns.getOrders({
 });
 
 side -> "listOpenOrders", "listOpenStopOrders", "listOpenBracketOrders", "usdtListOpenBracketOrders",
-         "usdtListOpenStopOrders","usdtListOpenOrders" 
+         "usdtListOpenStopOrders","usdtListOpenOrders"
 symbol -> COIN NAME(use suffix "_USDT" with coin name)
 page -> INTEGER
 
@@ -1792,7 +1792,7 @@ bitbns.getTokenSocket(function(error, data){
  }
 })
 </pre>
-<details> 
+<details>
   <summary>
    View Response
   </summary>
@@ -1831,7 +1831,7 @@ socket.on('disconnect', () => console.log('Disconnected'))
 
 bitbns.getTokenSocket(function(error, response){
  if(!error){
-  
+
   let data = JSON.parse(response);
   let token = response.data;
   const socket = bitbns.getExecutedOrders(token);
@@ -1870,7 +1870,7 @@ bitbns.placeMarginOrders({
   type: 'LEND',
 	qnty : 40,
   days : 1,
-	rate : 0.0055 
+	rate : 0.0055
 },function(error, data) {
 	console.log(data)
 });
@@ -1893,7 +1893,7 @@ Renew Flags => 0 - Don't renew, 1 -> Renew only Principal, 2 -> Renew with Princ
 
 bitbns.cancelMarginOrder({
 	id : 1,
-	side : 'cancelMarginOrder', 
+	side : 'cancelMarginOrder',
 	symbol: 'BTC'
 },function(error, data) {
 	console.log(data)
@@ -1932,7 +1932,8 @@ Pass id of the margin transaction you are looking to settle and amt you want to 
 
 bitbns.settleMargin({
 	id : 1,
-	side : 'settleMarginOrder'
+	side : 'settleMarginOrder',
+	symbol : 'BTC'
 
 },function(error, data) {
 	console.log(data)
@@ -2038,7 +2039,7 @@ bitbns.platformStatus(function(error, res1){
 });
 
 </pre>
-<details> 
+<details>
   <summary>
    View Response
   </summary>
@@ -2096,7 +2097,7 @@ bitbns.platformStatus(function(error, res1){
 });
 </pre>
 
-<details> 
+<details>
   <summary>
    View Response
   </summary>
@@ -2115,7 +2116,7 @@ bitbns.platformStatus(function(error, res1){
  <pre>
  curl -H "X-BITBNS-APIKEY: API-KEY" -X GET 'https://api.bitbns.com/api/trade/v1/getServerTime'
  </pre>
- <details> 
+ <details>
    <summary>
     View Response
    </summary>
