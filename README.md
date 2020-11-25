@@ -12,16 +12,16 @@ This project is designed to assist you make your own projects that interact with
 <pre>
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt install -y nodejs
-    
+
     After the installation is completed, you can verify the version of Node.js installed:
     node -v
     v8.1.1
     You can also check the version of npm installed:
     npm -v
     5.0.3
-    
-Alternative Method : 
-<a href='https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-16-04'>Click Here</a>    
+
+Alternative Method :
+<a href='https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-16-04'>Click Here</a>
 
 </pre>
 <br>
@@ -94,47 +94,47 @@ Alternative Method :
       <th>Buy Order</th>
       <th>&#x2716;</th>
       <th>&#10003;</th>
-    </tr> 
+    </tr>
      <tr>
       <th>Sell Order</th>
       <th>&#x2716;</th>
       <th>&#10003;</th>
-    </tr> 
+    </tr>
      <tr>
       <th>Get Coin Address</th>
       <th>&#10003;</th>
       <th>&#x2716;</th>
-    </tr> 
+    </tr>
      <tr>
       <th>Cancel Order</th>
       <th>&#x2716;</th>
       <th>&#10003;</th>
-    </tr> 
+    </tr>
      <tr>
       <th>Cancel Stop Loss Order</th>
       <th>&#x2716;</th>
       <th>&#10003;</th>
-    </tr> 
+    </tr>
      <tr>
       <th>Platform Status</th>
       <th>&#10003;</th>
       <th>&#x2716;</th>
-    </tr> 
+    </tr>
      <tr>
       <th>Ticker API</th>
       <th>&#10003;</th>
       <th>&#x2716;</th>
-    </tr> 
+    </tr>
       <tr>
       <th>Buy OrderBook</th>
       <th>&#10003;</th>
       <th>&#x2716;</th>
-    </tr> 
+    </tr>
       <tr>
       <th>Sell OrderBook</th>
       <th>&#10003;</th>
       <th>&#x2716;</th>
-    </tr>    
+    </tr>
   </table>
 </div>
 
@@ -493,13 +493,13 @@ Alternative Method :
 <code>npm install bitbns --save</code>
 
 <h3>Getting Started</h3><br>
-<pre> 
+<pre>
 const bitbnsApi = require('bitbns');
 <code>
 const bitbns = new bitbnsApi({
       apiKey :  'API-KEY',
       apiSecretKey : 'SECRET-KEY'
-}); 
+});
 </code>
 </pre>
 
@@ -522,7 +522,7 @@ bitbns.platformStatus(function(error, data){
 });
 </pre>
 
-<details> 
+<details>
   <summary>
    View Response
   </summary>
@@ -542,6 +542,8 @@ bitbns.platformStatus(function(error, data){
   status: 1,
   error: null
 }
+Explanation of fields:
+status -> whether the coin is live on platform
    </pre>
 </details>
 <b>Getting latest price of a symbol</b>
@@ -552,7 +554,7 @@ bitbns.getTickerApi('BTC',function(error,data){
 })
 </pre>
 
-<details> 
+<details>
   <summary>
    View Response
   </summary>
@@ -568,10 +570,14 @@ bitbns.getTickerApi('BTC',function(error,data){
   "status": 1,
   "error": null
 }
+Explanation of fields:
+highest_buy_bid -> top entry of buy order book
+lowest_sell_bid -> top entry of sell order book
+last_traded_price -> price at which the last trade had happened
    </pre>
 </details>
 
-<b>Getting latest price of few symbol</b>
+<b>Getting latest price of few symbols</b>
 <pre>
 bitbns.getTickerApi('BTC,ETH',function(error,data){
   console.log("BTC Price :: ",data);
@@ -598,17 +604,22 @@ bitbns.getTickerApi('BTC,ETH',function(error,data){
   "status": 1,
   "error": null
 }
+
+Explanation of fields:
+highest_buy_bid -> top entry of buy order book
+lowest_sell_bid -> top entry of sell order book
+last_traded_price -> price at which the last trade had happened
  </pre>
 </details>
 
-<b>Getting latest price of all symbol</b>
+<b>Getting latest price of all symbols</b>
 <pre>
 bitbns.getTickerApi('',function(error,data){
   console.log("All Price :: ",data);
 })
 </pre>
 
-<details> 
+<details>
   <summary>
    View Response
   </summary>
@@ -953,7 +964,7 @@ bitbns.currentCoinBalance('BTC', function(error, data){
  }
 })
 </pre>
-<details> 
+<details>
   <summary>
    View Response
   </summary>
@@ -966,6 +977,9 @@ bitbns.currentCoinBalance('BTC', function(error, data){
   "status": 1,
   "error": null
 }
+Explanation of fields:
+inorderBTC -> volume which is the order book
+availableorderBTC -> volume which is present in wallet
   </pre>
 </details>
 
@@ -981,7 +995,7 @@ bitbns.depositHistory('BTC', 0, function(error, data){
 </pre>
 
 
-<details> 
+<details>
   <summary>
    View Response
   </summary>
@@ -1020,6 +1034,17 @@ bitbns.depositHistory('BTC', 0, function(error, data){
   status: 1,
   error: null
 }
+
+Explanation of fields:
+type -> type of action
+typeI -> action id
+amount -> the amount deposited
+date -> the time at which this event occured
+unit -> the symbol name of coin
+factor -> the division factor
+del_btc -> delta changes in normal wallet of coin
+del_inr -> delta changes in normal inr wallet
+delh_btc -> delta changes in hold wallet of coin
   </pre>
 </details>
 
@@ -1032,7 +1057,7 @@ bitbns.depositHistory('BTC', 0, function(error, data){
    console.log('Error ::', error);
  }
 })</pre>
-<details> 
+<details>
   <summary>
    View Response
   </summary>
@@ -1083,7 +1108,7 @@ bitbns.listOpenOrders('BTC', function(error, data){
  }
 })
 </pre>
-<details> 
+<details>
   <summary>
    View Response
   </summary>
@@ -1214,6 +1239,14 @@ bitbns.listOpenOrders('BTC', function(error, data){
   "status": 1,
   "error": null
 }
+
+Explanation of fields:
+entry_id -> the unique id assigned to the order
+btc -> the volume of the coin
+rate -> the rate at which the order was placed
+time -> the timestamp at which the order was placed
+type -> 1 for sell and 0 for buy order
+status -> -1 for cancelled , 0 for not processed , 1 for partially executed, 2 for fully executed
   </pre>
 </details>
 
@@ -1227,7 +1260,7 @@ bitbns.listOpenStopOrders('TST', function(error, data){
  }
 })
 </pre>
-<details> 
+<details>
   <summary>
    View Response
   </summary>
@@ -1246,6 +1279,15 @@ bitbns.listOpenStopOrders('TST', function(error, data){
   status: 1,
   error: null
 }
+
+Explanation of fields:
+entry_id -> the unique id assigned to the order
+btc -> the volume of the coin
+rate -> the rate at which the order was placed
+t_rate -> the trigger rate at which the order was placed
+time -> the timestamp at which the order was placed
+type -> 1 for sell and 0 for buy order
+status -> -1 for cancelled , 0 for not processed , 1 for partially executed, 2 for fully executed
   </pre>
 </details>
 
@@ -1260,7 +1302,7 @@ bitbns.getCoinAddress('BTC', function(error, data){
    console.log('Error ::', error);
  }
 });</pre>
-<details> 
+<details>
   <summary>
    View Response
   </summary>
@@ -1273,6 +1315,10 @@ bitbns.getCoinAddress('BTC', function(error, data){
   "status": 1,
   "error": null
 }
+
+Explanation of fields:
+token -> the token address
+expiry -> the time till which this address is user's valid address
   </pre>
 </details>
 <pre>
@@ -1284,7 +1330,7 @@ bitbns.getCoinAddress('XLM', function(error, data){
    console.log('Error ::', error);
  }
 });</pre>
-<details> 
+<details>
   <summary>
    View Response
   </summary>
@@ -1297,6 +1343,11 @@ bitbns.getCoinAddress('XLM', function(error, data){
   "status": 1,
   "error": null
 }
+
+Explanation of fields:
+token -> the token address
+tag -> the tag to be used for the token
+Deposits would not be valid unless you specify the tag
   </pre>
 </details>
 
@@ -1311,7 +1362,7 @@ bitbns.getCoinAddress('XLM', function(error, data){
 200 -> Quantity
 25 -> Rate
 </pre>
-<details> 
+<details>
   <summary>
    View Response
   </summary>
@@ -1322,6 +1373,10 @@ bitbns.getCoinAddress('XLM', function(error, data){
   "error": null,
   "id": 489
 }
+
+Explanation of fields:
+data -> Just a custom message
+id -> the unique id of the order
   </pre>
 </details>
 
@@ -1336,7 +1391,7 @@ bitbns.getCoinAddress('XLM', function(error, data){
 200 -> Quantity
 25 -> Rate
 </pre>
-<details> 
+<details>
   <summary>
    View Response
   </summary>
@@ -1347,6 +1402,10 @@ bitbns.getCoinAddress('XLM', function(error, data){
   "error": null,
   "id": 490
 }
+
+Explanation of fields:
+data -> Just a custom message
+id -> the unique id of the order
   </pre>
 </details>
 <b>Placing a STOP LOSS order (BUY)</b><br>
@@ -1359,11 +1418,11 @@ bitbns.buyStopLoss('XRP', 40, 24, 24.5, function(error, data){
  }
 })
 
-40 -> Quantity 
+40 -> Quantity
 24 -> Rate
 24.5 -> Trigger rate
 </pre>
-<details> 
+<details>
   <summary>
    View Response
   </summary>
@@ -1374,6 +1433,10 @@ bitbns.buyStopLoss('XRP', 40, 24, 24.5, function(error, data){
   "error": null,
   "id": 28595
 }
+
+Explanation of fields:
+data -> Just a custom message
+id -> the unique id of the order
   </pre>
 </details>
 
@@ -1387,11 +1450,11 @@ bitbns.sellStopLoss('XRP', 40, 25, 24.5, function(error, data){
  }
 })
 
-40 -> Quantity 
+40 -> Quantity
 24 -> Rate
 24.5 -> Trigger rate
 </pre>
-<details> 
+<details>
   <summary>
    View Response
   </summary>
@@ -1402,6 +1465,10 @@ bitbns.sellStopLoss('XRP', 40, 25, 24.5, function(error, data){
   "error": null,
   "id": 28596
 }
+
+Explanation of fields:
+data -> Just a custom message
+id -> the unique id of the order
   </pre>
 </details>
 
@@ -1415,7 +1482,7 @@ bitbns.sellStopLoss('XRP', 40, 25, 24.5, function(error, data){
 })
 Here 174 is a order id
 </pre>
-<details> 
+<details>
   <summary>
    View Response
   </summary>
@@ -1425,6 +1492,10 @@ Here 174 is a order id
   "status": 1,
   "error": null
 }
+
+Explanation of fields:
+data -> just a custom message
+status -> status of cancellation 1 for success
   </pre>
 </details>
 
@@ -1435,7 +1506,7 @@ console.log(e,d);
 });
 </pre>
 
-<details> 
+<details>
   <summary>
    View Response
   </summary>
@@ -1506,6 +1577,50 @@ console.log(e,d);
   status: 1,
   error: null
 }
+
+ Explanation of fields:
+ rate -> the amount of the order
+ btc -> the volume of the coin for that order
+   </pre>
+</details>
+
+<b>Getting Sell Order Book</b><br>
+<pre>
+bitbns.getSellOrderBook('BTCUSDT', function(e, d){
+console.log(e,d);
+});
+</pre>
+<details>
+  <summary>
+   View Response
+  </summary>
+  <pre>
+    {
+    "data": [
+        { "rate": 13701.34, "btc": 0.145853 },
+        { "rate": 13701.35, "btc": 0.043633 },
+        { "rate": 13701.47, "btc": 0.543258 },
+        { "rate": 13701.69, "btc": 0.664955 },
+        { "rate": 13701.72, "btc": 0.131749 },
+        { "rate": 13702.36, "btc": 0.406614 },
+        { "rate": 13703.18, "btc": 0.253289 },
+        { "rate": 13713.46, "btc": 0.19549 },
+        { "rate": 13713.88, "btc": 0.055847 },
+        { "rate": 13740, "btc": 0.03642294 },
+        { "rate": 13848.3, "btc": 0.14447299 },
+        { "rate": 13855, "btc": 0.03 },
+        { "rate": 13855.11, "btc": 0.0119887 },
+        { "rate": 13879.39, "btc": 0.0001 },
+        { "rate": 14000, "btc": 0.00163832 }
+    ],
+    "status": 1,
+    "error": None,
+    "code": 200
+}
+
+ Explanation of fields:
+ rate -> the amount of the order
+ btc -> the volume of the coin for that order
    </pre>
 </details>
 
@@ -1515,7 +1630,7 @@ bitbns.getBuyOrderBook('BTC', function(e, d){
 console.log(e,d);
 });
 </pre>
-<details> 
+<details>
   <summary>
    View Response
   </summary>
@@ -1539,9 +1654,53 @@ console.log(e,d);
     { rate: 477706.19, btc: 5003424 } ],
  status: 1,
  error: null }
+
+ Explanation of fields:
+ rate -> the amount of the order
+ btc -> the volume of the coin for that order
   </pre>
 </details>
 
+<b>Getting Buy Order Book</b><br>
+<pre>
+bitbns.getBuyOrderBook('BTCUSDT', function(e, d){
+console.log(e,d);
+});
+</pre>
+<details>
+  <summary>
+   View Response
+  </summary>
+  <pre>
+    {
+    "data": [
+        { "rate": 13657.14, "btc": 0.245901 },
+        { "rate": 13656.94, "btc": 0.043868 },
+        { "rate": 13656.58, "btc": 0.249137 },
+        { "rate": 13656.57, "btc": 0.215321 },
+        { "rate": 13656.56, "btc": 0.06557399 },
+        { "rate": 13656.26, "btc": 0.28264299 },
+        { "rate": 13621.07, "btc": 0.086085 },
+        { "rate": 13620.93, "btc": 0.307243 },
+        { "rate": 13620.77, "btc": 0.466551 },
+        { "rate": 13620.71, "btc": 0.203805 },
+        { "rate": 13618.79, "btc": 0.01179179 },
+        { "rate": 13600, "btc": 0.00461852 },
+        { "rate": 13150, "btc": 0.07585551 },
+        { "rate": 13000, "btc": 0.00368308 },
+        { "rate": 12950, "btc": 0.01540463 }
+    ],
+    "status": 1,
+    "error": None,
+    "code": 200
+}
+
+
+ Explanation of fields:
+ rate -> the amount of the order
+ btc -> the volume of the coin for that order
+  </pre>
+</details>
 
 <b>Get executed trades list </b><br>
 <pre>
@@ -1555,14 +1714,14 @@ bitbns.listExecutedOrders('XRP', pageNo, since, function(error, data){
  }
 })
 
-Use symbol as XRPUSDT for fetching executed orders of USDT market. Just coin name, XRP, will return trades of INR market 
+Use symbol as XRPUSDT for fetching executed orders of USDT market. Just coin name, XRP, will return trades of INR market
 </pre>
-<details> 
+<details>
   <summary>
    View Response
   </summary>
   <pre>
-   { data: 
+   { data:
    [ { type: 'BTC Sell order executed',
        typeI: 30,
        crypto: 13972,
@@ -1578,6 +1737,17 @@ Use symbol as XRPUSDT for fetching executed orders of USDT market. Just coin nam
        del_inr: 101 } ],
   status: 1,
   error: null }
+
+Explanation of fields:
+type -> type of action
+typeI -> action id
+amount -> the amount deposited
+date -> the time at which this event occured
+unit -> the symbol name of coin
+factor -> the division factor
+del_btc -> delta changes in normal wallet of coin
+del_inr -> delta changes in normal inr wallet
+delh_btc -> delta changes in hold wallet of coin
   </pre>
 </details>
 
@@ -1592,7 +1762,7 @@ bitbns.getApiUsageStatus(function(error, data){
  }
 })
 </pre>
-<details> 
+<details>
   <summary>
    View Response
   </summary>
@@ -1608,6 +1778,11 @@ bitbns.getApiUsageStatus(function(error, data){
       status: 1,
       error: null
     }
+  Explanation of the fields:
+  readLimit -> the read limit of the user
+  writeLimit -> the write limit of the user
+  readRateUsed -> the read requests used
+  writeRateUsed -> the write requests used
   </pre>
 </details>
 
@@ -1624,7 +1799,7 @@ bitbns.orderStatus('BTC', '4221', function(error, data){
 })
 4221 -> order id
 </pre>
-<details> 
+<details>
   <summary>
    View Response
   </summary>
@@ -1643,6 +1818,14 @@ bitbns.orderStatus('BTC', '4221', function(error, data){
   status: 1,
   error: null
 }
+
+Explanation of fields:
+entry_id -> the unique id for the order
+btc -> the volume of the currency placed
+rate -> the rate at which the order is placed
+time -> the timestamp of the entry
+type -> 0 for buy and 1 for sell
+status -> -1 for cancelled, 0 for not processed, 1 for partially executed, 2 for fully executed
   </pre>
 </details>
 
@@ -1657,7 +1840,7 @@ bitbns.cancelStopLossOrder('BTC', 4221 , function(error, data){
 })
 4221 -> order id
 </pre>
-<details> 
+<details>
   <summary>
    View Response
   </summary>
@@ -1667,6 +1850,10 @@ bitbns.cancelStopLossOrder('BTC', 4221 , function(error, data){
   status: 1,
   error: null
 }
+
+Explanation of fields:
+data -> the custom message
+status -> for successful request the status is 1
   </pre>
 </details>
 
@@ -1682,7 +1869,7 @@ bitbns.placeOrders({
 	rate : 4,
 	target_rate : 5,
 	t_rate : 3.5,
-	trail_rate : .01  
+	trail_rate : .01
 },function(error, data) {
 	console.log(data)
 });
@@ -1700,6 +1887,25 @@ To Place Stoploss Buy or Sell Order use <b>rate & t_rate</b>
 To Place Bracket Buy or Sell Order use <b>rate , t_rate, target_rate & trail_rate</b>
 </pre>
 
+<details>
+  <summary>
+   View Response
+  </summary>
+  <pre>
+    {
+  "data": "Successfully placed a bracket order",
+  "status": 1,
+  "error": null,
+  "id": 4518726,
+  "code": 200
+}
+
+Explanation of fields:
+data -> the custom message
+status -> for successful request the status is 1
+id -> the unique id of the order
+  </pre>
+</details>
 
 <b>Cancel Order</b><br>
 <pre>
@@ -1718,6 +1924,24 @@ entry_id : ENTRY ID
 
 </pre>
 
+<details>
+  <summary>
+   View Response
+  </summary>
+  <pre>
+    {
+  "data": "Successfully cancelled the order",
+  "status": 1,
+  "error": null,
+  "code": 200
+}
+
+Explanation of fields:
+data -> the custom message
+status -> for successful request the status is 1
+  </pre>
+</details>
+
 <b>Place Orders in USDT Market</b><br>
 <pre>
 bitbns.placeOrders({
@@ -1727,7 +1951,7 @@ bitbns.placeOrders({
 	rate : 4,
 	target_rate : 5,
 	t_rate : 3.5,
-	trail_rate : .01  
+	trail_rate : .01
 },function(error, data) {
 	console.log(data)
 });
@@ -1746,6 +1970,26 @@ To Place Bracket Buy or Sell Order use <b>rate , t_rate, target_rate & trail_rat
 
 </pre>
 
+<details>
+  <summary>
+   View Response
+  </summary>
+  <pre>
+   {
+  "data": "Successfully placed bid to purchase currency",
+  "status": 1,
+  "error": null,
+  "id": 6743385,
+  "code": 200
+}
+
+Explanation of fields:
+data -> the custom message
+status -> for successful request the status is 1
+id -> the unique id of the order
+  </pre>
+</details>
+
 <b>Cancel Order in USDT MARKET</b><br>
 <pre>
 
@@ -1763,6 +2007,25 @@ entry_id : ENTRY ID
 
 </pre>
 
+</pre>
+<details>
+  <summary>
+   View Response
+  </summary>
+  <pre>
+    {
+  "data": "Successfully cancelled the order",
+  "status": 1,
+  "error": null,
+  "code": 200
+}
+
+Explanation of fields:
+data -> the custom message
+status -> for successful request the status is 1
+  </pre>
+</details>
+
 <b>Get Orders in USDT MARKET</b><br>
 <pre>
 
@@ -1775,12 +2038,39 @@ bitbns.getOrders({
 });
 
 side -> "listOpenOrders", "listOpenStopOrders", "listOpenBracketOrders", "usdtListOpenBracketOrders",
-         "usdtListOpenStopOrders","usdtListOpenOrders" 
+         "usdtListOpenStopOrders","usdtListOpenOrders"
 symbol -> COIN NAME(use suffix "_USDT" with coin name)
 page -> INTEGER
 
 </pre>
+<details>
+  <summary>
+   View Response
+  </summary>
+  <pre>
+    {
+  "data": [
+    {
+      "entry_id": 6747351,
+      "btc": 750,
+      "rate": 0.02,
+      "time": "2020-10-31T04:43:30.000Z",
+      "type": 0,
+      "status": 0
+    }
+  ],
+  "status": 1,
+  "error": null,
+  "code": 200
+}
 
+Explanation of fields:
+rate -> the amount of the order
+btc -> the volume of the coin for that order
+type -> 1 for sell and 0 for buy order
+status -> for successful request the status is 1
+  </pre>
+</details>
 
 <b>Get Token to authenticate Orders socket</b><br>
 <pre>
@@ -1792,7 +2082,7 @@ bitbns.getTokenSocket(function(error, data){
  }
 })
 </pre>
-<details> 
+<details>
   <summary>
    View Response
   </summary>
@@ -1831,7 +2121,7 @@ socket.on('disconnect', () => console.log('Disconnected'))
 
 bitbns.getTokenSocket(function(error, response){
  if(!error){
-  
+
   let data = JSON.parse(response);
   let token = response.data;
   const socket = bitbns.getExecutedOrders(token);
@@ -1870,7 +2160,7 @@ bitbns.placeMarginOrders({
   type: 'LEND',
 	qnty : 40,
   days : 1,
-	rate : 0.0055 
+	rate : 0.0055
 },function(error, data) {
 	console.log(data)
 });
@@ -1887,13 +2177,30 @@ rate -> RATE
 Renew Flags => 0 - Don't renew, 1 -> Renew only Principal, 2 -> Renew with Principal + Interest
 
 </pre>
+<details>
+  <summary>
+   View Response
+  </summary>
+  <pre>
+    {
+  "status": 1,
+  "error": "Successfully placed lend order for Margin trading.",
+  "code": 200
+}
+
+Explanation of fields:
+error -> the custom message
+status -> for successful request the status is 1
+  </pre>
+</details>
+
 
 <pre>
 <b>Cancel a margin order</b>
 
 bitbns.cancelMarginOrder({
 	id : 1,
-	side : 'cancelMarginOrder', 
+	side : 'cancelMarginOrder',
 	symbol: 'BTC'
 },function(error, data) {
 	console.log(data)
@@ -1905,6 +2212,22 @@ Pass id of the margin transaction you are looking to cancel
 symbol -> COIN NAME,
 
 </pre>
+<details>
+  <summary>
+   View Response
+  </summary>
+  <pre>
+    {
+      "status": 1,
+      "error": "Successfully cancelled the order",
+      "code": 200
+    }
+
+Explanation of fields:
+error -> the custom message
+status -> for successful request the status is 1
+  </pre>
+</details>
 
 
 <pre>
@@ -1925,6 +2248,22 @@ amt -> Amount to settle
 Pass id of the margin transaction you are looking to settle and amt you want to settle
 
 </pre>
+<details>
+  <summary>
+   View Response
+  </summary>
+  <pre>
+    {
+  "status": 1,
+  "error": "Successfully settled the margin order",
+  "code": 200
+}
+
+Explanation of fields:
+error -> the custom message
+status -> for successful request the status is 1
+  </pre>
+</details>
 
 
 <pre>
@@ -1932,7 +2271,8 @@ Pass id of the margin transaction you are looking to settle and amt you want to 
 
 bitbns.settleMargin({
 	id : 1,
-	side : 'settleMarginOrder'
+	side : 'settleMarginOrder',
+	symbol : 'BTC'
 
 },function(error, data) {
 	console.log(data)
@@ -1944,6 +2284,22 @@ bitbns.settleMargin({
 Pass id of the margin transaction you are looking to settle
 
 </pre>
+<details>
+  <summary>
+   View Response
+  </summary>
+  <pre>
+    {
+  "status": 1,
+  "error": "Successfully settled the margin order",
+  "code": 200
+}
+
+Explanation of fields:
+error -> the custom message
+status -> for successful request the status is 1
+  </pre>
+</details>
 
 
 <pre>
@@ -1960,8 +2316,68 @@ bitbns.listMarginExecuted({
 
 type => LEND or BORROW
 
-
 </pre>
+<details>
+  <summary>
+   View Response
+  </summary>
+  <pre>
+  response for borrow:
+  {
+    "data": [
+      {
+        "entry_id": 53298,
+        "worth_required": 8129.82,
+        "worth_current": 26779.7,
+        "margin_taken": 85,
+        "status": 0,
+        "expiry": "2020-11-01T07:03:04.000Z",
+        "phase": 0,
+        "margin_to_return": 85.04,
+        "days": 1,
+        "interest": 0.055,
+        "coin": 54,
+        "margin_partial_return": 0
+      }
+    ],
+    "status": 1,
+    "error": null,
+    "code": 200
+  }
+response for lend:
+    {
+      "data": [
+        {
+          "entry_id": 114143,
+          "amt": 50,
+          "time": "2020-02-03T02:48:41.000Z",
+          "status": 10,
+          "expiry": "2020-02-18T08:18:41.000Z",
+          "days": 15,
+          "interest": 0.051,
+          "coin": 54,
+          "renew": 0
+        }
+      ],
+      "status": 1,
+      "error": null,
+      "code": 200
+    }
+
+Explanation of fields:
+data -> the custom message
+worth_required -> the amount required to maintain the margin
+worth_current -> current worth of margin borrwoed
+margin_taken -> the amount value borrowed
+expiry -> time of expiry of margin
+margin_to_return -> amount to be returned.
+days -> number of days the margin was borrowed or lent.
+interest -> intreset of margin per day.
+amt -> the amount of coins lent
+error -> the custom message
+status -> for successful request the status is 1
+  </pre>
+</details>
 
 
 <pre>
@@ -1975,9 +2391,39 @@ bitbns.listMarginPending({
 	console.log(data)
 });
 
-
-
 </pre>
+<details>
+  <summary>
+   View Response
+  </summary>
+  <pre>
+    {
+  "data": [
+    {
+      "entry_id": 215769,
+      "btc": 40,
+      "days": 1,
+      "time": "2020-10-31T06:42:54.000Z",
+      "type": 0,
+      "status": 0,
+      "rate": 0.083
+    }
+  ],
+  "status": 1,
+  "error": null,
+  "code": 200
+}
+
+Explanation of fields:
+data -> the custom message
+entry_id -> the unique id assigned to the order
+days -> number of days lent or borrowed
+btc -> the volume of the coin
+type -> 1 for borrow and 0 for lend order
+rate -> the rate at which the margin is lend or borrowed
+status -> for successful request the status is 1
+  </pre>
+</details>
 
 
 <pre>
@@ -1994,7 +2440,207 @@ bitbns.listMarginMarketOrders({
 type => LEND or BORROW
 
 </pre>
+<details>
+  <summary>
+   View Response
+  </summary>
+  <pre>
+    {
+  "data": [
+    {
+      "btc": 486.55,
+      "days": 7,
+      "rate": 0.0539
+    },
+    {
+      "btc": 2.31,
+      "days": 1,
+      "rate": 0.055
+    },
+    {
+      "btc": 4392.95,
+      "days": 3,
+      "rate": 0.06
+    },
+    {
+      "btc": 99.96,
+      "days": 15,
+      "rate": 0.065
+    },
+    {
+      "btc": 1242,
+      "days": 30,
+      "rate": 0.065
+    },
+    {
+      "btc": 13287.65,
+      "days": 7,
+      "rate": 0.067
+    },
+    {
+      "btc": 350,
+      "days": 30,
+      "rate": 0.068
+    },
+    {
+      "btc": 5500,
+      "days": 7,
+      "rate": 0.07
+    },
+    {
+      "btc": 2119.34,
+      "days": 30,
+      "rate": 0.0749
+    },
+    {
+      "btc": 1770.51,
+      "days": 30,
+      "rate": 0.076
+    },
+    {
+      "btc": 53.52,
+      "days": 30,
+      "rate": 0.0779
+    },
+    {
+      "btc": 3231.92,
+      "days": 15,
+      "rate": 0.078
+    },
+    {
+      "btc": 622.69,
+      "days": 15,
+      "rate": 0.079
+    },
+    {
+      "btc": 17306,
+      "days": 1,
+      "rate": 0.08
+    },
+    {
+      "btc": 7840,
+      "days": 15,
+      "rate": 0.085
+    },
+    {
+      "btc": 446.07,
+      "days": 30,
+      "rate": 0.0855
+    },
+    {
+      "btc": 762.59,
+      "days": 30,
+      "rate": 0.0856
+    },
+    {
+      "btc": 500,
+      "days": 30,
+      "rate": 0.087
+    },
+    {
+      "btc": 195.66,
+      "days": 30,
+      "rate": 0.088
+    },
+    {
+      "btc": 112.33,
+      "days": 30,
+      "rate": 0.089
+    },
+    {
+      "btc": 2769,
+      "days": 1,
+      "rate": 0.09
+    },
+    {
+      "btc": 20000,
+      "days": 3,
+      "rate": 0.09
+    },
+    {
+      "btc": 7000,
+      "days": 7,
+      "rate": 0.09
+    },
+    {
+      "btc": 8525.51,
+      "days": 30,
+      "rate": 0.09
+    },
+    {
+      "btc": 206,
+      "days": 1,
+      "rate": 0.091
+    },
+    {
+      "btc": 20000,
+      "days": 15,
+      "rate": 0.091
+    },
+    {
+      "btc": 2096.32,
+      "days": 30,
+      "rate": 0.099
+    },
+    {
+      "btc": 235,
+      "days": 1,
+      "rate": 0.1
+    },
+    {
+      "btc": 401780.26,
+      "days": 30,
+      "rate": 0.1
+    },
+    {
+      "btc": 50000,
+      "days": 30,
+      "rate": 0.11
+    },
+    {
+      "btc": 19999.81,
+      "days": 15,
+      "rate": 0.12
+    },
+    {
+      "btc": 61.71,
+      "days": 30,
+      "rate": 0.12
+    },
+    {
+      "btc": 107.45,
+      "days": 30,
+      "rate": 0.14
+    },
+    {
+      "btc": 43212,
+      "days": 15,
+      "rate": 0.169
+    },
+    {
+      "btc": 30000,
+      "days": 7,
+      "rate": 0.17
+    },
+    {
+      "btc": 90610.26,
+      "days": 30,
+      "rate": 0.18
+    }
+  ],
+  "status": 1,
+  "error": null,
+  "code": 200
+}
 
+Explanation of fields:
+data -> the custom message
+days -> number of days lent or borrowed
+btc -> the volume of the coin
+rate -> the rate at which the margin is lend or borrowed
+status -> for successful request the status is 1
+  </pre>
+</details>
 
 
 <h3>Trading Basic Tutorial</h3>
@@ -2038,7 +2684,7 @@ bitbns.platformStatus(function(error, res1){
 });
 
 </pre>
-<details> 
+<details>
   <summary>
    View Response
   </summary>
@@ -2096,7 +2742,7 @@ bitbns.platformStatus(function(error, res1){
 });
 </pre>
 
-<details> 
+<details>
   <summary>
    View Response
   </summary>
@@ -2115,7 +2761,7 @@ bitbns.platformStatus(function(error, res1){
  <pre>
  curl -H "X-BITBNS-APIKEY: API-KEY" -X GET 'https://api.bitbns.com/api/trade/v1/getServerTime'
  </pre>
- <details> 
+ <details>
    <summary>
     View Response
    </summary>
