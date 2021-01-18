@@ -2,7 +2,7 @@
 
 # Bitbns Node API
 
-This project is designed to assist you make your own projects that interact with the Bitbns API.  This project seeks to have complete API coverage excluding WebSockets which would be released in the future version.
+This project is designed to assist you make your own projects that interact with the Bitbns API.  This project seeks to have complete API coverage.
 
 <code><b>Use Node Version 8.1.0+</b></code><br><br>
 <b><i>Download NodeJs Installer</i></b><br>
