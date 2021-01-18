@@ -229,6 +229,26 @@ class bitbnsApi{
     }
   }
 
+  buyStopLossWithTrail(symbol, quantity, rate, t_rate, trail, callback){
+    this.requestAuthenticate(symbol, callback);
+    if(this.verifyApiKeys(this.apiKeys)){
+      let body = {quantity:quantity,rate:rate,t_rate:t_rate,trail:trail};
+      this.makePostRequest(symbol, "buyStopLoss", body, callback);
+    }else{
+      return callback("apiKeys Not Found , Please intialize it first","");
+    }
+  }
+
+  sellStopLossWithTrail(symbol, quantity, rate, t_rate, trail, callback){
+    this.requestAuthenticate(symbol, callback);
+    if(this.verifyApiKeys(this.apiKeys)){
+      let body = {quantity:quantity,rate:rate,t_rate:t_rate,trail:trail};
+      this.makePostRequest(symbol, "sellStopLoss", body, callback);
+    }else{
+      return callback("apiKeys Not Found , Please intialize it first","");
+    }
+  }
+
   getCoinAddress(symbol, callback){
     this.requestAuthenticate(symbol, callback);
     if(this.verifyApiKeys(this.apiKeys)){
@@ -244,6 +264,24 @@ class bitbnsApi{
     if(this.verifyApiKeys(this.apiKeys)){
       let body = {page:page};
       this.makePostRequest(symbol, "withdrawHistory", body, callback);
+    }else{
+      return callback("apiKeys Not Found , Please intialize it first","");
+    }
+  }
+
+  withdrawHistoryAll(page, callback){
+    if(this.verifyApiKeys(this.apiKeys)){
+      let body = {page:page};
+      this.makePostRequest(symbol, "withdrawHistoryAll", body, callback);
+    }else{
+      return callback("apiKeys Not Found , Please intialize it first","");
+    }
+  }
+
+  depositHistoryAll(page, callback){
+    if(this.verifyApiKeys(this.apiKeys)){
+      let body = {page:page};
+      this.makePostRequest(symbol, "depositHistoryAll", body, callback);
     }else{
       return callback("apiKeys Not Found , Please intialize it first","");
     }
@@ -373,6 +411,16 @@ class bitbnsApi{
     };
     return options;
   }
+
+  setGetOption(method, route, headers = {}, body = {}){
+    let options =  {
+      url : route,
+      method : method,
+      headers :  headers,
+      body : JSON.stringify(body)
+    };
+    return options;
+  }
   /*
     Get the current status of the platform
     @return {object} -> whether the paltform is up for down for each coin present
@@ -456,6 +504,18 @@ class bitbnsApi{
     });
   }
 
+  getOHLCData(coin_name, market, page, callback){
+    coin_name = coin_name + market;
+    let options = this.setGetOption('GET',`https://bitbns.com/exchangeData/ohlc/?coin=${coin_name}&page=${page}`,{'X-BITBNS-APIKEY':this.apiKeys.apiKey});
+    request(options, function(error, response, body){
+      if(!error && response.statusCode == 200){
+        body = JSON.parse(body);
+        return callback("", body);
+      }else{
+        return callback(error, body)
+      }
+    });
+  }
 
 // Margin Trading starts here - V2
 
