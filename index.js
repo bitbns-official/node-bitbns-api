@@ -34,7 +34,7 @@ class bitbnsApi{
   getOrderBookSocket(coinName, marketName) {
 		return socket_IO(`https://ws${marketName.toLowerCase()}m.bitbns.com/?coin=${coinName.toUpperCase()}`);
   }
-  
+
   getExecutedOrders(token) {
 		return socket_IO(`https://wsorder.bitbns.com/?token=${token}`);
 	}
@@ -272,6 +272,7 @@ class bitbnsApi{
   withdrawHistoryAll(page, callback){
     if(this.verifyApiKeys(this.apiKeys)){
       let body = {page:page};
+      let symbol = '';
       this.makePostRequest(symbol, "withdrawHistoryAll", body, callback);
     }else{
       return callback("apiKeys Not Found , Please intialize it first","");
@@ -281,6 +282,7 @@ class bitbnsApi{
   depositHistoryAll(page, callback){
     if(this.verifyApiKeys(this.apiKeys)){
       let body = {page:page};
+      let symbol = '';
       this.makePostRequest(symbol, "depositHistoryAll", body, callback);
     }else{
       return callback("apiKeys Not Found , Please intialize it first","");
@@ -505,12 +507,12 @@ class bitbnsApi{
   }
 
   getOHLCData(coin_name, market, page, callback){
-    coin_name = coin_name + market;
+    coin_name = coin_name + '_'+ market;
     let options = this.setGetOption('GET',`https://bitbns.com/exchangeData/ohlc/?coin=${coin_name}&page=${page}`,{'X-BITBNS-APIKEY':this.apiKeys.apiKey});
     request(options, function(error, response, body){
       if(!error && response.statusCode == 200){
         body = JSON.parse(body);
-        return callback("", body);
+        return callback("", body[0]);
       }else{
         return callback(error, body)
       }
