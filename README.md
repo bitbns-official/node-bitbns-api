@@ -1048,6 +1048,52 @@ delh_btc -> delta changes in hold wallet of coin
   </pre>
 </details>
 
+<b>Get ALL Deposit History</b><br>
+<pre>
+bitbns.depositHistoryAll(0, function(error, data){
+ if(!error){
+   console.log('Data ::', data);
+ } else {
+   console.log('Error ::', error);
+ }
+})
+</pre>
+
+0 -> page no. (use pagination to fetch older deposit history)
+<details>
+  <summary>
+   View Response
+  </summary>
+  <pre>
+ {{
+  data: [
+    {
+      type: 'USDT deposited',
+      typeI: 2,
+      date: '2021-01-01T07:32:06.000Z',
+      unit: 'USDT',
+      factor: 100,
+      fee: 0,
+      coin: 'USDT',
+      amt: 120,
+      id: 'WITH_DROPLET'
+    },
+	],
+  status: 1,
+  error: null,
+  code: 200
+}}
+
+Explanation of fields:
+type -> type of action
+typeI -> action id
+amt -> the amount deposited
+date -> the time at which this event occured
+unit -> the symbol name of coin
+factor -> the division factor
+id -> source of deposit
+  </pre>
+</details>
 
 <b>Get Withdrawal History</b><br>
 <pre>bitbns.withdrawHistory('XRP', 0, function(error, data){
@@ -1097,6 +1143,52 @@ delh_btc -> delta changes in hold wallet of coin
   </pre>
 </details>
 
+<b>Get ALL withdrawal History</b><br>
+<pre>
+bitbns.withdrawHistoryAll(0, function(error, data){
+ if(!error){
+   console.log('Data ::', data);
+ } else {
+   console.log('Error ::', error);
+ }
+})
+</pre>
+
+0 -> page no. (use pagination to fetch older deposit history)
+<details>
+  <summary>
+   View Response
+  </summary>
+  <pre>
+ {{
+  data: [
+    {
+      type: 'USDT withdrawn',
+      typeI: 2,
+      date: '2021-01-01T07:32:06.000Z',
+      unit: 'USDT',
+      factor: 100,
+      fee: 0,
+      coin: 'USDT',
+      amt: 120,
+      id: 'WITH_DROPLET'
+    },
+	],
+  status: 1,
+  error: null,
+  code: 200
+}}
+
+Explanation of fields:
+type -> type of action
+typeI -> action id
+amt -> the amount deposited
+date -> the time at which this event occured
+unit -> the symbol name of coin
+factor -> the division factor
+id -> source of withdrawal
+  </pre>
+</details>
 
 <b>List Open Orders</b><br>
 <pre>
@@ -1440,6 +1532,41 @@ id -> the unique id of the order
   </pre>
 </details>
 
+<b>Placing a Trailing STOP LOSS order (BUY)</b><br>
+<pre>
+bitbns.buyStopLossWithTrail('USDT', 15, 76, 77.5,0.5, function(error, data){
+ if(!error){
+   console.log('Data ::', data);
+ } else {
+   console.log('Error ::', error);
+ }
+})
+
+15 -> Quantity
+76 -> Rate
+77.5 -> Trigger rate
+0.5 -> trail value
+</pre>
+<details>
+  <summary>
+   View Response
+  </summary>
+  <pre>
+  {
+  "data": "Successfully placed a stop limit buy order",
+  "status": 1,
+  "error": null,
+  "id": 28595
+}
+
+Explanation of fields:
+data -> Just a custom message
+id -> the unique id of the order
+  </pre>
+</details>
+
+
+
 <b>Placing a STOP LOSS order (SELL)</b><br>
 <pre>
 bitbns.sellStopLoss('XRP', 40, 25, 24.5, function(error, data){
@@ -1471,6 +1598,40 @@ data -> Just a custom message
 id -> the unique id of the order
   </pre>
 </details>
+
+<b>Placing a Trailing STOP LOSS order (SELL)</b><br>
+<pre>
+bitbns.sellStopLossWithTrail('USDT', 15, 80, 78.5,0.5, function(error, data){
+ if(!error){
+   console.log('Data ::', data);
+ } else {
+   console.log('Error ::', error);
+ }
+})
+
+15 -> Quantity
+80 -> Rate
+78.5 -> Trigger rate
+0.5 -> trail value
+</pre>
+<details>
+  <summary>
+   View Response
+  </summary>
+  <pre>
+  {
+  "data": "Successfully placed a stop limit sell order",
+  "status": 1,
+  "error": null,
+  "id": 28595
+}
+
+Explanation of fields:
+data -> Just a custom message
+id -> the unique id of the order
+  </pre>
+</details>
+
 
 <b>Place Cancel Order</b><br>
 <pre>bitbns.cancelOrder('XRP', 174 , function(error, data){
@@ -2148,6 +2309,54 @@ bitbns.getTokenSocket(function(error, response){
 })
 
 </pre>
+
+<b>Get OHLCV data</b><br>
+<pre>
+bitbns.getOHLCData('BTC', 'INR' , 0, function(error, data){
+ if(!error){
+   console.log('Data ::', data);
+ } else {
+   console.log('Error ::', error);
+ }
+})
+
+here:
+BTC -> coin name
+INR -> market (INR or USDT)
+0 -> page no (use pagination to fetch older data)
+</pre>
+<details>
+  <summary>
+   View Response
+  </summary>
+  <pre>
+    {
+  status: 1,
+  data: [
+    {
+      close: 2875774.93,
+      timestamp: '2021-01-19T03:55:10.000Z',
+      low: 2870096.39,
+      high: 2884794.25,
+      vol: 0.25635386,
+      open: 2883492.69
+    },
+    {
+      close: 2875774.93,
+      timestamp: '2021-01-19T03:50:10.000Z',
+      low: 2870096.39,
+      high: 2884794.25,
+      vol: 0.25635386,
+      open: 2883492.69
+    },
+	]
+}
+
+Explanation of fields:
+data -> just a custom message
+status -> status of cancellation 1 for success
+  </pre>
+</details>
 
 
 <b>Margin Trading V2 APIs</b><br>
