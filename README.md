@@ -136,359 +136,15 @@ Alternative Method :
       <th>&#x2716;</th>
     </tr>
   </table>
-</div>
+</div><br>
 
 <h2>Minimum Volume allowed of supporting currencies</h2>
-<table>
-    <tr>
-      <th>COIN NAME</th>
-      <th>SYMBOL</th>
-      <th>MINIMUM VOLUME ALLOWED</th>
-      <th>MAXIMUM VOLUME ALLOWED</th>
-    </tr>
-    <tr>
-      <th>Bitcoin</th>
-      <th>BTC</th>
-      <th>0.001</th>
-      <th>20</th>
-    </tr>
-    <tr>
-      <th>Ripple</th>
-      <th>XRP</th>
-      <th>50</th>
-      <th>500000</th>
-    </tr>
-    <tr>
-      <th>Neo</th>
-      <th>NEO</th>
-      <th>4</th>
-      <th>10000</th>
-    </tr>
-    <tr>
-      <th>Gas</th>
-      <th>GAS</th>
-      <th>13</th>
-      <th>10000</th>
-    </tr>
-    <tr>
-      <th>Stellar</th>
-      <th>XLM</th>
-      <th>300</th>
-      <th>500000</th>
-    </tr>
-    <tr>
-      <th>Ethereum</th>
-      <th>ETH</th>
-      <th>0.32</th>
-      <th>20</th>
-    </tr>
-    <tr>
-      <th>Bitcoin Cash</th>
-      <th>BCH</th>
-      <th>0.15</th>
-      <th>200</th>
-    </tr>
-    <tr>
-      <th>Tron</th>
-      <th>TRX</th>
-      <th>2800</th>
-      <th>200000</th>
-    </tr>
-    <tr>
-      <th>Cardano</th>
-      <th>ADA</th>
-      <th>880</th>
-      <th>2000000</th>
-    </tr>
-    <tr>
-      <th>VeChain</th>
-      <th>VET</th>
-      <th>5800</th>
-      <th>20000</th>
-    </tr>
-    <tr>
-      <th>Verge</th>
-      <th>XVG</th>
-      <th>4550</th>
-      <th>2000000</th>
-    </tr>
-     <tr>
-      <th>Dash</th>
-      <th>DASH</th>
-      <th>0.42</th>
-      <th>200</th>
-    </tr>
-     <tr>
-      <th>DigixDAO</th>
-      <th>DGD</th>
-      <th>1.5</th>
-      <th>200</th>
-    </tr>
-     <tr>
-      <th>LiteCoin</th>
-      <th>LTC</th>
-      <th>1.2</th>
-      <th>150</th>
-    </tr>
-     <tr>
-      <th>Augur</th>
-      <th>REP</th>
-      <th>6</th>
-      <th>500</th>
-    </tr>
-    <tr>
-      <th>Qtum</th>
-      <th>QTUM</th>
-      <th>17</th>
-      <th>1000</th>
-    </tr>
-    <tr>
-      <th>Lisk</th>
-      <th>LSK</th>
-      <th>24</th>
-      <th>1000</th>
-    </tr>
-    <tr>
-      <th>OmiseGo</th>
-      <th>OMG</th>
-      <th>21</th>
-      <th>1000</th>
-    </tr>
-    <tr>
-      <th>Waves</th>
-      <th>WAVES</th>
-      <th>34</th>
-      <th>1000</th>
-    </tr>
-    <tr>
-      <th>Ontology</th>
-      <th>ONT</th>
-      <th>35</th>
-      <th>1000</th>
-    </tr>
-    <tr>
-      <th>0x</th>
-      <th>ZRX</th>
-      <th>10</th>
-      <th>3000</th>
-    </tr>
-    <tr>
-      <th>Power Ledger</th>
-      <th>POWR</th>
-      <th>400</th>
-      <th>8000</th>
-    </tr>
-    <tr>
-      <th>PolyMath</th>
-      <th>POLY</th>
-      <th>324</th>
-      <th>10000</th>
-    </tr>
-    <tr>
-      <th>Tether</th>
-      <th>USDT</th>
-      <th>5</th>
-      <th>5000</th>
-    </tr>
-    <tr>
-      <th>Sia</th>
-      <th>SC</th>
-      <th>10000</th>
-      <th>1000000</th>
-    </tr>
-    <tr>
-      <th>NEM</th>
-      <th>XEM</th>
-      <th>564</th>
-      <th>5000000</th>
-    </tr>
-    <tr>
-      <th>DeepBrain Chain</th>
-      <th>DBC</th>
-      <th>9400</th>
-      <th>500000</th>
-    </tr>
-    <tr>
-      <th>MONERO</th>
-      <th>XMR</th>
-      <th>0.7</th>
-      <th>200</th>
-    </tr>
-    <tr>
-      <th>DogeCoin</th>
-      <th>DOGE</th>
-      <th>18000</th>
-      <th>1000000</th>
-    </tr>
-    <tr>
-      <th>Electroneum</th>
-      <th>ETN</th>
-      <th>4000</th>
-      <th>200000</th>
-    </tr>
-    <tr>
-      <th>EOS</th>
-      <th>EOS</th>
-      <th>15</th>
-      <th>200000</th>
-    </tr>
-    <tr>
-      <th>Zilica</th>
-      <th>ZIL</th>
-      <th>2000</th>
-      <th>200000</th>
-    </tr>
-    <tr>
-      <th>Digibyte</th>
-      <th>DGB</th>
-      <th>3000</th>
-      <th>2000000</th>
-    </tr>
-    <tr>
-      <th>ICON</th>
-      <th>ICX</th>
-      <th>105</th>
-      <th>20000</th>
-    </tr>
-    <tr>
-      <th>Request</th>
-      <th>REQ</th>
-      <th>1500</th>
-      <th>200000</th>
-    </tr>
-    <tr>
-      <th>QLC Chain</th>
-      <th>QLC</th>
-      <th>1500</th>
-      <th>2000000</th>
-    </tr>
-    <tr>
-      <th>Wan Chain</th>
-      <th>WAN</th>
-      <th>70</th>
-      <th>2000000</th>
-    </tr>
-    <tr>
-      <th>Achain</th>
-      <th>ACT</th>
-      <th>2500</th>
-      <th>2000000</th>
-    </tr>
-    <tr>
-      <th>Bluzelle</th>
-      <th>BLZ</th>
-      <th>500</th>
-      <th>200000</th>
-    </tr>
-    <tr>
-      <th>Substratum</th>
-      <th>SUB</th>
-      <th>600</th>
-      <th>200000</th>
-    </tr>
-    <tr>
-      <th>Loopring</th>
-      <th>LRC</th>
-      <th>600</th>
-      <th>200000</th>
-    </tr>
-    <tr>
-      <th>Nexo</th>
-      <th>NEXO</th>
-      <th>450</th>
-      <th>200000</th>
-    </tr>
-    <tr>
-      <th>Effect.Ai</th>
-      <th>EFX</th>
-      <th>5000</th>
-      <th>200000</th>
-    </tr>
-    <tr>
-      <th>Apex</th>
-      <th>CPX</th>
-      <th>2500</th>
-      <th>200000</th>
-    </tr>
-    <tr>
-      <th>LOOM Network</th>
-      <th>LOOM</th>
-      <th>500</th>
-      <th>200000</th>
-    </tr>
-    <tr>
-      <th>eosDAC</th>
-      <th>EOSDAC</th>
-      <th>1600</th>
-      <th>200000</th>
-    </tr>
-    <tr>
-      <th>Storm</th>
-      <th>STORM</th>
-      <th>8000</th>
-      <th>200000</th>
-    </tr>
-    <tr>
-      <th>Golem</th>
-      <th>GNT</th>
-      <th>400</th>
-      <th>200000</th>
-    </tr>
-    <tr>
-      <th>PundiX</th>
-      <th>NPXS</th>
-      <th>40000</th>
-      <th>2000000</th>
-    </tr>
-    <tr>
-      <th>Ethereum Classic</th>
-      <th>ETC</th>
-      <th>10</th>
-      <th>200000</th>
-    </tr>
-    <tr>
-      <th>DENT</th>
-      <th>DENT</th>
-      <th>200</th>
-      <th>200000</th>
-    </tr>
-    <tr>
-      <th>CloakCoin</th>
-      <th>CLOAK</th>
-      <th>25</th>
-      <th>200000</th>
-    </tr>
-    <tr>
-      <th>Komodo</th>
-      <th>KMD</th>
-      <th>55</th>
-      <th>200000</th>
-    </tr>
-    <tr>
-      <th>GroestlCoin</th>
-      <th>GRS</th>
-      <th>150</th>
-      <th>200000</th>
-    </tr>
-    <tr>
-      <th>LinkEye</th>
-      <th>LET</th>
-      <th>10000</th>
-      <th>200000</th>
-    </tr>
-    <tr>
-      <th>Phantasma</th>
-      <th>SOUL</th>
-      <th>600</th>
-      <th>200000</th>
-    </tr>
-    <tr>
-      <th>BNS token</th>
-      <th>BNS</th>
-      <th>300</th>
-      <th>200000</th>
-    </tr>
-</table>
+<h2>Minimum Volume supported by exchange</h2>
+<h3> <b> Minimum volume amount per order: </b></h3>
+
+  - USDT market = <u>1 USDT</u>
+  - INR market = <u>50 INR</u>
+
 <h3>Installation</h3>
 <code>npm install bitbns --save</code>
 
@@ -1048,6 +704,52 @@ delh_btc -> delta changes in hold wallet of coin
   </pre>
 </details>
 
+<b>Get ALL Deposit History</b><br>
+<pre>
+bitbns.depositHistoryAll(0, function(error, data){
+ if(!error){
+   console.log('Data ::', data);
+ } else {
+   console.log('Error ::', error);
+ }
+})
+</pre>
+
+0 -> page no. (use pagination to fetch older deposit history)
+<details>
+  <summary>
+   View Response
+  </summary>
+  <pre>
+ {{
+  data: [
+    {
+      type: 'USDT deposited',
+      typeI: 2,
+      date: '2021-01-01T07:32:06.000Z',
+      unit: 'USDT',
+      factor: 100,
+      fee: 0,
+      coin: 'USDT',
+      amt: 120,
+      id: 'WITH_DROPLET'
+    },
+	],
+  status: 1,
+  error: null,
+  code: 200
+}}
+
+Explanation of fields:
+type -> type of action
+typeI -> action id
+amt -> the amount deposited
+date -> the time at which this event occured
+unit -> the symbol name of coin
+factor -> the division factor
+id -> source of deposit
+  </pre>
+</details>
 
 <b>Get Withdrawal History</b><br>
 <pre>bitbns.withdrawHistory('XRP', 0, function(error, data){
@@ -1097,6 +799,52 @@ delh_btc -> delta changes in hold wallet of coin
   </pre>
 </details>
 
+<b>Get ALL withdrawal History</b><br>
+<pre>
+bitbns.withdrawHistoryAll(0, function(error, data){
+ if(!error){
+   console.log('Data ::', data);
+ } else {
+   console.log('Error ::', error);
+ }
+})
+</pre>
+
+0 -> page no. (use pagination to fetch older deposit history)
+<details>
+  <summary>
+   View Response
+  </summary>
+  <pre>
+ {{
+  data: [
+    {
+      type: 'USDT withdrawn',
+      typeI: 2,
+      date: '2021-01-01T07:32:06.000Z',
+      unit: 'USDT',
+      factor: 100,
+      fee: 0,
+      coin: 'USDT',
+      amt: 120,
+      id: 'WITH_DROPLET'
+    },
+	],
+  status: 1,
+  error: null,
+  code: 200
+}}
+
+Explanation of fields:
+type -> type of action
+typeI -> action id
+amt -> the amount deposited
+date -> the time at which this event occured
+unit -> the symbol name of coin
+factor -> the division factor
+id -> source of withdrawal
+  </pre>
+</details>
 
 <b>List Open Orders</b><br>
 <pre>
@@ -1440,6 +1188,41 @@ id -> the unique id of the order
   </pre>
 </details>
 
+<b>Placing a Trailing STOP LOSS order (BUY)</b><br>
+<pre>
+bitbns.buyStopLossWithTrail('USDT', 15, 76, 77.5,0.5, function(error, data){
+ if(!error){
+   console.log('Data ::', data);
+ } else {
+   console.log('Error ::', error);
+ }
+})
+
+15 -> Quantity
+76 -> Rate
+77.5 -> Trigger rate
+0.5 -> trail value
+</pre>
+<details>
+  <summary>
+   View Response
+  </summary>
+  <pre>
+  {
+  "data": "Successfully placed a stop limit buy order",
+  "status": 1,
+  "error": null,
+  "id": 28595
+}
+
+Explanation of fields:
+data -> Just a custom message
+id -> the unique id of the order
+  </pre>
+</details>
+
+
+
 <b>Placing a STOP LOSS order (SELL)</b><br>
 <pre>
 bitbns.sellStopLoss('XRP', 40, 25, 24.5, function(error, data){
@@ -1471,6 +1254,40 @@ data -> Just a custom message
 id -> the unique id of the order
   </pre>
 </details>
+
+<b>Placing a Trailing STOP LOSS order (SELL)</b><br>
+<pre>
+bitbns.sellStopLossWithTrail('USDT', 15, 80, 78.5,0.5, function(error, data){
+ if(!error){
+   console.log('Data ::', data);
+ } else {
+   console.log('Error ::', error);
+ }
+})
+
+15 -> Quantity
+80 -> Rate
+78.5 -> Trigger rate
+0.5 -> trail value
+</pre>
+<details>
+  <summary>
+   View Response
+  </summary>
+  <pre>
+  {
+  "data": "Successfully placed a stop limit sell order",
+  "status": 1,
+  "error": null,
+  "id": 28595
+}
+
+Explanation of fields:
+data -> Just a custom message
+id -> the unique id of the order
+  </pre>
+</details>
+
 
 <b>Place Cancel Order</b><br>
 <pre>bitbns.cancelOrder('XRP', 174 , function(error, data){
@@ -2148,6 +1965,54 @@ bitbns.getTokenSocket(function(error, response){
 })
 
 </pre>
+
+<b>Get OHLCV data</b><br>
+<pre>
+bitbns.getOHLCData('BTC', 'INR' , 0, function(error, data){
+ if(!error){
+   console.log('Data ::', data);
+ } else {
+   console.log('Error ::', error);
+ }
+})
+
+here:
+BTC -> coin name
+INR -> market (INR or USDT)
+0 -> page no (use pagination to fetch older data)
+</pre>
+<details>
+  <summary>
+   View Response
+  </summary>
+  <pre>
+    {
+  status: 1,
+  data: [
+    {
+      close: 2875774.93,
+      timestamp: '2021-01-19T03:55:10.000Z',
+      low: 2870096.39,
+      high: 2884794.25,
+      vol: 0.25635386,
+      open: 2883492.69
+    },
+    {
+      close: 2875774.93,
+      timestamp: '2021-01-19T03:50:10.000Z',
+      low: 2870096.39,
+      high: 2884794.25,
+      vol: 0.25635386,
+      open: 2883492.69
+    },
+	]
+}
+
+Explanation of fields:
+data -> just a custom message
+status -> status of cancellation 1 for success
+  </pre>
+</details>
 
 
 <b>Margin Trading V2 APIs</b><br>
