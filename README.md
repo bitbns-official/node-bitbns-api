@@ -1292,7 +1292,7 @@ status -> -1 for cancelled , 0 for not processed , 1 for partially executed, 2 f
 </details>
 
 
-<b>Get Specify Crypto Coin Address</b><br>
+<b>Get Specific Crypto Coin Address</b><br>
 <pre>
 Coins Without Tag
 bitbns.getCoinAddress('BTC', function(error, data){
