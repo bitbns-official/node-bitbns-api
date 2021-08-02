@@ -1954,6 +1954,8 @@ socket.on('ticker', res => {
 
 socket.on('disconnect', () => console.log('Disconnected'))
 
+Pass USDT as market to get ticks of USDT market
+
 </pre>
 
 <b>Use socket to get live executed order of your account</b><br>
