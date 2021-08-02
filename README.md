@@ -1933,6 +1933,29 @@ socket.on('disconnect', () => console.log('Disconnected'))
 
 </pre>
 
+
+
+<b>Use socket to get live ticker and prices of all coins</b><br>
+<pre>
+
+const socket = bitbns.getTickerSocket('INR')
+
+socket.on('connect', () => console.log('Connected'))
+
+socket.on('ticker', res => {
+	try {
+		const data = JSON.parse(res)
+		console.log('Data Received')
+		console.log(data)
+	} catch (e) {
+		console.log('Error in the Stream', e)
+	}
+})
+
+socket.on('disconnect', () => console.log('Disconnected'))
+
+</pre>
+
 <b>Use socket to get live executed order of your account</b><br>
 <pre>
 

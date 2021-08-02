@@ -32,11 +32,15 @@ class bitbnsApi{
   }
 
   getOrderBookSocket(coinName, marketName) {
-		return socket_IO(`https://ws${marketName.toLowerCase()}m.bitbns.com/?coin=${coinName.toUpperCase()}`);
+		return socket_IO(`https://ws${marketName.toLowerCase()}mv2.bitbns.com/?coin=${coinName.toUpperCase()}`);
+  }
+
+  getTickerSocket(marketName) {
+		return socket_IO(`https://ws${marketName.toLowerCase()}mv2.bitbns.com/?withTicker=true&onlyTicker=true`);
   }
 
   getExecutedOrders(token) {
-		return socket_IO(`https://wsorder.bitbns.com/?token=${token}`);
+		return socket_IO(`https://wsorderv2.bitbns.com/?token=${token}`);
 	}
 
   verifyApiKeys(data){
