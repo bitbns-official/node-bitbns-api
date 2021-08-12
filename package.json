@@ -1,6 +1,6 @@
 {
   "name": "bitbns",
-  "version": "3.0.10",
+  "version": "3.0.15",
   "description": "Bitbns Offical Node Module to trade",
   "main": "index.js",
   "scripts": {
