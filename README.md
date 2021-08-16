@@ -1944,7 +1944,7 @@ socket.on('connect', () => console.log('Connected'))
 
 socket.on('ticker', res => {
 	try {
-		const data = JSON.parse(res)
+		const data = JSON.parse(JSON.stringify(res))
 		console.log('Data Received')
 		console.log(data)
 	} catch (e) {
