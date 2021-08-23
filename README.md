@@ -159,7 +159,7 @@ const bitbns = new bitbnsApi({
 </code>
 </pre>
 
-<b>Instantiating Multiple Instances</b><br>
+<h4><b>Instantiating Multiple Instances</b><br></h4>
 <pre>
 const bitbnsApi = require('bitbns');
 
@@ -171,7 +171,7 @@ const instance2 = new bitbnsApi({
   // ...
 });
 </pre>
-<b>Getting Platform Status</b>
+<h4><b>Getting Platform Status</b></h4>
 <pre>
 bitbns.platformStatus(function(error, data){
   console.log(error, data);
@@ -202,7 +202,7 @@ Explanation of fields:
 status -> whether the coin is live on platform
    </pre>
 </details>
-<b>Getting latest price of a symbol</b>
+<h4><b>Getting latest price of a symbol</b></h4>
 Inputting Invalid crypto name would return "undefined" as the price.
 <pre>
 bitbns.getTickerApi('BTC',function(error,data){
@@ -233,7 +233,7 @@ last_traded_price -> price at which the last trade had happened
    </pre>
 </details>
 
-<b>Getting latest price of few symbols</b>
+<h4><b>Getting latest price of few symbols</b></h4>
 <pre>
 bitbns.getTickerApi('BTC,ETH',function(error,data){
   console.log("BTC Price :: ",data);
@@ -268,7 +268,7 @@ last_traded_price -> price at which the last trade had happened
  </pre>
 </details>
 
-<b>Getting latest price of all symbols</b>
+<h4><b>Getting latest price of all symbols</b></h4>
 <pre>
 bitbns.getTickerApi('',function(error,data){
   console.log("All Price :: ",data);
@@ -609,7 +609,7 @@ bitbns.getTickerApi('',function(error,data){
 </pre>
 </details>
 
-<b>Getting current balance of crypto asset</b><br>
+<h4><b>Getting current balance of crypto asset</b><br></h4>
 Inputing "INR" in place of crypto asset would list your inr balance . Pass "EVERYTHING" to get all the balance at once
 <pre>
 bitbns.currentCoinBalance('BTC', function(error, data){
@@ -639,7 +639,7 @@ availableorderBTC -> volume which is present in wallet
   </pre>
 </details>
 
-<b>Get Deposit History</b><br>
+<h4><b>Get Deposit History</b><br></h4>
 <pre>
 bitbns.depositHistory('BTC', 0, function(error, data){
  if(!error){
@@ -704,7 +704,7 @@ delh_btc -> delta changes in hold wallet of coin
   </pre>
 </details>
 
-<b>Get ALL Deposit History</b><br>
+<h4><b>Get ALL Deposit History</b><br></h4>
 <pre>
 bitbns.depositHistoryAll(0, function(error, data){
  if(!error){
@@ -734,7 +734,7 @@ bitbns.depositHistoryAll(0, function(error, data){
       amt: 120,
       id: 'WITH_DROPLET'
     },
-	],
+  ],
   status: 1,
   error: null,
   code: 200
@@ -751,7 +751,7 @@ id -> source of deposit
   </pre>
 </details>
 
-<b>Get Withdrawal History</b><br>
+<h4><b>Get Withdrawal History</b><br></h4>
 <pre>bitbns.withdrawHistory('XRP', 0, function(error, data){
  if(!error){
    console.log('Data ::', data);
@@ -799,7 +799,7 @@ id -> source of deposit
   </pre>
 </details>
 
-<b>Get ALL withdrawal History</b><br>
+<h4><b>Get ALL withdrawal History</b><br></h4>
 <pre>
 bitbns.withdrawHistoryAll(0, function(error, data){
  if(!error){
@@ -829,7 +829,7 @@ bitbns.withdrawHistoryAll(0, function(error, data){
       amt: 120,
       id: 'WITH_DROPLET'
     },
-	],
+  ],
   status: 1,
   error: null,
   code: 200
@@ -846,7 +846,7 @@ id -> source of withdrawal
   </pre>
 </details>
 
-<b>List Open Orders</b><br>
+<h4><b>List Open Orders</b><br></h4>
 <pre>
 bitbns.listOpenOrders('BTC', function(error, data){
  if(!error){
@@ -998,7 +998,7 @@ status -> -1 for cancelled , 0 for not processed , 1 for partially executed, 2 f
   </pre>
 </details>
 
-<b>List Open Stop Loss Orders</b><br>
+<h4><b>List Open Stop Loss Orders</b><br></h4>
 <pre>
 bitbns.listOpenStopOrders('TST', function(error, data){
  if(!error){
@@ -1040,7 +1040,7 @@ status -> -1 for cancelled , 0 for not processed , 1 for partially executed, 2 f
 </details>
 
 
-<b>Get Specific Crypto Coin Address</b><br>
+<h4><b>Get Specific Crypto Coin Address</b><br></h4>
 <pre>
 Coins Without Tag
 bitbns.getCoinAddress('BTC', function(error, data){
@@ -1099,7 +1099,7 @@ Deposits would not be valid unless you specify the tag
   </pre>
 </details>
 
-<b>Place Sell Order</b><br>
+<h4><b>Place Sell Order</b><br></h4>
 <pre>bitbns.placeSellOrder('XRP', 200, 25, function(error, data){
  if(!error){
     console.log('Data ::', data);
@@ -1128,7 +1128,7 @@ id -> the unique id of the order
   </pre>
 </details>
 
-<b>Place Buy Order</b><br>
+<h4><b>Place Buy Order</b><br></h4>
 <pre>bitbns.placeBuyOrder('XRP', 200, 25, function(error, data){
  if(!error){
     console.log('Data ::', data);
@@ -1156,7 +1156,7 @@ data -> Just a custom message
 id -> the unique id of the order
   </pre>
 </details>
-<b>Placing a STOP LOSS order (BUY)</b><br>
+<h4><b>Placing a STOP LOSS order (BUY)</b><br></h4>
 <pre>
 bitbns.buyStopLoss('XRP', 40, 24, 24.5, function(error, data){
  if(!error){
@@ -1188,7 +1188,7 @@ id -> the unique id of the order
   </pre>
 </details>
 
-<b>Placing a Trailing STOP LOSS order (BUY)</b><br>
+<h4><b>Placing a Trailing STOP LOSS order (BUY)</b><br></h4>
 <pre>
 bitbns.buyStopLossWithTrail('USDT', 15, 76, 77.5,0.5, function(error, data){
  if(!error){
@@ -1223,7 +1223,7 @@ id -> the unique id of the order
 
 
 
-<b>Placing a STOP LOSS order (SELL)</b><br>
+<h4><b>Placing a STOP LOSS order (SELL)</b><br></h4>
 <pre>
 bitbns.sellStopLoss('XRP', 40, 25, 24.5, function(error, data){
  if(!error){
@@ -1255,7 +1255,7 @@ id -> the unique id of the order
   </pre>
 </details>
 
-<b>Placing a Trailing STOP LOSS order (SELL)</b><br>
+<h4><b>Placing a Trailing STOP LOSS order (SELL)</b><br></h4>
 <pre>
 bitbns.sellStopLossWithTrail('USDT', 15, 80, 78.5,0.5, function(error, data){
  if(!error){
@@ -1289,7 +1289,7 @@ id -> the unique id of the order
 </details>
 
 
-<b>Place Cancel Order</b><br>
+<h4><b>Place Cancel Order</b><br></h4>
 <pre>bitbns.cancelOrder('XRP', 174 , function(error, data){
  if(!error){
    console.log('Data ::', data);
@@ -1316,7 +1316,7 @@ status -> status of cancellation 1 for success
   </pre>
 </details>
 
-<b>Getting Sell Order Book</b><br>
+<h4><b>Getting Sell Order Book</b><br></h4>
 <pre>
 bitbns.getSellOrderBook('BTC', function(e, d){
 console.log(e,d);
@@ -1401,7 +1401,7 @@ console.log(e,d);
    </pre>
 </details>
 
-<b>Getting Sell Order Book</b><br>
+<h4><b>Getting Sell Order Book</b><br></h4>
 <pre>
 bitbns.getSellOrderBook('BTCUSDT', function(e, d){
 console.log(e,d);
@@ -1441,7 +1441,7 @@ console.log(e,d);
    </pre>
 </details>
 
-<b>Getting Buy Order Book</b><br>
+<h4><b>Getting Buy Order Book</b><br></h4>
 <pre>
 bitbns.getBuyOrderBook('BTC', function(e, d){
 console.log(e,d);
@@ -1478,7 +1478,7 @@ console.log(e,d);
   </pre>
 </details>
 
-<b>Getting Buy Order Book</b><br>
+<h4><b>Getting Buy Order Book</b><br></h4>
 <pre>
 bitbns.getBuyOrderBook('BTCUSDT', function(e, d){
 console.log(e,d);
@@ -1519,7 +1519,7 @@ console.log(e,d);
   </pre>
 </details>
 
-<b>Get executed trades list </b><br>
+<h4><b>Get executed trades list </b><br></h4>
 <pre>
 let pageNo = 0; // starts with 0
 let since = '2019-01-01T00:00:00Z'; // shows trade after that period
@@ -1569,7 +1569,7 @@ delh_btc -> delta changes in hold wallet of coin
 </details>
 
 
-<b>Get API usage Status</b><br>
+<h4><b>Get API usage Status</b><br></h4>
 <pre>
 bitbns.getApiUsageStatus(function(error, data){
  if(!error){
@@ -1605,7 +1605,7 @@ bitbns.getApiUsageStatus(function(error, data){
 
 
 
-<b>Getting Order Status</b><br>
+<h4><b>Getting Order Status</b><br></h4>
 <pre>
 bitbns.orderStatus('BTC', '4221', function(error, data){
  if(!error){
@@ -1646,7 +1646,7 @@ status -> -1 for cancelled, 0 for not processed, 1 for partially executed, 2 for
   </pre>
 </details>
 
-<b>Cancel Stop Loss Order</b><br>
+<h4><b>Cancel Stop Loss Order</b><br></h4>
 <pre>
 bitbns.cancelStopLossOrder('BTC', 4221 , function(error, data){
  if(!error){
@@ -1675,20 +1675,19 @@ status -> for successful request the status is 1
 </details>
 
 <h3>API V2 (New Features)</h3>
-<b>Place Orders(BUY or SELL)</b><br>
+<h4><b>Place Orders(BUY or SELL)</b><br></h4>
+<h4><b>(Placing Bracket Order)</b></h4>
 <pre>
-<b>(Placing Bracket Order)</b>
-
 bitbns.placeOrders({
-	symbol : 'XRP',
-	side : 'BUY',
-	quantity : 40,
-	rate : 4,
-	target_rate : 5,
-	t_rate : 3.5,
-	trail_rate : .01
+  symbol : 'XRP',
+  side : 'BUY',
+  quantity : 40,
+  rate : 4,
+  target_rate : 5,
+  t_rate : 3.5,
+  trail_rate : .01
 },function(error, data) {
-	console.log(data)
+  console.log(data)
 });
 
 side -> BUY or SELL
@@ -1724,15 +1723,15 @@ id -> the unique id of the order
   </pre>
 </details>
 
-<b>Cancel Order</b><br>
+<h4><b>Cancel Order</b><br></h4>
 <pre>
 
 bitbns.cancelOrders({
-	symbol : 'XRP',
-	side : 'cancelOrder',
-	entry_id : 462
+  symbol : 'XRP',
+  side : 'cancelOrder',
+  entry_id : 462
 }, function(error, data) {
-	console.log(error, data);
+  console.log(error, data);
 });
 
 side -> "cancelOrder","cancelStopLossOrder", "usdtcancelOrder", "usdtcancelStopLossOrder"
@@ -1759,18 +1758,18 @@ status -> for successful request the status is 1
   </pre>
 </details>
 
-<b>Place Orders in USDT Market</b><br>
+<h4><b>Place Orders in USDT Market</b><br></h4>
 <pre>
 bitbns.placeOrders({
-	symbol : 'TRX_USDT',
-	side : 'BUY',
-	quantity : 40,
-	rate : 4,
-	target_rate : 5,
-	t_rate : 3.5,
-	trail_rate : .01
+  symbol : 'TRX_USDT',
+  side : 'BUY',
+  quantity : 40,
+  rate : 4,
+  target_rate : 5,
+  t_rate : 3.5,
+  trail_rate : .01
 },function(error, data) {
-	console.log(data)
+  console.log(data)
 });
 
 side -> BUY or SELL
@@ -1807,15 +1806,15 @@ id -> the unique id of the order
   </pre>
 </details>
 
-<b>Cancel Order in USDT MARKET</b><br>
+<h4><b>Cancel Order in USDT MARKET</b><br></h4>
 <pre>
 
 bitbns.cancelOrders({
-	symbol : 'TRX_USDT',
-	side : 'usdtcancelOrder',
-	entry_id : 462
+  symbol : 'TRX_USDT',
+  side : 'usdtcancelOrder',
+  entry_id : 462
 }, function(error, data) {
-	console.log(error, data);
+  console.log(error, data);
 });
 
 side -> "cancelOrder","cancelStopLossOrder", "usdtcancelOrder", "usdtcancelStopLossOrder"
@@ -1843,15 +1842,15 @@ status -> for successful request the status is 1
   </pre>
 </details>
 
-<b>Get Orders in USDT MARKET</b><br>
+<h4><b>Get Orders in USDT MARKET</b><br></h4>
 <pre>
 
 bitbns.getOrders({
-	side : 'usdtListOpenOrders',
-	symbol : 'TRX_USDT',
-	page : 0
+  side : 'usdtListOpenOrders',
+  symbol : 'TRX_USDT',
+  page : 0
 }, function(error, data) {
-	console.log(data)
+  console.log(data)
 });
 
 side -> "listOpenOrders", "listOpenStopOrders", "listOpenBracketOrders", "usdtListOpenBracketOrders",
@@ -1889,7 +1888,7 @@ status -> for successful request the status is 1
   </pre>
 </details>
 
-<b>Get Token to authenticate Orders socket</b><br>
+<h4><b>Get Token to authenticate Orders socket</b><br></h4>
 <pre>
 bitbns.getTokenSocket(function(error, data){
  if(!error){
@@ -1912,7 +1911,7 @@ bitbns.getTokenSocket(function(error, data){
   </pre>
 </details>
 
-<b>Use socket to get live order book</b><br>
+<h4><b>Use socket to get live order book</b><br></h4>
 <pre>
 
 const socket = bitbns.getOrderBookSocket('BTC', 'INR')
@@ -1920,13 +1919,13 @@ const socket = bitbns.getOrderBookSocket('BTC', 'INR')
 socket.on('connect', () => console.log('Connected'))
 
 socket.on('news', res => {
-	try {
-		const data = JSON.parse(res)
-		console.log('Data Received')
-		console.log(data)
-	} catch (e) {
-		console.log('Error in the Stream', e)
-	}
+  try {
+    const data = JSON.parse(res)
+    console.log('Data Received')
+    console.log(data)
+  } catch (e) {
+    console.log('Error in the Stream', e)
+  }
 })
 
 socket.on('disconnect', () => console.log('Disconnected'))
@@ -1935,7 +1934,7 @@ socket.on('disconnect', () => console.log('Disconnected'))
 
 
 
-<b>Use socket to get live ticker and prices of all coins</b><br>
+<h4><b>Use socket to get live ticker and prices of all coins</b><br></h4>
 <pre>
 
 const socket = bitbns.getTickerSocket('INR')
@@ -1943,13 +1942,13 @@ const socket = bitbns.getTickerSocket('INR')
 socket.on('connect', () => console.log('Connected'))
 
 socket.on('ticker', res => {
-	try {
-		const data = JSON.parse(JSON.stringify(res))
-		console.log('Data Received')
-		console.log(data)
-	} catch (e) {
-		console.log('Error in the Stream', e)
-	}
+  try {
+    const data = JSON.parse(JSON.stringify(res))
+    console.log('Data Received')
+    console.log(data)
+  } catch (e) {
+    console.log('Error in the Stream', e)
+  }
 })
 
 socket.on('disconnect', () => console.log('Disconnected'))
@@ -1958,7 +1957,7 @@ Pass USDT as market to get ticks of USDT market
 
 </pre>
 
-<b>Use socket to get live executed order of your account</b><br>
+<h4><b>Use socket to get live executed order of your account</b><br></h4>
 <pre>
 
 bitbns.getTokenSocket(function(error, response){
@@ -1991,7 +1990,7 @@ bitbns.getTokenSocket(function(error, response){
 
 </pre>
 
-<b>Get OHLCV data</b><br>
+<h4><b>Get OHLCV data</b><br></h4>
 <pre>
 bitbns.getOHLCData('BTC', 'INR' , 0, function(error, data){
  if(!error){
@@ -2030,7 +2029,7 @@ INR -> market (INR or USDT)
       vol: 0.25635386,
       open: 2883492.69
     },
-	]
+  ]
 }
 
 Explanation of fields:
@@ -2040,19 +2039,18 @@ status -> status of cancellation 1 for success
 </details>
 
 
-<b>Margin Trading V2 APIs</b><br>
+<h3><b>Margin Trading V2 APIs</b><br></h3>
+<h4><b>Place a margin order</b></h4>
 <pre>
-<b>Place a margin order</b>
-
 bitbns.placeMarginOrders({
-	symbol : 'XRP',
-	side : 'placeOrder',
+  symbol : 'XRP',
+  side : 'placeOrder',
   type: 'LEND',
-	qnty : 40,
+  qnty : 40,
   days : 1,
-	rate : 0.0055
+  rate : 0.0055
 },function(error, data) {
-	console.log(data)
+  console.log(data)
 });
 
 side -> placeOrder
@@ -2085,15 +2083,14 @@ status -> for successful request the status is 1
 </details>
 
 
+<h4><b>Cancel a margin order</b></h4>
 <pre>
-<b>Cancel a margin order</b>
-
 bitbns.cancelMarginOrder({
-	id : 1,
-	side : 'cancelMarginOrder',
-	symbol: 'BTC'
+  id : 1,
+  side : 'cancelMarginOrder',
+  symbol: 'BTC'
 },function(error, data) {
-	console.log(data)
+  console.log(data)
 });
 
 
@@ -2120,16 +2117,15 @@ status -> for successful request the status is 1
 </details>
 
 
+<h4><b>Settle a margin order partially</b></h4>
 <pre>
-<b>Settle a margin order partially</b>
-
 bitbns.settleMarginPartial({
-	id : 1,
-	side : 'settleMarginOrderPartial',
-	symbol: 'BTC',
- 	amt : 50
+  id : 1,
+  side : 'settleMarginOrderPartial',
+  symbol: 'BTC',
+  amt : 50
 },function(error, data) {
-	console.log(data)
+  console.log(data)
 });
 
 
@@ -2156,16 +2152,15 @@ status -> for successful request the status is 1
 </details>
 
 
+<h4><b>Settle a margin order completely</b></h4>
 <pre>
-<b>Settle a margin order completely</b>
-
 bitbns.settleMargin({
-	id : 1,
-	side : 'settleMarginOrder',
-	symbol : 'BTC'
+  id : 1,
+  side : 'settleMarginOrder',
+  symbol : 'BTC'
 
 },function(error, data) {
-	console.log(data)
+  console.log(data)
 });
 
 
@@ -2192,16 +2187,15 @@ status -> for successful request the status is 1
 </details>
 
 
+<h4><b>Get my margin executed orders</b></h4>
 <pre>
-<b>Get my margin executed orders</b>
-
 bitbns.listMarginExecuted({
-	page : 1,
-	side : 'listMarginExecuted',
+  page : 1,
+  side : 'listMarginExecuted',
   type : 'LEND',
   symbol : 'XRP'
 },function(error, data) {
-	console.log(data)
+  console.log(data)
 });
 
 type => LEND or BORROW
@@ -2270,15 +2264,14 @@ status -> for successful request the status is 1
 </details>
 
 
+<h4><b>Get my margin pending orders</b></h4>
 <pre>
-<b>Get my margin pending orders</b>
-
 bitbns.listMarginPending({
-	page : 1,
-	side : 'listMarginPending',
+  page : 1,
+  side : 'listMarginPending',
   symbol : 'XRP'
 },function(error, data) {
-	console.log(data)
+  console.log(data)
 });
 
 </pre>
@@ -2316,15 +2309,14 @@ status -> for successful request the status is 1
 </details>
 
 
+<h4><b>Get open orders of margin market - all users</b></h4>
 <pre>
-<b>Get open orders of margin market - all users</b>
-
 bitbns.listMarginMarketOrders({
-	type : 'BORROW',
-	side : 'listMarketOrders',
+  type : 'BORROW',
+  side : 'listMarketOrders',
   symbol : 'XRP'
 },function(error, data) {
-	console.log(data)
+  console.log(data)
 });
 
 type => LEND or BORROW
@@ -2647,7 +2639,7 @@ bitbns.platformStatus(function(error, res1){
   </pre>
   </details>
 
-<b>Curl request to get server time</b><br>
+<h4><b>Curl request to get server time</b><br></h4>
  <pre>
  curl -H "X-BITBNS-APIKEY: API-KEY" -X GET 'https://api.bitbns.com/api/trade/v1/getServerTime'
  </pre>
