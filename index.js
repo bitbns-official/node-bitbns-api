@@ -213,6 +213,16 @@ class bitbnsApi{
     }
   }
 
+  placeMarketOrder(symbol, market, side, amount, callback){
+    this.requestAuthenticate(symbol, callback);
+    if(this.verifyApiKeys(this.apiKeys)){
+      let body = {market:market,side:side,amount:amount};
+      this.makePostRequest(symbol, "placeMarketOrder", body, callback);
+    }else{
+      return callback("apiKeys Not Found , Please intialize it first","");
+    }
+  }
+
   buyStopLoss(symbol, quantity, rate, t_rate, callback){
     this.requestAuthenticate(symbol, callback);
     if(this.verifyApiKeys(this.apiKeys)){
