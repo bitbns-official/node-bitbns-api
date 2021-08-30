@@ -1151,6 +1151,35 @@ id -> the unique id of the order
   "id": 490
 }
 
+
+<h4><b>Place Market Order</b><br></h4>
+<pre>bitbns.placeMarketOrder('XRP', 'INR', 'BUY', 100, function(error, data){
+ if(!error){
+    console.log('Data ::', data);
+  } else {
+    console.log('Error ::', error);
+  }
+})
+XRP -> Symbol to trade
+INR -> Market, can be one of INR, USDT
+BUY -> Side, can be one of BUY, SELL
+100 -> amount in INR or USDT as per market selection
+Note - IN case user wants to specifiy quantity (number of tokens) in market sell, they can pass (quantity * current_rate) as amount. 
+</pre>
+<details>
+  <summary>
+   View Response
+  </summary>
+  <pre>
+  {
+  "data": "Successfully placed market order to purchase currency",
+  "status": 1,
+  "id": 1, // Order id
+  "error": null,
+  "id": 490
+}
+
+
 Explanation of fields:
 data -> Just a custom message
 id -> the unique id of the order
