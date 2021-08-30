@@ -1151,6 +1151,9 @@ id -> the unique id of the order
   "id": 490
 }
 
+</pre>
+</details>
+
 
 <h4><b>Place Market Order</b><br></h4>
 <pre>bitbns.placeMarketOrder('XRP', 'INR', 'BUY', 100, function(error, data){
