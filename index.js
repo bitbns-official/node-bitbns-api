@@ -227,7 +227,7 @@ class bitbnsApi{
     this.requestAuthenticate(symbol, callback);
     if(this.verifyApiKeys(this.apiKeys)){
       let body = {market:market,side:side,quantity:quantity};
-      this.makePostRequest(symbol, "placeMarketOrder", body, callback);
+      this.makePostRequest(symbol, "placeMarketOrderQnty", body, callback);
     }else{
       return callback("apiKeys Not Found , Please intialize it first","");
     }
