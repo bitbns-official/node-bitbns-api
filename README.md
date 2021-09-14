@@ -142,8 +142,8 @@ Alternative Method :
 <h2>Minimum Volume supported by exchange</h2>
 <h3> <b> Minimum volume amount per order: </b></h3>
 
-  - USDT market = <u>1 USDT</u>
-  - INR market = <u>50 INR</u>
+  - USDT market = <u>0.1 USDT</u>
+  - INR market = <u>10 INR</u>
 
 <h3>Installation</h3>
 <code>npm install bitbns --save</code>
