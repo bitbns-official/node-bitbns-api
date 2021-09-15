@@ -148,7 +148,18 @@ Alternative Method :
 <h3>Installation</h3>
 <code>npm install bitbns --save</code>
 
-<h3>Getting Started</h3><br>
+<h3>Getting Started</h3>
+There are two ways to instantiate based on your use-case. If you just want to access public endpoints, there is no need to provide api keys. However, api keys is needed when accessing private endpoints.
+<br>
+<h4>Instantiation - without API Key</h4>
+<pre>
+const bitbnsApi = require('bitbns');
+<code>
+const bitbns = new bitbnsApi();
+</code>
+</pre>
+
+<h4>Instantiation - With API Key</h4>
 <pre>
 const bitbnsApi = require('bitbns');
 <code>
@@ -171,6 +182,177 @@ const instance2 = new bitbnsApi({
   // ...
 });
 </pre>
+
+<h3>Public Endpoints</h3>
+<h4><b> Getting details of tickers </b></h4>
+<pre>
+bitbns.fetchTickers(function(error, data){
+    console.log(data);
+});
+</pre>
+
+<details>
+   <summary>
+     View Response
+   </summary>
+   <pre>
+{
+ data: {
+    'BTC': {
+       'highest_buy_bid': 3804776.47, 
+       'lowest_sell_bid': 3809634.1, 
+       'last_traded_price': 3809634.1, 
+       'yes_price': 3817924.68, 
+       'volume': {
+           'max': '3860000.00', 
+           'min': '3728401.38', 
+           'volume': 29.22102567
+          }
+       }, 
+    'XRP': {
+    .
+    .
+    .
+    }
+  },
+ 'error': None, 
+ 'status': 1,
+}
+<br><br>
+Explanation of fields:
+status -> 1 if data is returned successfully
+error -> describes the error faced while retrieving data if any
+  </pre>
+</details>
+
+
+<h4><b> Getting order book </b></h4>
+Coin, market (INR/USDT) and depth of the order book needs be specified.
+<pre>
+bitbns.fetchOrderBook('BTC', 'INR', 10, function(error, data){
+    console.log(data);
+});
+</pre>
+
+<details>
+  <summary> 
+  View Response
+  </summary>
+  <pre>
+{
+ 'data': {
+    'asks': [
+             [array],
+             [array],
+             .
+             .
+          ]
+    'bids': [
+             [array],
+             [array],
+             .
+             .
+          ]
+    'timestamp': 1630664703000
+    },
+ 'error': None,
+ 'status': 1
+}
+<br><br>
+Explanation of fields:
+status -> 1 if data is returned successfully
+error -> describes the error faced while retrieving data if any
+timestamp -> The timestamp when screenshot of order book was taken
+<br>
+NOTE: array is 2 element array object which will show values once accessed.
+  </pre>
+</details>
+
+<h4><b> Getting recent trades </b></h4>
+Coin, market (INR/USDT) and limit (nos of trades to be returned) needs to be specified.
+<pre>
+bitbns.fetchTrades('BTC', 'INR', 10, function(error, data){
+    console.log(data);
+});
+</pre>
+
+<details>
+  <summary> 
+  View Response
+  </summary>
+  <pre>
+{
+ 'data': [
+          {
+             'base_volume': 0.00106565,
+             'price': '3837783.20',
+             'quote_volume': 4099.96,
+             'timestamp': 1630664966000,
+             'tradeId': '2468049',
+             'type': 'buy'
+          },
+          {
+             .
+             .
+             .
+          }
+        ],
+ 'error': None,
+ 'status': 1
+}
+<br><br>
+Explanation of fields:
+status -> 1 if data is returned successfully
+error -> describes the error faced while retrieving data if any
+  </pre>
+</details>
+
+<h4><b> fetch OHLCV data </b></h4>
+Coin name, market (INR/USDT) & page needs to be specified. This endpoint is paginated. Increase page no., to get older data.
+<pre>
+bitbns.fetchOhlcv('BTC', 'INR', 1, function(error, data){
+    console.log(data);
+});
+</pre>
+
+<details>
+  <summary> 
+  View Response
+  </summary>
+  <pre>
+{
+  'data':[
+    {
+      'close': 3727748.31,
+      'high': 3727748.31,
+      'low': 3724656.82,
+      'open': 3727748.31,
+      'timestamp': '2021-09-01T11:25:04.000Z',
+      'vol': 1.07505351
+    },
+    {
+      'close': 3727748.31,
+      'high': 3749981.02,
+      'low': 3720000,
+      'open': 3720000,
+      'timestamp': '2021-09-01T11:20:04.000Z',
+      'vol': 0.04898758
+    },
+    .
+    .
+    .
+  ]
+  'error': None,
+  'status': 1
+}
+<br><br>
+Explanation of fields:
+status -> 1 if data is returned successfully
+error -> describes the error faced while retrieving data if any
+  </pre>
+</details>
+
+<h3>Private Endpoints</h3>
 <h4><b>Getting Platform Status</b></h4>
 <pre>
 bitbns.platformStatus(function(error, data){
