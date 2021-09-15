@@ -16,20 +16,28 @@ class bitbnsApi{
   constructor(data){
 
     this.baseURL = "https://api.bitbns.com/api/trade/v1";
-    this.baseURL2 = "https://api.bitbns.com/api/trade/v2"
-    this.apiKeys = {};
-    if(typeof(data.apiKey) !== 'string') throw Error('API_KEY NOT FOUND.');
-    if(typeof(data.apiSecretKey) !== 'string') throw Error('API_SECRET_KEY NOT FOUND.');
-    if(data.apiKey.length < 5) throw Error('API_KEY IS NOT OF VALID SIZE.');
-    if(data.apiSecretKey.length < 5) throw Error('API_SECRET_KEY IS NOT OF VALID SIZE.');
-    if(typeof data === 'object')
-      {
-        this.apiKeys = data;
+    this.baseURL2 = "https://api.bitbns.com/api/trade/v2";
+    this.baseURL3 = "https://bitbns.com";
+    this.apiKeys = {
+      apiKey: '',
+      apiSecretKey: ''
+    };
+
+    if (data){
+      if(typeof(data.apiKey) !== 'string') throw Error('API_KEY NOT FOUND.');
+      if(typeof(data.apiSecretKey) !== 'string') throw Error('API_SECRET_KEY NOT FOUND.');
+      if(data.apiKey.length < 5) throw Error('API_KEY IS NOT OF VALID SIZE.');
+      if(data.apiSecretKey.length < 5) throw Error('API_SECRET_KEY IS NOT OF VALID SIZE.');
+      if(typeof data === 'object')
+        {
+          this.apiKeys = data;
+        }
+      else {
+        throw Error('Data Format is incorrect.');
       }
-    else {
-      throw Error('Data Format is incorrect.');
     }
   }
+
 
   getOrderBookSocket(coinName, marketName) {
 		return socket_IO(`https://ws${marketName.toLowerCase()}mv2.bitbns.com/?coin=${coinName.toUpperCase()}`, {transports: ['websocket']});
@@ -595,6 +603,100 @@ listMarginMarketOrders(orders_obj, callback) {
         }else{
           return callback("apiKeys Not Found , Please intialize it first","");
     }
+}
+
+fetchTickers(callback){
+  const options = {
+    url: this.baseURL3 + '/order/getTickerWithVolume',
+    method: 'GET'
+  }
+
+  request(options, function(error, res, body) {
+    if(!error){
+      try{
+        return callback("", JSON.parse(body));
+      }catch(err){
+        return callback("Parsing error : fetchTickers", "");
+      }
+    }else{
+      return callback("Error in fetching tickers");
+    }
+  });
+}
+
+fetchOrderBook(coinName, marketName, depth, callback){
+  const options = {
+    url: this.baseURL3 + '/exchangeData/orderBook',
+    method: 'GET',
+    qs: {
+      market: marketName,
+      coin: coinName
+    }
+  };
+
+  request(options, function(error, res, body){
+    if(!error){
+      try{
+        body = JSON.parse(body);
+        body['asks'].splice(depth);
+        body['bids'].splice(depth);
+        return callback("", {data: body, error: null, status: 1});
+      }catch(err){
+        return callback("Parsing error : fetchOrderBook", "");
+      }
+    }else{
+      return callback("Error in fetching order book", "");
+    }
+  });
+}
+
+fetchTrades(coinName, marketName, limit, callback){
+  const options = {
+    url: this.baseURL3 + '/exchangeData/tradedetails',
+    method: 'GET',
+    qs: {
+      market: marketName,
+      coin: coinName
+    }
+  };
+
+  request(options, function(error, res, body){
+    if(!error){
+      try{
+        body = JSON.parse(body).reverse();
+        return callback("",{data: body.splice(0, limit), error: null, status: 1});
+      }catch(err){
+        return callback("Parsing error : fetchTrades", "");
+      }
+    }else{
+      return callback("Error in fetching trade details", "");
+    }
+  });
+
+}
+
+fetchOhlcv(coinName, marketName, page, callback){
+  const options = {
+    url: this.baseURL3 + '/exchangeData/ohlc',
+    method: 'GET',
+    qs: {
+      coin: `${coinName}_${marketName}`,
+      page: page
+    }
+  };
+
+  request(options, function(error, res, body){
+    if(!error){
+      try{
+        body = JSON.parse(body);
+        return callback("", {data: body[0]['data'], error: null, status: 1});
+      }catch(err){
+        return callback("Parsing error : fetchOhlcv", "");
+      }
+    }else{
+      return callback("Error in fetching ohlcv data", "");
+    }
+  });
 }
 
 }
