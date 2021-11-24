@@ -2152,8 +2152,6 @@ bitbns.getTokenSocket(function(error, response){
 
   socket.on('delta_data', res => {
     try {
-      const data = JSON.parse(res)
-      console.log('Data Received')
       console.log(data)
     } catch (e) {
       console.log('Error in the Stream', e)
