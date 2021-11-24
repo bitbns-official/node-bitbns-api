@@ -2208,8 +2208,7 @@ Pass USDT as market to get ticks of USDT market
 
 bitbns.getTokenSocket(function(error, response){
  if(!error){
-
-  let data = JSON.parse(response);
+ 
   let token = response.data;
   const socket = bitbns.getExecutedOrders(token);
 
@@ -2217,8 +2216,6 @@ bitbns.getTokenSocket(function(error, response){
 
   socket.on('delta_data', res => {
     try {
-      const data = JSON.parse(res)
-      console.log('Data Received')
       console.log(data)
     } catch (e) {
       console.log('Error in the Stream', e)
