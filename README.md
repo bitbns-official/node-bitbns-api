@@ -199,23 +199,23 @@ bitbns.fetchTickers(function(error, data){
 {
  data: {
     'BTC': {
-       'highest_buy_bid': 3804776.47, 
-       'lowest_sell_bid': 3809634.1, 
-       'last_traded_price': 3809634.1, 
-       'yes_price': 3817924.68, 
+       'highest_buy_bid': 3804776.47,
+       'lowest_sell_bid': 3809634.1,
+       'last_traded_price': 3809634.1,
+       'yes_price': 3817924.68,
        'volume': {
-           'max': '3860000.00', 
-           'min': '3728401.38', 
+           'max': '3860000.00',
+           'min': '3728401.38',
            'volume': 29.22102567
           }
-       }, 
+       },
     'XRP': {
     .
     .
     .
     }
   },
- 'error': None, 
+ 'error': None,
  'status': 1,
 }
 <br><br>
@@ -235,7 +235,7 @@ bitbns.fetchOrderBook('BTC', 'INR', 10, function(error, data){
 </pre>
 
 <details>
-  <summary> 
+  <summary>
   View Response
   </summary>
   <pre>
@@ -269,7 +269,7 @@ NOTE: array is 2 element array object which will show values once accessed.
 </details>
 
 <h4><b> Getting recent trades </b></h4>
-Coin, market (INR/USDT) and limit (nos of trades to be returned) needs to be specified.
+Coin, market (INR/USDT) and limit (no of trades to be returned) needs to be specified.
 <pre>
 bitbns.fetchTrades('BTC', 'INR', 10, function(error, data){
     console.log(data);
@@ -277,7 +277,7 @@ bitbns.fetchTrades('BTC', 'INR', 10, function(error, data){
 </pre>
 
 <details>
-  <summary> 
+  <summary>
   View Response
   </summary>
   <pre>
@@ -316,7 +316,7 @@ bitbns.fetchOhlcv('BTC', 'INR', 1, function(error, data){
 </pre>
 
 <details>
-  <summary> 
+  <summary>
   View Response
   </summary>
   <pre>
@@ -1333,11 +1333,75 @@ id -> the unique id of the order
   "id": 490
 }
 
+</pre>
+</details>
+
+<h4><b>Place Market Order - amount</b><br></h4>
+<pre>bitbns.placeMarketOrder('XRP', 'INR', 'BUY', 100, function(error, data){
+ if(!error){
+    console.log('Data ::', data);
+  } else {
+    console.log('Error ::', error);
+  }
+})
+XRP -> Symbol to trade
+INR -> Market, can be one of INR, USDT
+BUY -> Side, can be one of BUY, SELL
+100 -> amount in INR or USDT as per market selection
+</pre>
+<details>
+  <summary>
+   View Response
+  </summary>
+  <pre>
+  {
+  "data": "Successfully placed market order to purchase currency",
+  "status": 1,
+  "id": 1, // Order id
+  "error": null,
+}
+
 Explanation of fields:
 data -> Just a custom message
 id -> the unique id of the order
   </pre>
 </details>
+
+</pre>
+</details>
+
+
+<h4><b>Place Market Order - quantity</b><br></h4>
+<pre>bitbns.placeMarketOrderQnty('XRP', 'INR', 'BUY', 1, function(error, data){
+ if(!error){
+    console.log('Data ::', data);
+  } else {
+    console.log('Error ::', error);
+  }
+})
+XRP -> Symbol to trade
+INR -> Market, can be one of INR, USDT
+BUY -> Side, can be one of BUY, SELL
+1 -> asset quantity
+</pre>
+<details>
+  <summary>
+   View Response
+  </summary>
+  <pre>
+  {
+  "data": "Successfully placed market order to purchase currency",
+  "status": 1,
+  "id": 1, // Order id
+  "error": null,
+}
+
+Explanation of fields:
+data -> Just a custom message
+id -> the unique id of the order
+  </pre>
+</details>
+
 <h4><b>Placing a STOP LOSS order (BUY)</b><br></h4>
 <pre>
 bitbns.buyStopLoss('XRP', 40, 24, 24.5, function(error, data){
