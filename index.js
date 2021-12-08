@@ -105,6 +105,8 @@ class bitbnsApi{
     });
   }
 
+
+
   makePostRequest2(methodName, body, callback) {
     const options = {
       url : `${this.baseURL2}/${methodName}`,
@@ -129,6 +131,30 @@ class bitbnsApi{
 
   }
 
+
+  makePostRequest3(methodName, body, callback){
+    const options = {
+      url : this.baseURL+'/'+methodName+'/',
+      method : 'POST',
+      body : JSON.stringify(body)
+    }
+    let headers = this.populateHeadersForPost('ALL', methodName, JSON.stringify(body));
+    options.headers = headers;
+    request(options, function(error, res, body){
+      if(!error){
+        try {
+          // console.log(body);
+          body = JSON.parse(body);
+          return callback("",body);
+        } catch(err){
+          return callback("Invalid Non-JSON response " + methodName , "");
+        }
+      }else{
+        return callback(error,"");
+      }
+    });
+  }
+
   requestAuthenticate(symbol, callback){
     if(typeof(symbol) !== 'string' || symbol.length < 1) throw Error('Prices apiError :: Symbol not found.');
     if(typeof(callback) !== 'function') throw Error('Prices apiError :: Callback not found.');
@@ -136,6 +162,11 @@ class bitbnsApi{
 
   requestAuthenticate2(orders_obj, callback) {
     if(typeof(orders_obj.symbol) !== 'string' || typeof(orders_obj.side) != 'string') throw Error('Invalid Object Passed');
+    if(typeof(callback) !== 'function') throw Error('Prices apiError :: Callback not found.');
+  }
+
+  requestAuthenticate3(callback) {
+    // if(typeof(orders_obj.symbol) !== 'string' || typeof(orders_obj.side) != 'string') throw Error('Invalid Object Passed');
     if(typeof(callback) !== 'function') throw Error('Prices apiError :: Callback not found.');
   }
 
@@ -718,6 +749,60 @@ fetchOhlcv(coinName, marketName, page, callback){
     }
   });
 }
+
+
+// Partner APIS start here - These apis need pre approval from Bitbns team
+
+
+  createNewAccount(dataObj, callback){ 
+    this.requestAuthenticate3(callback);
+
+    if(this.verifyApiKeys(this.apiKeys)){
+      this.makePostRequest3("createNewAccount", dataObj, callback);
+    }else{
+      return callback("apiKeys Not Found , Please intialize it first","");
+    }
+  }
+
+  updateUserAccountDetails(dataObj, callback){ 
+    this.requestAuthenticate3(callback);
+
+    if(this.verifyApiKeys(this.apiKeys)){
+      this.makePostRequest3("updateUserAccountDetails", dataObj, callback);
+    }else{
+      return callback("apiKeys Not Found , Please intialize it first","");
+    }
+  }
+
+  fetchUserAccountDetails(dataObj, callback){ 
+    this.requestAuthenticate3(callback);
+
+    if(this.verifyApiKeys(this.apiKeys)){
+      this.makePostRequest3("fetchUserAccountDetails", dataObj, callback);
+    }else{
+      return callback("apiKeys Not Found , Please intialize it first","");
+    }
+  }
+
+  transferToPoolAccount(dataObj, callback){ 
+    this.requestAuthenticate3(callback);
+
+    if(this.verifyApiKeys(this.apiKeys)){
+      this.makePostRequest3("transferToPoolAccount", dataObj, callback);
+    }else{
+      return callback("apiKeys Not Found , Please intialize it first","");
+    }
+  }
+
+  generateNewAPIKey(dataObj, callback){ 
+    this.requestAuthenticate3(callback);
+
+    if(this.verifyApiKeys(this.apiKeys)){
+      this.makePostRequest3("generateNewAPIKey", dataObj, callback);
+    }else{
+      return callback("apiKeys Not Found , Please intialize it first","");
+    }
+  }
 
 }
 
