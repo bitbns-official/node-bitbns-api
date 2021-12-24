@@ -117,3 +117,37 @@ bitbns.transferToPoolAccount({
 	console.log(data);
     console.log(error);  
 });
+
+
+//// Transfer funds to pool account
+
+bitbns.transferToPoolAccount({    
+	pool_uid : 64873278,
+	amount : 50,
+},function(error, data) { 
+	console.log(data);
+    console.log(error);   
+});
+
+
+//// Transfer USDT funds from pool account
+
+bitbns.transferUSDTFromPoolAccount({    
+	target_uid : 23342324,
+	amount : 50,
+},function(error, data) { 
+	console.log(data);
+    console.log(error);  
+});
+
+//// Transfer INR funds from pool account
+
+bitbns.transferINRFromPoolAccount({    
+	target_uid : 28746827,
+	usdtAmt : 50,
+	inrAmt : 4000,
+   vpa: 'test@pingpay'
+},function(error, data) { 
+	console.log(data);
+    console.log(error);  
+});
