@@ -817,6 +817,26 @@ class bitbnsApi{
     }
   }
 
+  transferUSDTFromPoolAccount(dataObj, callback){ 
+    this.requestAuthenticate3(callback);
+
+    if(this.verifyApiKeys(this.apiKeys)){
+      this.makePostRequest3("transferUSDTFromPoolAccount", dataObj, callback);
+    }else{
+      return callback("apiKeys Not Found , Please intialize it first","");
+    }
+  }
+
+  transferINRFromPoolAccount(dataObj, callback){ 
+    this.requestAuthenticate3(callback);
+
+    if(this.verifyApiKeys(this.apiKeys)){
+      this.makePostRequest3("transferINRFromPoolAccount", dataObj, callback);
+    }else{
+      return callback("apiKeys Not Found , Please intialize it first","");
+    }
+  }
+
   generateNewAPIKey(dataObj, callback){ 
     this.requestAuthenticate3(callback);
 
