@@ -751,6 +751,89 @@ fetchOhlcv(coinName, marketName, page, callback){
 }
 
 
+// Swap APIS start here - Users can use these to place orders on Bitbns Swap 
+
+swapLimitINR(dataObj, callback){ 
+  this.requestAuthenticate3(callback);
+
+  if(this.verifyApiKeys(this.apiKeys)){
+    this.makePostRequest3("swapLimitINR", dataObj, callback);
+  }else{
+    return callback("apiKeys Not Found , Please intialize it first","");
+  }
+}
+
+swapLimitUSDT(dataObj, callback){ 
+  this.requestAuthenticate3(callback);
+
+  if(this.verifyApiKeys(this.apiKeys)){
+    this.makePostRequest3("swapLimitUSDT", dataObj, callback);
+  }else{
+    return callback("apiKeys Not Found , Please intialize it first","");
+  }
+}
+
+swapCancelOrder(dataObj, callback){ 
+  this.requestAuthenticate3(callback);
+
+  if(this.verifyApiKeys(this.apiKeys)){
+    this.makePostRequest3("swapCancelOrder", dataObj, callback);
+  }else{
+    return callback("apiKeys Not Found , Please intialize it first","");
+  }
+}
+
+swapListOpenOrders(dataObj, callback){ 
+  this.requestAuthenticate3(callback);
+
+  if(this.verifyApiKeys(this.apiKeys)){
+    this.makePostRequest3("swapListOpenOrders", dataObj, callback);
+  }else{
+    return callback("apiKeys Not Found , Please intialize it first","");
+  }
+}
+
+swapMarketINR(dataObj, callback){ 
+  this.requestAuthenticate3(callback);
+
+  if(this.verifyApiKeys(this.apiKeys)){
+    this.makePostRequest3("swapMarketINR", dataObj, callback);
+  }else{
+    return callback("apiKeys Not Found , Please intialize it first","");
+  }
+}
+
+swapMarketUSDT(dataObj, callback){ 
+  this.requestAuthenticate3(callback);
+
+  if(this.verifyApiKeys(this.apiKeys)){
+    this.makePostRequest3("swapMarketUSDT", dataObj, callback);
+  }else{
+    return callback("apiKeys Not Found , Please intialize it first","");
+  }
+}
+
+swapOrderHistory(dataObj, callback){  
+  this.requestAuthenticate3(callback);
+
+  if(this.verifyApiKeys(this.apiKeys)){
+    this.makePostRequest3("swapOrderHistory", dataObj, callback);
+  }else{
+    return callback("apiKeys Not Found , Please intialize it first","");
+  }
+}
+
+swapCoinList(dataObj, callback){ 
+  this.requestAuthenticate3(callback);
+
+  if(this.verifyApiKeys(this.apiKeys)){
+    this.makePostRequest3("swapCoinList", dataObj, callback);
+  }else{
+    return callback("apiKeys Not Found , Please intialize it first","");
+  }
+}
+
+
 // Partner APIS start here - These apis need pre approval from Bitbns team
 
 
