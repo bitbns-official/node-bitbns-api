@@ -907,6 +907,26 @@ swapCoinList(dataObj, callback){
     }
   }
 
+  createNewPGOrder(dataObj, callback){ 
+    this.requestAuthenticate3(callback);
+
+    if(this.verifyApiKeys(this.apiKeys)){
+      this.makePostRequest3("createNewPGOrder", dataObj, callback);
+    }else{
+      return callback("apiKeys Not Found , Please intialize it first","");
+    }
+  }
+
+  fetchPGOrderStatus(dataObj, callback){ 
+    this.requestAuthenticate3(callback);
+
+    if(this.verifyApiKeys(this.apiKeys)){
+      this.makePostRequest3("fetchPGOrderStatus", dataObj, callback);
+    }else{
+      return callback("apiKeys Not Found , Please intialize it first","");
+    }
+  }
+
 }
 
 module.exports = bitbnsApi;
