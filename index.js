@@ -833,6 +833,71 @@ swapCoinList(dataObj, callback){
   }
 }
 
+// FIP APIs starts here 
+
+listAllFIP(dataObj, callback){ 
+  this.requestAuthenticate3(callback);
+
+  if(this.verifyApiKeys(this.apiKeys)){
+    this.makePostRequest3("listAllFIP", dataObj, callback);
+  }else{
+    return callback("apiKeys Not Found , Please intialize it first","");
+  }
+}
+
+
+enrollForFIP(dataObj, callback){ 
+  this.requestAuthenticate3(callback);
+
+  if(this.verifyApiKeys(this.apiKeys)){
+    this.makePostRequest3("enrollForFIP", dataObj, callback);
+  }else{
+    return callback("apiKeys Not Found , Please intialize it first","");
+  }
+}
+
+getOngoingFIP(dataObj, callback){ 
+  this.requestAuthenticate3(callback);
+
+  if(this.verifyApiKeys(this.apiKeys)){
+    this.makePostRequest3("getOngoingFIP", dataObj, callback);
+  }else{
+    return callback("apiKeys Not Found , Please intialize it first","");
+  }
+}
+
+getFIPTransactions(dataObj, callback){ 
+  this.requestAuthenticate3(callback);
+
+  if(this.verifyApiKeys(this.apiKeys)){
+    this.makePostRequest3("getFIPTransactions", dataObj, callback);
+  }else{
+    return callback("apiKeys Not Found , Please intialize it first","");
+  }
+}
+
+preSubscribeForFIP(dataObj, callback){ 
+  this.requestAuthenticate3(callback);
+
+  if(this.verifyApiKeys(this.apiKeys)){
+    this.makePostRequest3("preSubscribeForFIP", dataObj, callback);
+  }else{
+    return callback("apiKeys Not Found , Please intialize it first","");
+  }
+}
+
+fetchMySubscriptions(dataObj, callback){ 
+  this.requestAuthenticate3(callback);
+
+  if(this.verifyApiKeys(this.apiKeys)){
+    this.makePostRequest3("fetchMySubscriptions", dataObj, callback);
+  }else{
+    return callback("apiKeys Not Found , Please intialize it first","");
+  }
+}
+
+// FIP APIs ends here
+
 
 // Partner APIS start here - These apis need pre approval from Bitbns team
 
