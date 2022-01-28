@@ -145,7 +145,7 @@ bitbns.transferUSDTFromPoolAccount({
 bitbns.transferCoinFromPoolAccount({    
 	target_uid : 23342324,
 	amount : 1,
-    coin: 460
+    coin_name: 'GARI'
 },function(error, data) { 
 	console.log(data);
     console.log(error);  
