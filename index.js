@@ -952,6 +952,16 @@ fetchMySubscriptions(dataObj, callback){
     }
   }
 
+  transferCoinFromPoolAccount(dataObj, callback){ 
+    this.requestAuthenticate3(callback);
+
+    if(this.verifyApiKeys(this.apiKeys)){
+      this.makePostRequest3("transferCoinFromPoolAccount", dataObj, callback);
+    }else{
+      return callback("apiKeys Not Found , Please intialize it first","");
+    }
+  }
+
   transferINRFromPoolAccount(dataObj, callback){ 
     this.requestAuthenticate3(callback);
 

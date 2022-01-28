@@ -140,6 +140,17 @@ bitbns.transferUSDTFromPoolAccount({
     console.log(error);  
 });
 
+//// Transfer Any coin from pool account
+
+bitbns.transferCoinFromPoolAccount({    
+	target_uid : 23342324,
+	amount : 1,
+    coin: 460
+},function(error, data) { 
+	console.log(data);
+    console.log(error);  
+});
+
 //// Transfer INR funds from pool account
 
 bitbns.transferINRFromPoolAccount({    
