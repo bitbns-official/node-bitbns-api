@@ -774,6 +774,154 @@ class bitbnsApi{
   }
 
 
+// Swap APIS start here - Users can use these to place orders on Bitbns Swap 
+
+swapLimitINR(dataObj, callback){ 
+  this.requestAuthenticate3(callback);
+
+  if(this.verifyApiKeys(this.apiKeys)){
+    this.makePostRequest3("swapLimitINR", dataObj, callback);
+  }else{
+    return callback("apiKeys Not Found , Please intialize it first","");
+  }
+}
+
+swapLimitUSDT(dataObj, callback){ 
+  this.requestAuthenticate3(callback);
+
+  if(this.verifyApiKeys(this.apiKeys)){
+    this.makePostRequest3("swapLimitUSDT", dataObj, callback);
+  }else{
+    return callback("apiKeys Not Found , Please intialize it first","");
+  }
+}
+
+swapCancelOrder(dataObj, callback){ 
+  this.requestAuthenticate3(callback);
+
+  if(this.verifyApiKeys(this.apiKeys)){
+    this.makePostRequest3("swapCancelOrder", dataObj, callback);
+  }else{
+    return callback("apiKeys Not Found , Please intialize it first","");
+  }
+}
+
+swapListOpenOrders(dataObj, callback){ 
+  this.requestAuthenticate3(callback);
+
+  if(this.verifyApiKeys(this.apiKeys)){
+    this.makePostRequest3("swapListOpenOrders", dataObj, callback);
+  }else{
+    return callback("apiKeys Not Found , Please intialize it first","");
+  }
+}
+
+swapMarketINR(dataObj, callback){ 
+  this.requestAuthenticate3(callback);
+
+  if(this.verifyApiKeys(this.apiKeys)){
+    this.makePostRequest3("swapMarketINR", dataObj, callback);
+  }else{
+    return callback("apiKeys Not Found , Please intialize it first","");
+  }
+}
+
+swapMarketUSDT(dataObj, callback){ 
+  this.requestAuthenticate3(callback);
+
+  if(this.verifyApiKeys(this.apiKeys)){
+    this.makePostRequest3("swapMarketUSDT", dataObj, callback);
+  }else{
+    return callback("apiKeys Not Found , Please intialize it first","");
+  }
+}
+
+swapOrderHistory(dataObj, callback){  
+  this.requestAuthenticate3(callback);
+
+  if(this.verifyApiKeys(this.apiKeys)){
+    this.makePostRequest3("swapOrderHistory", dataObj, callback);
+  }else{
+    return callback("apiKeys Not Found , Please intialize it first","");
+  }
+}
+
+swapCoinList(dataObj, callback){ 
+  this.requestAuthenticate3(callback);
+
+  if(this.verifyApiKeys(this.apiKeys)){
+    this.makePostRequest3("swapCoinList", dataObj, callback);
+  }else{
+    return callback("apiKeys Not Found , Please intialize it first","");
+  }
+}
+
+// FIP APIs starts here 
+
+listAllFIP(dataObj, callback){ 
+  this.requestAuthenticate3(callback);
+
+  if(this.verifyApiKeys(this.apiKeys)){
+    this.makePostRequest3("listAllFIP", dataObj, callback);
+  }else{
+    return callback("apiKeys Not Found , Please intialize it first","");
+  }
+}
+
+
+enrollForFIP(dataObj, callback){ 
+  this.requestAuthenticate3(callback);
+
+  if(this.verifyApiKeys(this.apiKeys)){
+    this.makePostRequest3("enrollForFIP", dataObj, callback);
+  }else{
+    return callback("apiKeys Not Found , Please intialize it first","");
+  }
+}
+
+getOngoingFIP(dataObj, callback){ 
+  this.requestAuthenticate3(callback);
+
+  if(this.verifyApiKeys(this.apiKeys)){
+    this.makePostRequest3("getOngoingFIP", dataObj, callback);
+  }else{
+    return callback("apiKeys Not Found , Please intialize it first","");
+  }
+}
+
+getFIPTransactions(dataObj, callback){ 
+  this.requestAuthenticate3(callback);
+
+  if(this.verifyApiKeys(this.apiKeys)){
+    this.makePostRequest3("getFIPTransactions", dataObj, callback);
+  }else{
+    return callback("apiKeys Not Found , Please intialize it first","");
+  }
+}
+
+preSubscribeForFIP(dataObj, callback){ 
+  this.requestAuthenticate3(callback);
+
+  if(this.verifyApiKeys(this.apiKeys)){
+    this.makePostRequest3("preSubscribeForFIP", dataObj, callback);
+  }else{
+    return callback("apiKeys Not Found , Please intialize it first","");
+  }
+}
+
+fetchMySubscriptions(dataObj, callback){ 
+  this.requestAuthenticate3(callback);
+
+  if(this.verifyApiKeys(this.apiKeys)){
+    this.makePostRequest3("fetchMySubscriptions", dataObj, callback);
+  }else{
+    return callback("apiKeys Not Found , Please intialize it first","");
+  }
+}
+
+// FIP APIs ends here
+
+
 // Partner APIS start here - These apis need pre approval from Bitbns team
 
 
@@ -827,6 +975,16 @@ class bitbnsApi{
     }
   }
 
+  transferCoinFromPoolAccount(dataObj, callback){ 
+    this.requestAuthenticate3(callback);
+
+    if(this.verifyApiKeys(this.apiKeys)){
+      this.makePostRequest3("transferCoinFromPoolAccount", dataObj, callback);
+    }else{
+      return callback("apiKeys Not Found , Please intialize it first","");
+    }
+  }
+
   transferINRFromPoolAccount(dataObj, callback){ 
     this.requestAuthenticate3(callback);
 
@@ -842,6 +1000,26 @@ class bitbnsApi{
 
     if(this.verifyApiKeys(this.apiKeys)){
       this.makePostRequest3("generateNewAPIKey", dataObj, callback);
+    }else{
+      return callback("apiKeys Not Found , Please intialize it first","");
+    }
+  }
+
+  createNewPGOrder(dataObj, callback){ 
+    this.requestAuthenticate3(callback);
+
+    if(this.verifyApiKeys(this.apiKeys)){
+      this.makePostRequest3("createNewPGOrder", dataObj, callback);
+    }else{
+      return callback("apiKeys Not Found , Please intialize it first","");
+    }
+  }
+
+  fetchPGOrderStatus(dataObj, callback){ 
+    this.requestAuthenticate3(callback);
+
+    if(this.verifyApiKeys(this.apiKeys)){
+      this.makePostRequest3("fetchPGOrderStatus", dataObj, callback);
     }else{
       return callback("apiKeys Not Found , Please intialize it first","");
     }
