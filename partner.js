@@ -151,6 +151,18 @@ bitbns.transferCoinFromPoolAccount({
     console.log(error);  
 });
 
+
+//// Transfer any coin to pooled account
+
+bitbns.transferCoinToPoolAccount({    
+	pool_uid : 423424242,
+	amount : 0.01,
+    coin_name: 'SOL'
+},function(error, data) { 
+	console.log(data);
+    console.log(error);  
+});
+
 //// Transfer INR funds from pool account
 
 bitbns.transferINRFromPoolAccount({    
