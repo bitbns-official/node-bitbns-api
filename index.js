@@ -428,6 +428,26 @@ class bitbnsApi{
     }
   }
 
+  stopOrderStatus(symbol, entry_id, callback){
+    this.requestAuthenticate(symbol, callback);
+    if(this.verifyApiKeys(this.apiKeys)){
+      let body = {entry_id:entry_id};
+      this.makePostRequest(symbol, "stopOrderStatus", body, callback);
+    }else{
+      return callback("apiKeys Not Found , Please intialize it first","");
+    }
+  }
+
+  bracketOrderStatus(symbol, entry_id, callback){
+    this.requestAuthenticate(symbol, callback);
+    if(this.verifyApiKeys(this.apiKeys)){
+      let body = {entry_id:entry_id};
+      this.makePostRequest(symbol, "bracketOrderStatus", body, callback);
+    }else{
+      return callback("apiKeys Not Found , Please intialize it first","");
+    }
+  }
+
   cancelStopLossOrder(symbol, entry_id, callback){
     this.requestAuthenticate(symbol, callback);
     if(this.verifyApiKeys(this.apiKeys)){
