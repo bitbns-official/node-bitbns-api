@@ -982,6 +982,16 @@ fetchMySubscriptions(dataObj, callback){
     }
   }
 
+  requestCoinWithdrawFromPoolAccount(dataObj, callback){ 
+    this.requestAuthenticate3(callback);
+    
+    if(this.verifyApiKeys(this.apiKeys)){
+      this.makePostRequest3("transferCoinFromPoolToNormalAccount", dataObj, callback);
+    }else{
+      return callback("apiKeys Not Found , Please intialize it first","");
+    }
+  }
+
   transferCoinToPoolAccount(dataObj, callback){ 
     this.requestAuthenticate3(callback);
 

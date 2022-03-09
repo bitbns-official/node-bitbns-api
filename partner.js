@@ -152,6 +152,18 @@ bitbns.transferCoinFromPoolAccount({
 });
 
 
+//// Transfer Any coin from pool account to any normal Bitbns account - requires special permission
+
+bitbns.requestCoinWithdrawFromPoolAccount({    
+	target_uid : 23342324,
+	amount : 1,
+  coin_name: 'USDT'
+},function(error, data) { 
+   console.log(data);
+   console.log(error);  
+});
+
+
 //// Transfer any coin to pooled account
 
 bitbns.transferCoinToPoolAccount({    
