@@ -1042,6 +1042,128 @@ fetchMySubscriptions(dataObj, callback){
     }
   }
 
+  /// Futures testnet apis start here
+
+  futuresPlaceOpenOrder(dataObj, callback){ 
+    this.requestAuthenticate3(callback);
+
+    if(this.verifyApiKeys(this.apiKeys)){
+      this.makePostRequest3("futuresPlaceOpenOrder", dataObj, callback);
+    }else{
+      return callback("apiKeys Not Found , Please intialize it first","");
+    }
+  }
+
+  futuresPlaceCloseOrder(dataObj, callback){ 
+    this.requestAuthenticate3(callback);
+
+    if(this.verifyApiKeys(this.apiKeys)){
+      this.makePostRequest3("futuresPlaceCloseOrder", dataObj, callback);
+    }else{
+      return callback("apiKeys Not Found , Please intialize it first","");
+    }
+  }
+
+  futuresCancelOpenOrder(dataObj, callback){ 
+    this.requestAuthenticate3(callback);
+
+    if(this.verifyApiKeys(this.apiKeys)){
+      this.makePostRequest3("futuresCancelOpenOrder", dataObj, callback);
+    }else{
+      return callback("apiKeys Not Found , Please intialize it first","");
+    }
+  }
+
+  futuresCancelCloseOrder(dataObj, callback){ 
+    this.requestAuthenticate3(callback);
+
+    if(this.verifyApiKeys(this.apiKeys)){
+      this.makePostRequest3("futuresCancelCloseOrder", dataObj, callback);
+    }else{
+      return callback("apiKeys Not Found , Please intialize it first","");
+    }
+  }
+
+  futuresOpenPositions(dataObj, callback){ 
+    this.requestAuthenticate3(callback);
+
+    if(this.verifyApiKeys(this.apiKeys)){
+      this.makePostRequest3("futuresOpenPositions", dataObj, callback);
+    }else{
+      return callback("apiKeys Not Found , Please intialize it first","");
+    }
+  }
+
+  futuresOpenOrders(dataObj, callback){ 
+    this.requestAuthenticate3(callback);
+
+    if(this.verifyApiKeys(this.apiKeys)){
+      this.makePostRequest3("futuresOpenOrders", dataObj, callback);
+    }else{
+      return callback("apiKeys Not Found , Please intialize it first","");
+    }
+  }
+
+  futuresOrderHistory(dataObj, callback){ 
+    this.requestAuthenticate3(callback);
+
+    if(this.verifyApiKeys(this.apiKeys)){
+      this.makePostRequest3("futuresOrderHistory", dataObj, callback);
+    }else{
+      return callback("apiKeys Not Found , Please intialize it first","");
+    }
+  }
+
+  futuresUpdateLeverage(dataObj, callback){ 
+    this.requestAuthenticate3(callback);
+
+    if(this.verifyApiKeys(this.apiKeys)){
+      this.makePostRequest3("futuresUpdateLeverage", dataObj, callback);
+    }else{
+      return callback("apiKeys Not Found , Please intialize it first","");
+    }
+  }
+
+  futuresWalletBalance(dataObj, callback){ 
+    this.requestAuthenticate3(callback);
+
+    if(this.verifyApiKeys(this.apiKeys)){
+      this.makePostRequest3("futuresWalletBalance", dataObj, callback);
+    }else{
+      return callback("apiKeys Not Found , Please intialize it first","");
+    }
+  }
+
+  futuresRequestBalance(dataObj, callback){ 
+    this.requestAuthenticate3(callback);
+
+    if(this.verifyApiKeys(this.apiKeys)){
+      this.makePostRequest3("futuresRequestBalance", dataObj, callback);
+    }else{
+      return callback("apiKeys Not Found , Please intialize it first","");
+    }
+  }
+
+  futuresMaxOpenPos(dataObj, callback){ 
+    this.requestAuthenticate3(callback);
+
+    if(this.verifyApiKeys(this.apiKeys)){
+      this.makePostRequest3("futuresMaxOpenPos", dataObj, callback);
+    }else{
+      return callback("apiKeys Not Found , Please intialize it first","");
+    }
+  }
+
+  futuresInstList(dataObj, callback){ 
+    this.requestAuthenticate3(callback);
+
+    if(this.verifyApiKeys(this.apiKeys)){
+      this.makePostRequest3("futuresInstList", dataObj, callback);
+    }else{
+      return callback("apiKeys Not Found , Please intialize it first","");
+    }
+  }
+
 }
 
 module.exports = bitbnsApi;
