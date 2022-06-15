@@ -919,6 +919,17 @@ fetchMySubscriptions(dataObj, callback){
 // FIP APIs ends here
 
 
+fetchMyHistory(dataObj, callback){ 
+  this.requestAuthenticate3(callback);
+
+  if(this.verifyApiKeys(this.apiKeys)){
+    this.makePostRequest3("userHistoryNew", dataObj, callback);
+  }else{
+    return callback("apiKeys Not Found , Please intialize it first","");
+  }
+}
+
+
 // Partner APIS start here - These apis need pre approval from Bitbns team
 
 
