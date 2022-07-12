@@ -6,25 +6,6 @@ const bitbns = new bitbnsApi({
 }); 
 
 
-// To reset balance to 50000 USDT in test account
-bitbns.futuresRequestBalance({
-	fund : 50000,
-  network: 'mainnet',
-  reset: 1
-},function(error, data) {
-	console.log(data);
-});
-
-
-// To add 50000 USDT balance to existing balance 
-bitbns.futuresRequestBalance({
-	fund : 50000,
-  network: 'mainnet',
-  reset: 0
-},function(error, data) {
-	console.log(data);
-});
-
 
 // Get all active futures market list
 bitbns.futuresInstList({network: 'mainnet'},function(error, data) {
