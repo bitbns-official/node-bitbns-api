@@ -19,6 +19,16 @@ bitbns.createNewAccount({
 });
 
 
+////// Verifiying phone number for this newly created user
+///// This process returns a verifyLink, please redirect user to that link for verification
+
+bitbns.verifyMobileForAccount({
+	target_uid : 1705823
+},function(error, data) {
+	console.log(data)
+});
+
+
 ////// Adding PAN of user a new account
 
 bitbns.updateUserAccountDetails({ 
