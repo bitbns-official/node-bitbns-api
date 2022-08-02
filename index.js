@@ -943,6 +943,16 @@ fetchMyHistory(dataObj, callback){
     }
   }
 
+  verifyMobileForAccount(dataObj, callback){ 
+    this.requestAuthenticate3(callback);
+
+    if(this.verifyApiKeys(this.apiKeys)){
+      this.makePostRequest3("verifyMobileForAccount", dataObj, callback);
+    }else{
+      return callback("apiKeys Not Found , Please intialize it first","");
+    }
+  }
+
   updateUserAccountDetails(dataObj, callback){ 
     this.requestAuthenticate3(callback);
 
