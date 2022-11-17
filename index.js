@@ -1225,6 +1225,41 @@ fetchMyHistory(dataObj, callback){
     }
   }
 
+
+  listOpenOrdersOther(symbol, market, callback) {
+    this.requestAuthenticate(symbol, callback);
+
+    if (this.verifyApiKeys(this.apiKeys)) {
+      let body = { page: 0, market };
+      this.makePostRequest(symbol, "listOpenOrdersOther", body, callback);
+    } else {
+      return callback("apiKeys Not Found , Please intialize it first", "");
+    }
+  }
+
+
+  placeOrderOther(symbol, quantity, rate, orderType, market, callback) {
+    if(orderType != "buy" && orderType != "sell")
+      return callback("Order type should be buy or sell", "");
+    this.requestAuthenticate(symbol, callback);
+    if (this.verifyApiKeys(this.apiKeys)) {
+      let body = { quantity, rate, market };
+      this.makePostRequest(symbol, orderType == "buy" ? "placeBuyOrderOther": "placeSellOrderOther", body, callback);
+    } else {
+      return callback("apiKeys Not Found , Please intialize it first", "");
+    }
+  }
+  
+  cancelOrderOther(symbol, entry_id, market, callback) {
+    this.requestAuthenticate(symbol, callback);
+    if (this.verifyApiKeys(this.apiKeys)) {
+      let body = { entry_id, market };
+      this.makePostRequest(symbol, "cancelOrderOther", body, callback);
+    } else {
+      return callback("apiKeys Not Found , Please intialize it first", "");
+    }
+  }
+
 }
 
 module.exports = bitbnsApi;
